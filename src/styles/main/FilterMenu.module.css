@@ -1,0 +1,9 @@
+.menus {
+  position: fixed;
+  top: 160px;
+  left: 40px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}

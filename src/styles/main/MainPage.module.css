@@ -12,6 +12,8 @@
 .insturctorSection,
 .meetingSection {
   width: 774px;
+
+  margin-top: 2rem;
 }
 
 .meetingSection {

@@ -1,6 +1,8 @@
 import styles from "../styles/main/MainPage.module.css";
 import Tab from "../componets/main/Tab";
 import MeetingCard from "../componets/gathering/MeetingCard";
+import FilterMenu from "../componets/main/FilterMenu";
+import { useState } from "react";
 
 function MainPage() {
   const mockMeetingData = [
@@ -60,15 +62,27 @@ function MainPage() {
     },
   ];
 
+  const [filter, setFilter] = useState({
+    regions: "",
+    sports: "",
+    coach: false,
+  });
+
+  const handleFilter = (key, value) => {
+    setFilter((prev) => ({ ...prev, [key]: prev[key] === value ? "" : value }));
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.header}></div>
+      <FilterMenu filter={filter} onClick={handleFilter} />
       <Tab />
       <div className={styles.insturctorSection}>
         <div className={styles.sectionHeader}>
           <h1 className={styles.sectionTitle}>강사님 리스트</h1>
           <p className={styles.sort}>경기, 용인시, 기흥구</p>
         </div>
+        <div className={styles.cardSection}></div>
       </div>
       <section className={styles.meetingSection}>
         <div className={styles.sectionHeader}>
@@ -79,6 +93,11 @@ function MainPage() {
           {mockMeetingData.map((meeting) => (
             <MeetingCard key={meeting.id} meeting={meeting} />
           ))}
+        </div>
+        <div className={styles.bottom}>
+          <div className={styles.prev}></div>
+
+          <div className={styles.next}></div>
         </div>
       </section>
     </div>
