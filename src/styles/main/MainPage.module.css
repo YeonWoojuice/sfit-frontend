@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  height: 110px;
+}
+
+.insturctorSection,
+.meetingSection {
+  width: 774px;
+}
+
+.meetingSection {
+  margin-top: 4rem;
+}
+
+.sectionHeader {
+  padding-inline: 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sectionTitle {
+  font-size: 20px;
+}
+
+.sort {
+  font-size: 1rem;
+  font-weight: 500;
+
+  color: #8d8b8d;
+}
+
+.cardSection {
+  margin-top: 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}

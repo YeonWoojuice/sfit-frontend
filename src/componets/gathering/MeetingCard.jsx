@@ -8,11 +8,11 @@ const RequestButton = () => {
   return <button className={styles.requestBtn}>신청하기</button>;
 };
 
-const CategoryButton = ({ label }) => {
-  return <button className={styles.categoryBtn}>{label}</button>;
+const CategoryButton = ({ children }) => {
+  return <button className={styles.categoryBtn}>{children}</button>;
 };
 
-function MeetingCard() {
+function MeetingCard({ meeting }) {
   return (
     <div className={styles.container}>
       <div className={styles.img}></div>
@@ -21,19 +21,19 @@ function MeetingCard() {
         <div className={styles.contentHeader}>
           <div className={styles.leftBox}>
             <RecomandIcon />
-            <p className={styles.name}>[모임 명] 게시글 제목 설명</p>
+            <p className={styles.name}>{meeting.name}</p>
           </div>
           <RequestButton />
         </div>
-        <p className={styles.content}>게시물 부제 혹은 부연설명</p>
+        <p className={styles.content}>{meeting.description}</p>
       </div>
 
       <div className={styles.bottomBox}>
-        20250-11-07
+        {meeting.date}
         <div className={styles.btnBox}>
-          <CategoryButton label={"지역"} />
-          <CategoryButton label={"종목"} />
-          <CategoryButton label={"별점"} />
+          <CategoryButton>{meeting.region}</CategoryButton>
+          <CategoryButton>{meeting.sport}</CategoryButton>
+          <CategoryButton>{meeting.rating}</CategoryButton>
         </div>
       </div>
     </div>
