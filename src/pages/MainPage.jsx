@@ -1,8 +1,10 @@
 import styles from "../styles/main/MainPage.module.css";
 import Tab from "../componets/main/Tab";
-import MeetingCard from "../componets/gathering/MeetingCard";
 import FilterMenu from "../componets/main/FilterMenu";
 import { useState } from "react";
+import InstructorSection from "../componets/gathering/InstructorSection";
+import MeetingSection from "../componets/gathering/MeetingSection";
+import { getRange } from "../utils/pagination";
 
 function MainPage() {
   const mockMeetingData = [
@@ -62,6 +64,17 @@ function MainPage() {
     },
   ];
 
+  const pageInfo = {
+    page: 1,
+    size: 8,
+    totalPages: 8,
+    totalElements: 61,
+    hasPrev: false,
+    hasNext: true,
+  };
+
+  const pages = getRange(1, pageInfo.totalPages);
+
   const [filter, setFilter] = useState({
     regions: "",
     sports: "",
@@ -75,31 +88,22 @@ function MainPage() {
   return (
     <div className={styles.container}>
       <div className={styles.header}></div>
+      {/* 필터링 */}
       <FilterMenu filter={filter} onClick={handleFilter} />
       <Tab />
-      <div className={styles.insturctorSection}>
-        <div className={styles.sectionHeader}>
-          <h1 className={styles.sectionTitle}>강사님 리스트</h1>
-          <p className={styles.sort}>경기, 용인시, 기흥구</p>
-        </div>
-        <div className={styles.cardSection}></div>
-      </div>
-      <section className={styles.meetingSection}>
-        <div className={styles.sectionHeader}>
-          <h1 className={styles.sectionTitle}>일반 모임</h1>
-          <p className={styles.sort}>거리순</p>
-        </div>
-        <div className={styles.cardSection}>
-          {mockMeetingData.map((meeting) => (
-            <MeetingCard key={meeting.id} meeting={meeting} />
+      {/* 강사 데이터 넘겨줘야 됨 */}
+      <InstructorSection />
+      <MeetingSection data={mockMeetingData} />
+      {/* 모임 페이지 버튼 */}
+      <div className={styles.bottom}>
+        <div className={styles.prev}></div>
+        <div className={styles.pages}>
+          {pages.map((item) => (
+            <div className={styles.page}>{item}</div>
           ))}
         </div>
-        <div className={styles.bottom}>
-          <div className={styles.prev}></div>
-
-          <div className={styles.next}></div>
-        </div>
-      </section>
+        <div className={styles.next}></div>
+      </div>
     </div>
   );
 }

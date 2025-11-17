@@ -1,0 +1,17 @@
+.meetingSection {
+  width: 774px;
+
+  margin-top: 2rem;
+}
+
+.meetingSection {
+  margin-top: 4rem;
+}
+
+.meetingCards {
+  margin-top: 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
