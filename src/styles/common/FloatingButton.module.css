@@ -2,5 +2,16 @@
   width: 72px;
   height: 72px;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   border-radius: 50%;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+
+  fill: #fff;
 }

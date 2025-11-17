@@ -1,11 +1,14 @@
 import styles from "../styles/main/MainPage.module.css";
+import { useState } from "react";
+import { getRange } from "../utils/pagination";
 import Tab from "../componets/main/Tab";
 import FilterMenu from "../componets/main/FilterMenu";
-import { useState } from "react";
 import InstructorSection from "../componets/gathering/InstructorSection";
 import MeetingSection from "../componets/gathering/MeetingSection";
-import { getRange } from "../utils/pagination";
 import FloatingButton from "../componets/common/FloatingButton";
+import prevIcon from "../assets/prev.png";
+import nextIcon from "../assets/next.png";
+import FloatingLayout from "../componets/common/FloatingLayout";
 
 function MainPage() {
   const mockMeetingData = [
@@ -88,27 +91,30 @@ function MainPage() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.header}></div>
-      {/* 플로팅 버튼 */}
-      {/* <div className={styles.floatingBox}>
-        <FloatingButton type="chat" />
-        <FloatingButton type="new" />
-      </div> */}
-      {/* 필터링 */}
-      <FilterMenu filter={filter} onClick={handleFilter} />
-      <Tab />
-      {/* 강사 데이터 넘겨줘야 됨 */}
-      <InstructorSection />
-      <MeetingSection data={mockMeetingData} />
-      {/* 모임 페이지 버튼 */}
-      <div className={styles.bottom}>
-        <div className={styles.prev}></div>
-        <div className={styles.pages}>
-          {pages.map((item) => (
-            <div className={styles.page}>{item}</div>
-          ))}
+      <div className={styles.layout}>
+        <div className={styles.header}></div>
+        {/* 플로팅 버튼 */}
+        <FloatingLayout>
+          <FloatingButton type="chat" />
+          <FloatingButton type="new" />
+        </FloatingLayout>
+
+        {/* 필터링 */}
+        <FilterMenu filter={filter} onClick={handleFilter} />
+        <Tab />
+        {/* 강사 데이터 넘겨줘야 됨 */}
+        <InstructorSection />
+        <MeetingSection data={mockMeetingData} />
+        {/* 모임 페이지 버튼 */}
+        <div className={styles.bottom}>
+          <img src={prevIcon} className={styles.prev}></img>
+          <div className={styles.pages}>
+            {pages.map((item) => (
+              <div className={styles.page}>{item}</div>
+            ))}
+          </div>
+          <img src={nextIcon} className={styles.next}></img>
         </div>
-        <div className={styles.next}></div>
       </div>
     </div>
   );

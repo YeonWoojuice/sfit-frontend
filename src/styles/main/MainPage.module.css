@@ -5,6 +5,10 @@
   align-items: center;
 }
 
+.layout {
+  position: relative;
+}
+
 .header {
   height: 110px;
 }
@@ -37,8 +41,23 @@
 }
 
 .bottom {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-block: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.prev,
+.next {
+  width: 37px;
+  height: 37px;
+
+  border-radius: 8px;
+  background: #e9e7e9;
+
+  cursor: pointer;
 }
 
 .pages {
