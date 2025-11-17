@@ -2,52 +2,21 @@
 .signupImage{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #E9E7E9;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 0;
+  margin: -70px 0 0 0; /* Title과 이미지 사이 간격 조정 */
+  background-color: transparent;
+  box-sizing: border-box;
 }
-
-/* 타이틀과 텍스트를 묶는 컨테이너 */
-.headerRow{
-  display: flex;
-  gap: 8px;
-  align-items: center; /* 텍스트의 하단선 기준으로 정렬 */
-  margin-bottom: -10px; /* 이미지와의 간격 */
-  width: 100%; /* 너비를 꽉 채워서 정렬을 제어할 수 있게 함 */
-}
-/* signup타이틀 */
-.title {
-    font-size: 32px;
-    font-weight: 900;
-    color: #8D8B8D;
-    margin: 0;
-    margin-bottom: 0px;
-    letter-spacing: -0.5px;
-    margin-right: 18px;
-    align-self: flex-start;
-    line-height: 1;
-    display: block;
-}
-
-/* 계정이 없나요? */
-.nosignup{
-    font-size: 16px;
-    color: #8D8B8D;
-    background-color: transparent;
-    padding-bottom:0.5px;
-    margin-bottom: 100px;
-    line-height: 1;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    text-decoration: underline;
-    text-underline-position: under;
-  }
 
 /* signup 이미지 스타일 */
 .image{
     width: 100%;
-    
-    margin-bottom: 1px;
+    margin: 0;
+    display: block;
+    margin-top: 120px;
 }
+
 

@@ -1,127 +1,153 @@
 .signupFormContainer{
-width: 100%;   /* 부모 .content(479px) 기준으로 꽉 채움 */
-height: 100%;
-display: flex;
-justify-content: flex-start;
-align-items: flex-start;
-box-sizing: border-box;
-padding-top: 0; /* 부모에서 패딩 처리했으므로 여기선 0 */
-background-color: #ffffff;
-}
-/* 폼 영역 (흰색 카드 부분) */
-.signupForm {
-    width: 420px;
-padding: 60px;
-  border-radius: 26px; /* 둥근 모서리 */
-  /* box-shadow: 0 10px 30px rgba(0,0,0,0.08); */
-display: flex;
-flex-direction: column;
-}
-
-/* SIGN UP 타이틀 (h1) 스타일 */
-.title {
-    font-size: 35px;
-    font-weight: 900;
-    color: #1a1a1a;
-    letter-spacing: -0.5px;
-    align-self: flex-start;
-}
-
-/* 각 입력 필드 그룹 (ID, PASSWORD 등) */
-.inputGroup {
-    margin-bottom: 20px;
-}
-
-/* 필드 레이블 (ID, PASSWORD, 이름 등) */
-.label {
-    display: block;
-    font-size: 14px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-/* 두 입력 필드가 한 줄에 있는 그룹 (이름/전화번호, 이메일) */
-.rowGroup {
+    width: 100%;   
+    height: 100%;
     display: flex;
-    gap: 1px; /* 필드 사이의 간격 */
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-/* rowGroup 내부의 개별 필드 (이름, 전화번호, 이메일 인풋/셀렉트) */
-.rowItem {
-    flex: 1; /* 너비를 균등하게 분할 */
-    margin-top: 3px;
-}
-
-/* 모든 입력 요소 (input, select) 공통 스타일 */
-.inputField {
-    flex: 1;
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    font-size: 14px;
+    justify-content: flex-start;
+    align-items: flex-start;
     box-sizing: border-box;
-    color: #8D8B8D;
-}
-
-.inputWithButton{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-
-/* 에러 메시지 스타일 */
-.errorMessage {
-    color: red;
-    font-size: 13px;
-    margin-top: 5px;
-}
-
-
-/* 중복확인 버튼 */
-.checkButton {
-    background-color: #e0e0e0;
-    color: #555555;
-    padding: 8px 13px;
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 8px;
-    display: inline-block;
-    width: auto;
-    white-space: nowrap;
-}
-
-/* 회원가입 버튼 */
-.submitButton {
-width: fit-content;
-padding: 15px 55px;
-    background-color: #ff6a2c; /* 주황색 */
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 15px;
-    transition: background-color 0.2s;
-}
-
-
-.submitButton:hover {
-    background-color: #FF632C;
-}
-
-.emailDomainSelect {
-    /* 일부 브라우저에서 기본 드롭다운 스타일 제거 */
-    /* appearance: none;  */
-    background-repeat: no-repeat;
-    background-position: right 10px center; /* 화살표 위치 조정 */
-    padding-right: 35px; /* 화살표 공간 확보 */
-}
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    }
+    /* 폼 영역 (흰색 카드 부분) */
+    .signupForm {
+        width: 100%;
+        max-width: 420px;
+        padding: 60px 60px 60px 0;
+        border-radius: 26px; /* 둥근 모서리 */
+        /* box-shadow: 0 10px 30px rgba(0,0,0,0.08); */
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        margin-top: -30px; /* 폼을 위로 올림 (원하는 만큼 조정 가능) */
+        box-sizing: border-box;
+    }
+    
+    /* SIGN UP 타이틀 (h1) 스타일 */
+    
+    
+    /* 각 입력 필드 그룹 (ID, PASSWORD 등) */
+    .inputGroup {
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+    
+    /* 필드 레이블 (ID, PASSWORD, 이름 등) */
+    .label {
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+        font-family: 'Pretendard';
+        margin-left: 10px;
+    }
+    
+    /* 두 입력 필드가 한 줄에 있는 그룹 (이름/전화번호, 이메일) */
+    .rowGroup {
+        display: flex;
+        gap: 8px; /* 필드 사이의 간격 */
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    /* rowGroup 내부의 개별 필드 (이름, 전화번호, 이메일 인풋/셀렉트) */
+    .rowItem {
+        flex: 1; /* 너비를 균등하게 분할 */
+        margin-top: 3px;
+    }
+    
+    /* 모든 입력 요소 (input, select) 공통 스타일 */
+    .inputField {
+        flex: 1;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        font-size: 14px;
+        box-sizing: border-box;
+        color: #000000;
+        background-color: #ffffff;
+    }
+    
+    .inputField::placeholder {
+        color: #8D8B8D;
+        opacity: 1;
+    }
+    
+    .inputField:focus {
+        background-color: #ffffff;
+        outline: none;
+    }
+    
+    .inputWithButton{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    
+    /* 에러 메시지 스타일 */
+    .errorMessage {
+        color: red;
+        font-size: 13px;
+        margin-top: 5px;
+    }
+    
+    .errorMassage {
+        color: red;
+        font-size: 13px;
+        margin-top: 5px;
+    }
+    
+    /* 중복확인 버튼 */
+    .checkButton {
+        background-color: #e0e0e0;
+        color: #555555;
+        padding: 8px 13px;
+        border: none;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 8px;
+        display: inline-block;
+        width: auto;
+        white-space: nowrap;
+    }
+    
+    /* 회원가입 버튼 */
+    .submitButton {
+    width: fit-content;
+    padding: 15px 55px;
+        background-color: #ff6a2c; /* 주황색 */
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 15px;
+        transition: background-color 0.2s;
+        font-family: 'Pretendard';
+    }
+    
+    
+    .submitButton:hover {
+        background-color: #FF632C;
+    }
+    
+    .emailDomainSelect {
+        /* 일부 브라우저에서 기본 드롭다운 스타일 제거 */
+        /* appearance: none;  */
+        background-color: #ffffff;
+        background-repeat: no-repeat;
+        background-position: right 10px center; /* 화살표 위치 조정 */
+        padding-right: 35px; /* 화살표 공간 확보 */
+    }
+    
+    .emailDomainSelect:focus {
+        background-color: #ffffff;
+        outline: none;
+    }
+    

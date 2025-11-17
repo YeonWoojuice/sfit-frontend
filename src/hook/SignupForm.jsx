@@ -1,9 +1,9 @@
 import {useForm} from 'react-hook-form';
 import styles from "../styles/SignupForm.module.css";
-import contentBox from "../styles/AuthLayout.module.css";
+import Title from "../Components/Title";
 
 
-function SignupForm() {
+function SignupForm({onSwitch}) {
   const {
     register,
     handleSubmit,
@@ -21,7 +21,6 @@ function SignupForm() {
       
       <div className={styles.signupFormContainer}>
         <form className={styles.signupForm} onSubmit={handleSubmit(onSubmit)}>
-          <h1 className={contentBox.Title}>SIGN UP</h1>
           <div className={styles.rowGroup}>
             <div className={styles.rowItem}>
               <label className={styles.label}>ID</label>
@@ -48,7 +47,7 @@ function SignupForm() {
                 value:/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
                 message:"영문,숫자,특수문자 조합 6~20자로 입력해 주세요.."
               }})} />
-            {errors.Password && <p classNmae={styles.errorMassage}>{errors.Password.message}</p>}
+            {errors.Password && <p className={styles.errorMassage}>{errors.Password.message}</p>}
           </div>
           <div className={styles.rowGroup}>
             <div className={styles.rowItem}>
@@ -58,16 +57,16 @@ function SignupForm() {
               placeholder='이름을 입력해 주세요.'
               className={styles.inputField}
               {...register("Name", {required:"이름을 입력해 주세요."})}/>
-              {errors.Name && <p classNmae={styles.errorMassage}>{errors.Name.message}</p>}
+              {errors.Name && <p className={styles.errorMassage}>{errors.Name.message}</p>}
             </div>
-            <div className={styles.Item}>
+            <div className={styles.rowItem}>
               <label className={styles.label}>전화번호</label>
               <input
               type="number"
               className={styles.inputField}
               placeholder='전화번호를 입력해 주세요.'
               {...register("phonenumber", {required:"전화번호를 입력해 주세요."})}/>
-              {errors.phonenumber && <p classNmae={styles.errorMassage}>{errors.phonenumber.message}</p>}
+              {errors.phonenumber && <p className={styles.errorMassage}>{errors.phonenumber.message}</p>}
             </div>
           </div>
           <div className={styles.inputGroup}>
@@ -99,7 +98,7 @@ function SignupForm() {
             </p>
         )}
       
-          <button type='submit ' className={styles.submitButton}>회원가입</button>
+          <button type='submit' className={styles.submitButton}>회원가입</button>
         </form>
       </div>
 

@@ -1,77 +1,104 @@
 .loginFormContainer{
-width: 100%;   
-display: flex;
-justify-content: flex-start;
-align-items: flex-start;
-box-sizing: border-box;
-padding-top: 0; 
-}
-
-
-.loginForm{
-  max-width: 420px;
-  background: white;
-  padding: 48px;
-  
-  /* box-shadow: 0 10px 30px rgba(0,0,0,0.08); */
+  width: 100%;   
   display: flex;
-  flex-direction: column;
-
-}
-
-.loginTitle{
-  font-size: 32px;
-    font-weight: 900;
-    margin: 0;
-    margin-bottom: 60px;
-    align-self: flex-start;
-    text-align: left;
+  justify-content: flex-start;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  }
+  
+  
+  .loginForm{
+    width: 100%;
+    max-width: 420px;
+    background: white;
+    padding: 0 48px 48px 0;
     
-}
-
-.inputGroup{
-  margin-bottom: 40px;
-  padding: 0px;
-}
-
-.label{
-  display: block;
-    font-size: 14px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 8px;
-}
-
-.inputField{
-  flex: 1;
-    width: 200%;
-    height: 45px;
-    padding: 10px;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    font-size: 14px;
+    /* box-shadow: 0 10px 30px rgba(0,0,0,0.08); */
+    display: flex;
+    flex-direction: column;
+    margin: 0;
     box-sizing: border-box;
+    margin-top: 30px;
+  }
+  
+  
+  
+  .inputGroup{
+    margin-bottom: 40px;
+    padding: 0px;
+    justify-content: flex-start;
+    align-self: stretch;
+    width: 100%;}
+    
+  .label{
+    display: block;
+      font-size: 14px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 8px;
+      margin-left: 10px;
+      font-family: 'Pretendard';
+      
+  }
+  
+  .inputField{
+    flex: 1;
+      width: 100%;
+      height: 45px;
+      padding: 10px;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      margin-bottom: -20px;
+      
+      font-size: 14px;
+      box-sizing: border-box;
+      color: #8D8B8D;
+      background-color: #ffffff;
+  }
+  
+  .inputField::placeholder {
+      color: #8D8B8D;
+      opacity: 1;
+  }
+  
+  .inputField:focus {
+      background-color: #ffffff;
+      outline: none;
+  }
+  
+  .errorMessage{
+    color: red;
+      font-size: 13px;
+      margin-top: 5px;
+  }
+  
+  .errorMassage{
+    color: red;
+      font-size: 13px;
+      margin-top: 5px;
+  }
+  
+  .forgotPassword{
+    font-size: 14px;
     color: #8D8B8D;
-}
-
-.errorMessage{
-  color: red;
-    font-size: 13px;
-    margin-top: 5px;
-}
-
-
-
-.submitButton{
-  width: fit-content;
-  padding: 15px 55px;
-    background-color: #ff6a2c; /* 주황색 */
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 40px;
-    transition: background-color 0.2s;
-}
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+  
+  .submitButton{
+    width: fit-content;
+    padding: 15px 55px;
+      background-color: #ff6a2c; /* 주황색 */
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 40px;
+      transition: background-color 0.2s;
+      font-family: 'Pretendard';
+  }
+  

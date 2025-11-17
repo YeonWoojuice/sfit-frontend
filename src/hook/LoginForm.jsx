@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
 import styles from "../styles/LoginForm.module.css";
-import contentBox from "../styles/AuthLayout.module.css";
+import Title from "../Components/Title";
 
 
-function LoginForm(){
+function LoginForm({onSwitch}){
   const{
     register,
     handleSubmit,
@@ -19,7 +19,6 @@ function LoginForm(){
     
       <div className={styles.loginFormContainer}>
         <form className={styles.loginForm} onSubmit={handleSubmit(onSubmit)}>
-          <h1 className={contentBox.Title}>LOGIN</h1>
           <div className={styles.inputGroup}>
             <label className={styles.label} htmlFor="loginID">ID</label>
             <input
@@ -34,8 +33,8 @@ function LoginForm(){
           <div className={styles.inputGroup}>
             <label className={styles.label}htmlFor="loginPassword">Password</label>
             <input
-            id="password"
-            type="text"
+            id="loginPassword"
+            type="password"
             className={styles.inputField}
             placeholder="비밀번호를 입력해 주세요"
             {...register("loginPassword", {required:"비밀번호를 입력해 주세요.",
@@ -47,6 +46,7 @@ function LoginForm(){
       
             />
             {errors.loginPassword && <p className={styles.errorMassage}>{errors.loginPassword.message}</p>}
+            
           </div>
       
       
