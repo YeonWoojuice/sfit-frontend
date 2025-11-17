@@ -89,7 +89,11 @@ function MainPage() {
   return (
     <div className={styles.container}>
       <div className={styles.header}></div>
-      {/* <FloatingButton /> */}
+      {/* 플로팅 버튼 */}
+      {/* <div className={styles.floatingBox}>
+        <FloatingButton type="chat" />
+        <FloatingButton type="new" />
+      </div> */}
       {/* 필터링 */}
       <FilterMenu filter={filter} onClick={handleFilter} />
       <Tab />

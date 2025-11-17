@@ -1,8 +1,12 @@
 import styles from "../../styles/common/FloatingButton.module.css";
 
-function FloatingButton() {
+function FloatingButton({ type }) {
+  const color = {
+    chat: "#FF9F2C",
+    new: "#FF632C",
+  };
   return (
-    <div className={styles.container} style={{ background: "#FF9F2C" }}>
+    <div className={styles.container} style={{ background: color[type] }}>
       <div></div>
     </div>
   );

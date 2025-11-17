@@ -17,7 +17,7 @@
   color: #000;
 
   cursor: pointer;
-  transition: background-color 0.25s ease, color 0.25s ease;
+  transition: 0.25s ease;
 }
 
 .filterBox.active {
@@ -38,7 +38,12 @@
   width: 22px;
   height: 27px;
 
-  background: #fff;
+  fill: #ff632c;
+  transition: fill 0.25s ease;
+}
+
+.icon.select {
+  fill: #fff;
 }
 
 .label {
@@ -80,11 +85,15 @@
   margin-left: 1.25rem;
 
   border-radius: 50%;
-  border: 3px solid #ff632c;
+  border: 2px solid #d9d9d9;
 }
 
 .check.select {
-  background: #ff632c;
+  width: 16px;
+  height: 16px;
+
+  border: none;
+  background-image: url("../../assets/check.svg");
 }
 
 .option {
