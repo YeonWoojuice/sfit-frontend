@@ -1,0 +1,14 @@
+.container {
+  width: 454px;
+  /* height: 735px; */
+
+  padding: 2rem;
+
+  position: absolute;
+  left: 15%;
+  z-index: 1;
+
+  border-radius: 32px;
+
+  background: #e9e7e9;
+}

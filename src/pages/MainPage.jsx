@@ -9,6 +9,7 @@ import FloatingButton from "../componets/common/FloatingButton";
 import prevIcon from "../assets/prev.png";
 import nextIcon from "../assets/next.png";
 import FloatingLayout from "../componets/common/FloatingLayout";
+import Modal from "../componets/common/Modal";
 
 function MainPage() {
   const mockMeetingData = [
@@ -85,6 +86,8 @@ function MainPage() {
     coach: false,
   });
 
+  const [modal, setModal] = useState(false);
+
   const handleFilter = (key, value) => {
     setFilter((prev) => ({ ...prev, [key]: prev[key] === value ? "" : value }));
   };
@@ -93,10 +96,11 @@ function MainPage() {
     <div className={styles.container}>
       <div className={styles.layout}>
         <div className={styles.header}></div>
+        {modal && <Modal onClick={() => setModal(false)} />}
         {/* 플로팅 버튼 */}
         <FloatingLayout>
           <FloatingButton type="chat" />
-          <FloatingButton type="new" />
+          <FloatingButton type="new" onClick={() => setModal(true)} />
         </FloatingLayout>
 
         {/* 필터링 */}
@@ -110,7 +114,9 @@ function MainPage() {
           <img src={prevIcon} className={styles.prev}></img>
           <div className={styles.pages}>
             {pages.map((item) => (
-              <div className={styles.page}>{item}</div>
+              <div key={item} className={styles.page}>
+                {item}
+              </div>
             ))}
           </div>
           <img src={nextIcon} className={styles.next}></img>

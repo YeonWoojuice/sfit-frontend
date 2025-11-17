@@ -20,6 +20,10 @@
   transition: 0.25s ease;
 }
 
+.filterBox:hover {
+  transform: scale(1.04);
+}
+
 .filterBox.active {
   background: #ff632c;
 

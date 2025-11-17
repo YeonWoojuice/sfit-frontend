@@ -11,6 +11,8 @@
 
   background: #f8f6f8;
   border-radius: 25px;
+
+  transition: transform 0.2 ease;
 }
 
 .tabBtn {
@@ -24,6 +26,11 @@
   color: #dddddd;
 
   cursor: pointer;
+  transition: transform 0.2 ease;
+}
+
+.tabBtn:hover {
+  transform: scale(1.04);
 }
 
 .tabBtn.active {
