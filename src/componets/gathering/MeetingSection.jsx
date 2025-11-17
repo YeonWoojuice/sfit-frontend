@@ -5,7 +5,7 @@ import MeetingCard from "./MeetingCard";
 function MeetingSection({ data }) {
   return (
     <section className={styles.meetingSection}>
-      <SectionHeader title="일반 모임" sort="거리순" />
+      <SectionHeader title="일반 모임" sort="전체" isMeeting={true} />
       <div className={styles.meetingCards}>
         {data.map((meeting) => (
           <MeetingCard key={meeting.id} meeting={meeting} />

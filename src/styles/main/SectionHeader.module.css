@@ -11,8 +11,14 @@
 }
 
 .sort {
+  position: relative;
+
   font-size: 1rem;
   font-weight: 500;
 
   color: #8d8b8d;
+}
+
+.menu {
+  position: absolute;
 }

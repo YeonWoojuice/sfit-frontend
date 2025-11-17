@@ -5,6 +5,7 @@ import { useState } from "react";
 import InstructorSection from "../componets/gathering/InstructorSection";
 import MeetingSection from "../componets/gathering/MeetingSection";
 import { getRange } from "../utils/pagination";
+import FloatingButton from "../componets/common/FloatingButton";
 
 function MainPage() {
   const mockMeetingData = [
@@ -88,6 +89,7 @@ function MainPage() {
   return (
     <div className={styles.container}>
       <div className={styles.header}></div>
+      {/* <FloatingButton /> */}
       {/* 필터링 */}
       <FilterMenu filter={filter} onClick={handleFilter} />
       <Tab />
