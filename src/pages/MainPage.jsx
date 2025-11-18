@@ -1,15 +1,15 @@
 import styles from "../styles/main/MainPage.module.css";
 import { useState } from "react";
 import { getRange } from "../utils/pagination";
-import Tab from "../componets/main/Tab";
-import FilterMenu from "../componets/main/FilterMenu";
-import InstructorSection from "../componets/gathering/InstructorSection";
-import MeetingSection from "../componets/gathering/MeetingSection";
-import FloatingButton from "../componets/common/FloatingButton";
+import Tab from "../components/main/Tab";
+import FilterMenu from "../components/main/FilterMenu";
+import InstructorSection from "../components/gathering/InstructorSection";
+import MeetingSection from "../components/gathering/MeetingSection";
+import FloatingButton from "../components/common/FloatingButton";
 import prevIcon from "../assets/prev.png";
 import nextIcon from "../assets/next.png";
-import FloatingLayout from "../componets/common/FloatingLayout";
-import Modal from "../componets/common/Modal";
+import FloatingLayout from "../components/common/FloatingLayout";
+import Modal from "../components/common/Modal";
 
 function MainPage() {
   const mockMeetingData = [
