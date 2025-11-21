@@ -76,6 +76,8 @@
 }
 
 .optionBox {
+  margin-top: 0.5rem;
+
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -85,7 +87,6 @@
   width: 12px;
   height: 12px;
 
-  margin-top: 0.5rem;
   margin-left: 1.25rem;
 
   border-radius: 50%;
