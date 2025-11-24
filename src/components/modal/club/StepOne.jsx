@@ -1,4 +1,4 @@
-import styles from "../../../styles/modal/gathering/StepOne.module.css";
+import styles from "../../../styles/modal/club/StepOne.module.css";
 import Input from "../common/Input";
 
 function StepOne() {

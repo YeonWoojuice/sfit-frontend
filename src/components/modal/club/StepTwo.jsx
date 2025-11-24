@@ -1,4 +1,4 @@
-import styles from "../../../styles/modal/gathering/StepTwo.module.css";
+import styles from "../../../styles/modal/club/StepTwo.module.css";
 import DateInput from "../common/DateInput";
 import Input from "../common/Input";
 
