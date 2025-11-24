@@ -1,12 +1,10 @@
 import "./App.css";
-import MeetingCard from "./componets/gathering/MeetingCard";
-import Tab from "./componets/main/Tab";
+import MainPage from "./pages/MainPage";
 
 function App() {
   return (
     <>
-      <Tab />
-      <MeetingCard />
+      <MainPage />
     </>
   );
 }
