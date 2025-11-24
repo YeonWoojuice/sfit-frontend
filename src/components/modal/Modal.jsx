@@ -71,7 +71,7 @@ function Modal({ onClick }) {
       </div>
       <div className={styles.layout}>
         {current[step]}
-        <ProgressBar step={step} />
+        <ProgressBar type={type} step={step} />
         <div className={styles.buttons}>
           <Button color="gray" onClick={handlePrev}>
             {step === 1 ? "저장하기" : "뒤로가기"}

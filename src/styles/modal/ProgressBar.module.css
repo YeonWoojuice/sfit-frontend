@@ -1,4 +1,6 @@
 .progressBar {
+  position: relative;
+
   width: 100%;
 
   display: flex;
@@ -23,6 +25,11 @@
   color: #ffffff;
 
   background: #ff9f2c;
+}
+
+.middle {
+  position: absolute;
+  left: 198px;
 }
 
 .barBackground {
