@@ -9,7 +9,7 @@ import FloatingButton from "../components/common/FloatingButton";
 import prevIcon from "../assets/prev.png";
 import nextIcon from "../assets/next.png";
 import FloatingLayout from "../components/common/FloatingLayout";
-import Modal from "../components/common/Modal";
+import Modal from "../components/modal/Modal";
 
 function MainPage() {
   const mockMeetingData = [
@@ -101,8 +101,6 @@ function MainPage() {
         <FloatingButton
           type="new"
           onClick={() => {
-            console.log("플로팅");
-            console.log(modal);
             setModal(!modal);
           }}
         />
