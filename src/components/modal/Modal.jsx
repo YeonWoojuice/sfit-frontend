@@ -5,6 +5,7 @@ import ModalToggle from "../common/ModalToggle";
 import StepOne from "./club/StepOne";
 import ProgressBar from "./ProgressBar";
 import StepTwo from "./club/StepTwo";
+import StepThree from "./club/StepThree";
 
 const Button = ({ children, color, onClick }) => {
   const backColor = {
@@ -31,16 +32,44 @@ const Button = ({ children, color, onClick }) => {
 function Modal({ onClick }) {
   const [type, setType] = useState("club");
   const [step, setStep] = useState(1);
+  const [info, setInfo] = useState({
+    name: "",
+    explain: "",
+    region_code: "",
+    sport_id: "", // 코드로 변경 필요
+    start_at: "",
+    end_at: "",
+    start_time: "",
+    end_time: "",
+    days_of_week: [],
+    capacity_min: 0,
+    capacity_max: 0,
+    level_min: "",
+    level_max: "",
+    is_public: true,
+  });
+
+  //  { id: 1, name: '야구' },
+  //  { id: 2, name: '축구' },
+  //  { id: 3, name: '골프' },
+  //  { id: 4, name: '수영' }
+  //  { id: 5, name: '러닝' }
+  //  { id: 6, name: '테니스' }
+
+  const handleUpdate = (key, value) => {
+    setInfo((prev) => ({ ...prev, [key]: value }));
+  };
+
   const steps = {
     club: {
-      1: <StepOne />,
-      2: <StepTwo />,
+      1: <StepOne info={info} onChange={handleUpdate} />,
+      2: <StepTwo info={info} onChange={handleUpdate} />,
     },
 
     lightning: {
-      1: <StepOne />,
-      2: <StepTwo />,
-      3: <div>번개모임</div>,
+      1: <StepOne info={info} onChange={handleUpdate} />,
+      2: <StepTwo info={info} onChange={handleUpdate} />,
+      3: <StepThree info={info} onChange={handleUpdate} />,
     },
   };
 
