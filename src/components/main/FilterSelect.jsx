@@ -1,22 +1,20 @@
-import { useState } from "react";
 import styles from "../../styles/main/FilterSelect.module.css";
 import RegionIcon from "../../assets/regions.svg?react";
 import SportsIcon from "../../assets/sports.svg?react";
 import CoachIcon from "../../assets/coach.svg?react";
 
-function FilterSelect({ label, filter, filterkey, onClick }) {
-  const [open, setOpen] = useState(false);
+function FilterSelect({ label, filter, filterkey, onClick, isOpen, onToggle }) {
+  // const [open, setOpen] = useState(false);
+  const hasValue = !!filter[filterkey];
+  const getIconClass = (isActive) =>
+    `${styles.icon} ${isActive ? styles.select : ""}`;
 
   const icons = {
-    regions: (
-      <RegionIcon className={`${styles.icon} ${open ? styles.select : ""}`} />
-    ),
-    sports: (
-      <SportsIcon className={`${styles.icon} ${open ? styles.select : ""}`} />
-    ),
+    regions: <RegionIcon className={getIconClass(isOpen || hasValue)} />,
+    sports: <SportsIcon className={getIconClass(isOpen || hasValue)} />,
     coach: (
       <CoachIcon
-        className={`${styles.icon} ${open ? styles.select : ""}`}
+        className={getIconClass(filter.coach)}
         style={{ width: "26px", height: "29px" }}
       />
     ),
@@ -39,17 +37,20 @@ function FilterSelect({ label, filter, filterkey, onClick }) {
     sports: ["야구", "축구", "골프", "수영"],
   };
 
+  const isDropdown = filterkey !== "coach";
+  const isActive = isDropdown ? isOpen || hasValue : filter.coach;
+
   return (
     <div className={styles.container}>
       <div
-        className={`${styles.filterBox} ${open ? styles.active : ""}`}
+        className={`${styles.filterBox} ${isActive ? styles.active : ""}`}
         onClick={() => {
-          if (filterkey === "coach") {
+          if (!isDropdown) {
             onClick("coach", !filter.coach);
-            setOpen(!open);
+            onToggle();
             return;
           }
-          setOpen(!open);
+          onToggle();
         }}
       >
         <div className={styles.left}>
@@ -62,7 +63,7 @@ function FilterSelect({ label, filter, filterkey, onClick }) {
           <div className={styles.circle}></div>
         </div>
       </div>
-      {open && (
+      {isDropdown && isOpen && (
         <div className={styles.options}>
           {(mockOptions[filterkey] ?? []).map((item) => (
             <div className={styles.optionBox} key={item}>

@@ -38,7 +38,7 @@ function SectionHeader({ title, isMeeting }) {
             </p>
           </>
         ) : (
-          <p>경기도, 용인시, 기흥구</p>
+          <p>경기도</p>
         )}
       </div>
     </div>

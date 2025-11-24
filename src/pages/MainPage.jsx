@@ -79,7 +79,6 @@ function MainPage() {
   };
 
   const pages = getRange(1, pageInfo.totalPages);
-
   const [filter, setFilter] = useState({
     regions: "",
     sports: "",
