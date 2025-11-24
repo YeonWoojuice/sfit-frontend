@@ -46,7 +46,6 @@ function Modal({ onClick }) {
     capacity_max: 0,
     level_min: "",
     level_max: "",
-    is_public: true,
   });
 
   //  { id: 1, name: '야구' },
