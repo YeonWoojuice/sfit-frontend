@@ -1,0 +1,48 @@
+.progressBar {
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+.circle {
+  width: 44px;
+  height: 44px;
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 5px solid #d9d9d9;
+  border-radius: 50%;
+
+  font-weight: 700;
+  font-size: 14px;
+
+  color: #ffffff;
+
+  background: #ff9f2c;
+}
+
+.middle {
+  position: absolute;
+  left: 198px;
+}
+
+.barBackground {
+  flex-grow: 1;
+  height: 12px;
+  background-color: #e0e0e0;
+  margin: 0 -5px;
+  position: relative;
+  z-index: 0;
+}
+
+.barFill {
+  width: 100%;
+  height: 100%;
+  background-color: #ff7a00;
+}
