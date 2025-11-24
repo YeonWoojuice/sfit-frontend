@@ -1,25 +1,16 @@
 import styles from "../../../styles/modal/gathering/StepTwo.module.css";
+import DateInput from "../common/DateInput";
+import Input from "../common/Input";
 
 function StepTwo() {
   return (
-    <div className={styles.two}>
-      <div className={styles.imgBox}>
-        <div className={styles.img}>사진을 업로드해 주세요.</div>
-      </div>
+    <div className={styles.container}>
       <div className={styles.inputBox}>
-        <label className={styles.label}>모임 명</label>
-        <input
-          placeholder="모임 명을 입력해주세요."
-          className={styles.name}
-        ></input>
+        <Input label="지역 설정" placeholder="지역을 설정해주세요." />
+        <Input label="장소 설정" placeholder="장소를 설정해주세요." />
       </div>
-      <div className={styles.inputBox}>
-        <label className={styles.label}>모임 설명</label>
-        <textarea
-          placeholder="모임 설명을 입력해주세요."
-          className={styles.content}
-        ></textarea>
-      </div>
+      <Input label="종목 설정" placeholder="종목을 설정해주세요. (Tag 형식)" />
+      <DateInput />
     </div>
   );
 }
