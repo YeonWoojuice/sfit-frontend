@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AuthPage from "./pages/AuthPage";
-import MainPage from "./pages/MainPage";
+import AuthPage from "./Pages/AuthPage";
+import MainPage from "./Pages/MainPage";
 import Header from "./Components/Header";
 function App() {
   return (
