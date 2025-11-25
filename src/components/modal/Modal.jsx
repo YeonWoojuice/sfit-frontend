@@ -36,6 +36,7 @@ function Modal({ onClick }) {
     name: "",
     explain: "",
     region_code: "",
+    location: "",
     sport_id: "", // 코드로 변경 필요
     start_at: "",
     end_at: "",
@@ -48,13 +49,6 @@ function Modal({ onClick }) {
     level_max: "",
   });
 
-  //  { id: 1, name: '야구' },
-  //  { id: 2, name: '축구' },
-  //  { id: 3, name: '골프' },
-  //  { id: 4, name: '수영' }
-  //  { id: 5, name: '러닝' }
-  //  { id: 6, name: '테니스' }
-
   const handleUpdate = (key, value) => {
     setInfo((prev) => ({ ...prev, [key]: value }));
   };
@@ -62,12 +56,12 @@ function Modal({ onClick }) {
   const steps = {
     club: {
       1: <StepOne info={info} onChange={handleUpdate} />,
-      2: <StepTwo info={info} onChange={handleUpdate} />,
+      2: <StepTwo info={info} onChange={handleUpdate} isCalendar={false} />,
     },
 
     lightning: {
       1: <StepOne info={info} onChange={handleUpdate} />,
-      2: <StepTwo info={info} onChange={handleUpdate} />,
+      2: <StepTwo info={info} onChange={handleUpdate} isCalendar={true} />,
       3: <StepThree info={info} onChange={handleUpdate} />,
     },
   };
