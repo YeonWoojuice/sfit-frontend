@@ -1,5 +1,5 @@
 import styles from "../../../styles/modal/club/StepTwo.module.css";
-import { REGION_OPTIONS, SPORT_OPTIONS } from "../../constants/option";
+import { REGION_OPTIONS, SPORT_OPTIONS } from "../../../constants/option";
 import DateInput from "../common/DateInput";
 import Input from "../common/Input";
 import SelectInput from "../common/SelectInput";
