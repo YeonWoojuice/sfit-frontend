@@ -8,13 +8,15 @@ function App() {
     <BrowserRouter>
       {/* <AuthPage /> */}
       <Header />
-      {/* <SignupPage />
+      {/* <SignupPage /> */}
       {/* <AuthLayout /> */}
       <MainPage />
-      {/* <Routes>
-        <Route path="/" element={SignupPage />} />
+      {/* 
+      <Routes>
+        <Route path="/" element={<SignupPage />} />
         <Route path="/home" element={<HomePage />} />
-      </Routes> */}
+      </Routes> 
+      */}
     </BrowserRouter>
   );
 }
