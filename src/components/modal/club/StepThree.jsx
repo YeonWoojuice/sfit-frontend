@@ -23,6 +23,20 @@ function StepThree({ info, onChange }) {
       onChange("level_max", val);
       return;
     }
+    if (val === min) {
+      if (min === max) {
+        onChange("level_min", 0);
+        onChange("level_max", 0);
+      } else {
+        onChange("level_min", val + 1);
+      }
+      return;
+    }
+
+    if (val === max) {
+      onChange("level_max", val - 1);
+      return;
+    }
 
     if (val < min) {
       onChange("level_min", val);
@@ -33,18 +47,13 @@ function StepThree({ info, onChange }) {
       return;
     }
 
-    if (min === max && val === min) {
-      onChange("level_min", 0);
-      onChange("level_max", 0);
-      return;
-    }
     const distToMin = val - min;
     const distToMax = max - val;
 
     if (distToMin <= distToMax) {
-      onChange("level_min", val + 1);
+      onChange("level_min", val);
     } else {
-      onChange("level_max", val - 1);
+      onChange("level_max", val);
     }
   };
   // const levelText = {
