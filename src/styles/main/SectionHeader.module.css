@@ -1,0 +1,34 @@
+.sectionHeader {
+  padding-inline: 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sectionTitle {
+  font-size: 20px;
+}
+
+.sort {
+  display: flex;
+  gap: 0.5rem;
+
+  font-size: 1rem;
+  font-weight: 500;
+
+  color: #8d8b8d;
+}
+
+.sort p {
+  cursor: pointer;
+}
+.sort p:hover {
+  transform: scale(1.04);
+  cursor: pointer;
+}
+
+.sort .select {
+  transform: scale(1.04);
+  color: #000;
+}
