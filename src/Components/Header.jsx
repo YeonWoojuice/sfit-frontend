@@ -14,7 +14,7 @@ function Header() {
       <div className={styles.Headernav}>
         <ul>
           <li>
-            <Link to="/about">?�개</Link>
+            <Link to="/about">?�개</Link>
           </li>
           <li>
             <Link to="/coach">코치</Link>
@@ -23,14 +23,14 @@ function Header() {
       </div>
 
       <div className={styles.Headersearch}>
-        <input type="text" placeholder="모임??검?�해 보세??" />
+        <input type="text" placeholder="모임??검?�해 보세??" />
         <button>
           <img src={headersearch} alt="search" />
         </button>
       </div>
 
       <div className={styles.Headerlogin}>
-        <span className={styles.HeaderStatus}>로그?�웃 ?�태?�니??/span>
+        <span className={styles.HeaderStatus}>로그?�웃 ?�태?�니??</span>
         <button className={styles.HeaderProfileButton}>
           <img src={profileImage} alt="user profile" />
         </button>
