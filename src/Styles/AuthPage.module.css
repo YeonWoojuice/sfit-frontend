@@ -1,0 +1,44 @@
+.page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;  /* ✅ AuthLayout을 정확히 가운데 */
+  align-items: center;      /* ✅ 수직도 가운데 */
+  position: relative;
+}
+
+/* 50:50 배경 분할 */
+.page::before,
+.page::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50vw;
+  z-index: -1; /* ✅ AuthLayout 뒤에 깔림 */
+}
+
+/* 왼쪽 영역 */
+.page::before {
+  left: 0;
+}
+
+/* 오른쪽 영역 */
+.page::after {
+  right: 0;
+}
+
+/* 모드에 따라 색 변화 */
+.loginMode::before {
+  background: #FF714D; /* 로그인 폼 쪽 */
+}
+.loginMode::after {
+  background: #ffffff; /* 이미지쪽 */
+}
+
+.signupMode::before {
+  background: #ffffff; /* 이미지쪽 */
+}
+.signupMode::after {
+  background: #FF714D; /* 회원가입 폼 쪽 */
+}
