@@ -1,4 +1,4 @@
-import styles from "../../styles/modal/ProgressBar.module.css";
+import styles from "../../Styles/modal/ProgressBar.module.css";
 
 function ProgressBar({ type, step }) {
   const steps = {

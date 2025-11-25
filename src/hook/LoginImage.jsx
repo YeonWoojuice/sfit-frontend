@@ -1,5 +1,5 @@
 import login from '../assets/LoginImage.png';
-import styles from "../styles/LoginImage.module.css";
+import styles from "../Styles/LoginImage.module.css";
 
 function LoginImage({onSwitch}) {
   return(

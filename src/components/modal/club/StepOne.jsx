@@ -1,24 +1,24 @@
-import styles from "../../../styles/modal/club/StepOne.module.css";
+import styles from "../../../Styles/modal/club/StepOne.module.css";
 import Input from "../common/Input";
 
 function StepOne({ info, onChange }) {
   return (
     <>
       <div className={styles.imgBox}>
-        <div className={styles.img}>사진을 업로드해 주세요.</div>
+        <div className={styles.img}>?�진???�로?�해 주세??</div>
       </div>
       <div className={styles.inputBox}>
         <Input
-          label="모임 명"
-          placeholder="모임 명을 입력해주세요."
+          label="모임 �?
+          placeholder="모임 명을 ?�력?�주?�요."
           value={info.name}
           onChange={(e) => onChange("name", e.target.value)}
         />
       </div>
       <div className={styles.inputBox}>
-        <label className={styles.label}>모임 설명</label>
+        <label className={styles.label}>모임 ?�명</label>
         <textarea
-          placeholder="모임 설명을 입력해주세요."
+          placeholder="모임 ?�명???�력?�주?�요."
           value={info.explain}
           className={styles.content}
           onChange={(e) => onChange("explain", e.target.value)}

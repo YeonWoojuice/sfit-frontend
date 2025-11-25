@@ -1,4 +1,4 @@
-import styles from "../../../styles/modal/club/StepTwo.module.css";
+import styles from "../../../Styles/modal/club/StepTwo.module.css";
 import DateInput from "../common/DateInput";
 import Input from "../common/Input";
 
@@ -7,16 +7,16 @@ function StepTwo({ info, onChange }) {
     <div className={styles.container}>
       <div className={styles.inputBox}>
         <Input
-          label="지역 설정"
-          placeholder="지역을 설정해주세요."
+          label="지???�정"
+          placeholder="지??�� ?�정?�주?�요."
           value={info.region_code}
           onChange={(e) => onChange("region_code", e.target.value)}
         />
-        <Input label="장소 설정" placeholder="장소를 설정해주세요." />
+        <Input label="?�소 ?�정" placeholder="?�소�??�정?�주?�요." />
       </div>
       <Input
-        label="종목 설정"
-        placeholder="종목을 설정해주세요. (Tag 형식)"
+        label="종목 ?�정"
+        placeholder="종목???�정?�주?�요. (Tag ?�식)"
         value={info.sport_id}
         onChange={(e) => onChange("sport_id", e.target.value)}
       />

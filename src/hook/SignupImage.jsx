@@ -1,5 +1,5 @@
 import signup from '../assets/signupImage.png';
-import styles from "../styles/SignupImage.module.css";
+import styles from "../Styles/SignupImage.module.css";
 
 // import signupform from './SignupForm.jsx';
 function SignupImage({onSwitch}) {

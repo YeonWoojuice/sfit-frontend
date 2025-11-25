@@ -1,4 +1,4 @@
-import styles from "../../styles/common/FloatingButton.module.css";
+import styles from "../../Styles/common/FloatingButton.module.css";
 import ChatIcon from "../../assets/chat.svg?react";
 import NewIcon from "../../assets/new.svg?react";
 

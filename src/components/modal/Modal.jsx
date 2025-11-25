@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "../../styles/modal/Modal.module.css";
+import styles from "../../Styles/modal/Modal.module.css";
 import ModalHeader from "../common/ModalHeader";
 import ModalToggle from "../common/ModalToggle";
 import StepOne from "./club/StepOne";
@@ -36,7 +36,7 @@ function Modal({ onClick }) {
     name: "",
     explain: "",
     region_code: "",
-    sport_id: "", // 코드로 변경 필요
+    sport_id: "", // 코드�?변�??�요
     start_at: "",
     end_at: "",
     start_time: "",
@@ -48,12 +48,12 @@ function Modal({ onClick }) {
     level_max: "",
   });
 
-  //  { id: 1, name: '야구' },
+  //  { id: 1, name: '?�구' },
   //  { id: 2, name: '축구' },
   //  { id: 3, name: '골프' },
-  //  { id: 4, name: '수영' }
-  //  { id: 5, name: '러닝' }
-  //  { id: 6, name: '테니스' }
+  //  { id: 4, name: '?�영' }
+  //  { id: 5, name: '?�닝' }
+  //  { id: 6, name: '?�니?? }
 
   const handleUpdate = (key, value) => {
     setInfo((prev) => ({ ...prev, [key]: value }));
@@ -102,10 +102,10 @@ function Modal({ onClick }) {
         <ProgressBar type={type} step={step} />
         <div className={styles.buttons}>
           <Button color="gray" onClick={handlePrev}>
-            {step === 1 ? "저장하기" : "뒤로가기"}
+            {step === 1 ? "?�?�하�? : "?�로가�?}
           </Button>
           <Button color="oragne" onClick={handleNext}>
-            다음으로
+            ?�음?�로
           </Button>
         </div>
       </div>

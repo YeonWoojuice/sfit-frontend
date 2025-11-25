@@ -1,4 +1,4 @@
-import styles from "../../../styles/modal/club/StepThree.module.css";
+import styles from "../../../Styles/modal/club/StepThree.module.css";
 
 const Level = ({ children, isSelect, value, onClick }) => {
   return (
@@ -48,17 +48,17 @@ function StepThree({ info, onChange }) {
     }
   };
   // const levelText = {
-  //   1: "입문자 환영해요.",
-  //   2: "초보자 환영해요.",
-  //   3: "중급자 레벨이에요.",
-  //   4: "상급자만 가능해요.",
-  //   5: "프로급 실력자 모임.",
+  //   1: "?�문???�영?�요.",
+  //   2: "초보???�영?�요.",
+  //   3: "중급???�벨?�에??",
+  //   4: "?�급?�만 가?�해??",
+  //   5: "?�로�??�력??모임.",
   // };
 
   return (
     <div className={styles.container}>
       <div>
-        <label className={styles.label}>참가자 레벨 설정</label>
+        <label className={styles.label}>참�????�벨 ?�정</label>
         <div className={styles.levelContainer}>
           <div className={styles.levelBox}>
             {levels.map((num) => (
@@ -74,14 +74,14 @@ function StepThree({ info, onChange }) {
           </div>
           <div className={styles.levelText}>
             {/* {level ? levelText[level] :  */}
-            레벨을 선택해주세요.
+            ?�벨???�택?�주?�요.
           </div>
         </div>
       </div>
       <div>
         <div className={styles.memberTitle}>
-          <label className={styles.label}>목표 인원 수</label>
-          <p className={styles.sub}>최소 인원과 최대 인원을 설정해 주세요.</p>
+          <label className={styles.label}>목표 ?�원 ??/label>
+          <p className={styles.sub}>최소 ?�원�?최�? ?�원???�정??주세??</p>
         </div>
         <input type="range" min={1} max={50}></input>
       </div>

@@ -1,4 +1,4 @@
-import styles from "../../styles/gathering/InsturctorCard.module.css";
+import styles from "../../Styles/gathering/InsturctorCard.module.css";
 
 function InstructorCard({ isNew = false }) {
   return (
@@ -7,9 +7,9 @@ function InstructorCard({ isNew = false }) {
       <div className={styles.textBox}>
         <div className={styles.titles}>
           {isNew && <div className={styles.new}>N</div>}
-          <p className={styles.title}>[모임 명] 게시글 제목 설명</p>
+          <p className={styles.title}>[모임 �? 게시글 ?�목 ?�명</p>
         </div>
-        <p className={styles.content}>게시물 부제 혹은 부연설명</p>
+        <p className={styles.content}>게시�?부???��? 부?�설�?/p>
       </div>
     </div>
   );

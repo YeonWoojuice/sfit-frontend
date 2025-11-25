@@ -1,11 +1,11 @@
-import styles from "../../styles/gathering/MeetingCard.module.css";
+import styles from "../../Styles/gathering/MeetingCard.module.css";
 
 const RecomandIcon = () => {
   return <div className={styles.recoIcon}>추천</div>;
 };
 
 const RequestButton = () => {
-  return <button className={styles.requestBtn}>신청하기</button>;
+  return <button className={styles.requestBtn}>?�청?�기</button>;
 };
 
 const CategoryButton = ({ children }) => {

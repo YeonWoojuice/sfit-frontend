@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import styles from "../styles/SignupForm.module.css";
+import styles from "../Styles/SignupForm.module.css";
 import Title from "../Components/Title";
 
 function SignupForm({ onSwitch }) {
@@ -25,11 +25,11 @@ function SignupForm({ onSwitch }) {
               <input
                 type="text"
                 className={styles.inputField}
-                placeholder="아이디를 입력해 주세요."
-                {...register("ID", { required: "아이디를 입력해 주세요." })}
+                placeholder="?�이?��? ?�력??주세??"
+                {...register("ID", { required: "?�이?��? ?�력??주세??" })}
               />
               <button type="button" className={styles.checkButton}>
-                중복확인
+                중복?�인
               </button>
             </div>
             {errors.ID && (
@@ -42,13 +42,13 @@ function SignupForm({ onSwitch }) {
           <input
             type="password"
             className={styles.inputField}
-            placeholder="비밀번호를 입력해 주세요."
+            placeholder="비�?번호�??�력??주세??"
             {...register("Password", {
-              // required:"비밀번호를 입력해 주세요.",
+              // required:"비�?번호�??�력??주세??",
               pattern: {
                 value:
                   /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
-                message: "영문,숫자,특수문자 조합 6~20자로 입력해 주세요..",
+                message: "?�문,?�자,?�수문자 조합 6~20?�로 ?�력??주세??.",
               },
             })}
           />
@@ -58,25 +58,25 @@ function SignupForm({ onSwitch }) {
         </div>
         <div className={styles.rowGroup}>
           <div className={styles.rowItem}>
-            <label className={styles.label}>이름</label>
+            <label className={styles.label}>?�름</label>
             <input
               type="text"
-              placeholder="이름을 입력해 주세요."
+              placeholder="?�름???�력??주세??"
               className={styles.inputField}
-              {...register("Name", { required: "이름을 입력해 주세요." })}
+              {...register("Name", { required: "?�름???�력??주세??" })}
             />
             {errors.Name && (
               <p className={styles.errorMassage}>{errors.Name.message}</p>
             )}
           </div>
           <div className={styles.rowItem}>
-            <label className={styles.label}>전화번호</label>
+            <label className={styles.label}>?�화번호</label>
             <input
               type="number"
               className={styles.inputField}
-              placeholder="전화번호를 입력해 주세요."
+              placeholder="?�화번호�??�력??주세??"
               {...register("phonenumber", {
-                required: "전화번호를 입력해 주세요.",
+                required: "?�화번호�??�력??주세??",
               })}
             />
             {errors.phonenumber && (
@@ -87,27 +87,27 @@ function SignupForm({ onSwitch }) {
           </div>
         </div>
         <div className={styles.inputGroup}>
-          <label className={styles.label}>이메일</label>
+          <label className={styles.label}>?�메??/label>
           <div className={styles.rowGroup}>
             <div className={styles.rowItem}>
               <input
                 type="text"
-                placeholder="이메일을 입력해 주세요."
+                placeholder="?�메?�을 ?�력??주세??"
                 className={styles.inputField}
-                {...register("Email", { required: "이메일을 입력해 주세요." })}
+                {...register("Email", { required: "?�메?�을 ?�력??주세??" })}
               />
             </div>
             <div className={styles.rowItem}>
               <select
                 className={`${styles.inputField} ${styles.emailDomainSelect}`}
                 {...register("EmailDomain", {
-                  required: "도메인을 선택해 주세요.",
+                  required: "?�메?�을 ?�택??주세??",
                 })}
               >
                 <option value="naver.com">naver.com</option>
                 <option value="gmail.com">gmail.com</option>
                 <option value="daum.net">daum.net</option>
-                <option value="direct">직접 입력</option>
+                <option value="direct">직접 ?�력</option>
               </select>
             </div>
           </div>
@@ -119,7 +119,7 @@ function SignupForm({ onSwitch }) {
         )}
 
         <button type="submit" className={styles.submitButton}>
-          회원가입
+          ?�원가??
         </button>
       </form>
     </div>

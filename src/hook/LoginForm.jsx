@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import styles from "../styles/LoginForm.module.css";
+import styles from "../Styles/LoginForm.module.css";
 import Title from "../Components/Title";
 
 function LoginForm({ onSwitch }) {
@@ -10,8 +10,8 @@ function LoginForm({ onSwitch }) {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log("로그인 시도:", data);
-    alert("로그인 시도");
+    console.log("로그???�도:", data);
+    alert("로그???�도");
   };
 
   return (
@@ -25,8 +25,8 @@ function LoginForm({ onSwitch }) {
             id="loginID"
             type="text"
             className={styles.inputField}
-            placeholder="아이디를 입력해 주세요"
-            {...register("loginID", { required: "아이디를 입력해 주세요." })}
+            placeholder="?�이?��? ?�력??주세??
+            {...register("loginID", { required: "?�이?��? ?�력??주세??" })}
           />
           {errors.loginID && (
             <p className={styles.errorMassage}>{errors.loginID.message}</p>
@@ -40,12 +40,12 @@ function LoginForm({ onSwitch }) {
             id="loginPassword"
             type="password"
             className={styles.inputField}
-            placeholder="비밀번호를 입력해 주세요"
+            placeholder="비�?번호�??�력??주세??
             {...register("loginPassword", {
-              required: "비밀번호를 입력해 주세요.",
+              required: "비�?번호�??�력??주세??",
               minLength: {
                 value: 6,
-                message: "비밀번호는 최소 6자 이상이어야 합니다.",
+                message: "비�?번호??최소 6???�상?�어???�니??",
               },
             })}
           />
@@ -57,7 +57,7 @@ function LoginForm({ onSwitch }) {
         </div>
 
         <button type="submit" className={styles.submitButton}>
-          로그인
+          로그??
         </button>
       </form>
     </div>

@@ -1,4 +1,4 @@
-import styles from "../styles/AuthformBox"
+import styles from "../Styles/AuthformBox"
 
 function AuthformBox({title, children}) {
   return(

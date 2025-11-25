@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "../../styles/main/SectionHeader.module.css";
+import styles from "../../Styles/main/SectionHeader.module.css";
 
 function SectionHeader({ title, isMeeting }) {
   const [staus, setStaus] = useState("all");
@@ -13,32 +13,32 @@ function SectionHeader({ title, isMeeting }) {
               className={`${staus === "all" ? styles.select : ""}`}
               onClick={() => setStaus("all")}
             >
-              전체
+              ?�체
             </p>
             |
             <p
               className={`${staus === "latest" ? styles.select : ""}`}
               onClick={() => setStaus("latest")}
             >
-              최신순
+              최신??
             </p>
             |
             <p
               className={`${staus === "close" ? styles.select : ""}`}
               onClick={() => setStaus("close")}
             >
-              거리순
+              거리??
             </p>
             |
             <p
               className={`${staus === "popular" ? styles.select : ""}`}
               onClick={() => setStaus("popular")}
             >
-              인기순
+              ?�기??
             </p>
           </>
         ) : (
-          <p>경기도</p>
+          <p>경기??/p>
         )}
       </div>
     </div>

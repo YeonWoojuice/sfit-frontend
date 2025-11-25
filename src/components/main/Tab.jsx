@@ -1,9 +1,9 @@
 import { useState } from "react";
-import styles from "../../styles/main/Tab.module.css";
+import styles from "../../Styles/main/Tab.module.css";
 
 function Tab() {
-  const tabs = ["전체", "동호회", "번개 모임", "나의 모임"];
-  const [active, setActive] = useState("전체");
+  const tabs = ["?�체", "?�호??, "번개 모임", "?�의 모임"];
+  const [active, setActive] = useState("?�체");
 
   return (
     <div className={styles.container}>

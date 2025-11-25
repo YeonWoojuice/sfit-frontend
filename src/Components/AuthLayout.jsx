@@ -3,7 +3,7 @@ import LoginImage from '../hook/LoginImage.jsx';
 import SignupForm from '../hook/SignupForm.jsx';
 import SignupImage from '../hook/SignupImage.jsx';
 import Title from './Title.jsx';
-import styles from "../styles/AuthLayout.module.css";
+import styles from "../Styles/AuthLayout.module.css";
 
 function AuthLayout({isLoginMode, onSwitch}) {
 
@@ -11,7 +11,7 @@ function AuthLayout({isLoginMode, onSwitch}) {
     <div className={styles.wrapper}>
       <div className={styles.container}>
 
-        {/* 왼쪽: 항상 login 계열 */}
+        {/* ?�쪽: ??�� login 계열 */}
         <div className={`${styles.side} ${isLoginMode ? styles.whiteBg : styles.grayBg}`}>
           <div className={styles.sideContent}>
             <Title text="LOGIN">
@@ -21,7 +21,7 @@ function AuthLayout({isLoginMode, onSwitch}) {
                   className={styles.switchButton}
                   onClick={onSwitch}
                 >
-                  계정이 이미 있나요?
+                  계정???��? ?�나??
                 </button>
               )}
             </Title>
@@ -33,7 +33,7 @@ function AuthLayout({isLoginMode, onSwitch}) {
           </div>
         </div>
 
-        {/* 오른쪽: 항상 signup 계열 */}
+        {/* ?�른�? ??�� signup 계열 */}
         <div className={`${styles.side} ${isLoginMode ? styles.grayBg : styles.whiteBg}`}>
           <div className={styles.sideContent}>
             <Title text="SIGN UP">
@@ -43,7 +43,7 @@ function AuthLayout({isLoginMode, onSwitch}) {
                   className={styles.switchButton}
                   onClick={onSwitch}
                 >
-                  계정이 없나요?
+                  계정???�나??
                 </button>
               )}
             </Title>

@@ -1,4 +1,4 @@
-import styles from "../../styles/main/FilterSelect.module.css";
+import styles from "../../Styles/main/FilterSelect.module.css";
 import RegionIcon from "../../assets/regions.svg?react";
 import SportsIcon from "../../assets/sports.svg?react";
 import CoachIcon from "../../assets/coach.svg?react";
@@ -22,19 +22,19 @@ function FilterSelect({ label, filter, filterkey, onClick, isOpen, onToggle }) {
 
   const mockOptions = {
     regions: [
-      "서울",
+      "?�울",
       "경기",
-      "인천",
-      "부산",
-      "대구",
+      "?�천",
+      "부??,
+      "?��?,
       "광주",
-      "대전",
-      "울산",
+      "?�??,
+      "?�산",
       "경북",
       "충북",
       "충남",
     ],
-    sports: ["야구", "축구", "골프", "수영"],
+    sports: ["?�구", "축구", "골프", "?�영"],
   };
 
   const isDropdown = filterkey !== "coach";

@@ -1,4 +1,4 @@
-import styles from "../../../styles/modal/common/Input.module.css";
+import styles from "../../../Styles/modal/common/Input.module.css";
 
 function Input({ label, placeholder, value, onChange }) {
   return (

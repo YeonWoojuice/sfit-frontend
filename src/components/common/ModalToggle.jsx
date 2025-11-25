@@ -1,4 +1,4 @@
-import styles from "../../styles/common/ModalToggle.module.css";
+import styles from "../../Styles/common/ModalToggle.module.css";
 
 function ModalToggle({ type, onClick }) {
   return (
@@ -7,7 +7,7 @@ function ModalToggle({ type, onClick }) {
         className={`${styles.toggle} ${type === "club" ? styles.active : ""}`}
         onClick={() => onClick("club")}
       >
-        동호회
+        ?�호??
       </div>
       <div
         className={`${styles.toggle} ${
