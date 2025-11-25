@@ -1,6 +1,7 @@
 import AuthLayout  from "../Components/AuthLayout";
 import {useState} from "react";
 import styles from "../styles/AuthPage.module.css";
+// import styles from "../styles/AuthPage.module.css";
 
 
 function AuthPage(){

@@ -1,22 +1,22 @@
-
-import './App.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import AuthPage from './Pages/AuthPage'
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AuthPage from "./pages/AuthPage";
 import MainPage from "./pages/MainPage";
-import Header from './Components/Header'
+import Header from "./Components/Header";
 function App() {
   return (
     <BrowserRouter>
-    {/* <AuthPage /> */}
-      <Header/>
+      {/* <AuthPage /> */}
+      <Header />
       {/* <SignupPage />
       {/* <AuthLayout /> */}
-    <MainPage />
+      <MainPage />
       {/* <Routes>
         <Route path="/" element={SignupPage />} />
         <Route path="/home" element={<HomePage />} />
       </Routes> */}
     </BrowserRouter>
-  )
+  );
+}
 
 export default App;
