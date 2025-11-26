@@ -9,7 +9,7 @@ function Header() {
     <div className={styles.Header}>
       <div className={styles.Headerlogo}>
         <Link to="/">
-          <img src={headerlogo} alt="logo" />git a
+          <img src={headerlogo} alt="logo" />
         </Link>
       </div>
 
