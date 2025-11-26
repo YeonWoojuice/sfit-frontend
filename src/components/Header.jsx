@@ -1,4 +1,4 @@
-import styles from "../Styles/Header.module.css";
+import styles from "../styles/Header.module.css";
 import headerlogo from "../assets/HeaderLogo.svg";
 import headersearch from "../assets/HeaderSearch.svg";
 import profileImage from "../assets/ProfileImage.svg";
@@ -9,7 +9,7 @@ function Header() {
     <div className={styles.Header}>
       <div className={styles.Headerlogo}>
         <Link to="/">
-          <img src={headerlogo} alt="logo" />
+          <img src={headerlogo} alt="logo" />git a
         </Link>
       </div>
 
