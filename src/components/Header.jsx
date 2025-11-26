@@ -1,7 +1,7 @@
 import styles from "../styles/Header.module.css";
-import headerlogo from "../assets/HeaderLogo.svg";
-import headersearch from "../assets/HeaderSearch.svg";
-import profileImage from "../assets/profileImage.svg";
+import headerlogo from "../assets/headerlogo.svg";
+import headersearch from "../assets/headersearch.svg";
+import profileImage from "../assets/profileimage.svg";
 import { Link } from "react-router-dom";
 
 function Header() {
