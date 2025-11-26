@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import styles from "../../../styles/modal/club/StepThree.module.css";
 
 const Level = ({ children, isSelect, value, onClick }) => {
@@ -64,6 +65,60 @@ function StepThree({ info, onChange }) {
   //   5: "프로급 실력자 모임.",
   // };
 
+  const sliderRef = useRef(null);
+  const minMember = info.member_min || 1;
+  const maxMember = info.member_max || 50;
+  const MIN_LIMIT = 1;
+  const MAX_LIMIT = 50;
+
+  const [dragging, setDragging] = useState(null);
+
+  const getPercent = (value) => {
+    return ((value - MIN_LIMIT) / (MAX_LIMIT - MIN_LIMIT)) * 100;
+  };
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      if (!dragging || !sliderRef.current) return;
+
+      const rect = sliderRef.current.getBoundingClientRect();
+      const width = rect.width;
+      const offsetX = e.clientX - rect.left; // 슬라이더 내의 클릭 X 좌표
+
+      // X좌표를 1~50 사이의 값으로 변환
+      let newValue = Math.round(
+        (offsetX / width) * (MAX_LIMIT - MIN_LIMIT) + MIN_LIMIT
+      );
+
+      // 범위 제한 (1 ~ 50)
+      newValue = Math.max(MIN_LIMIT, Math.min(MAX_LIMIT, newValue));
+
+      if (dragging === "min") {
+        // 최소값은 최대값을 넘을 수 없음 (최소 1명 차이 유지)
+        if (newValue >= maxMember) newValue = maxMember - 1;
+        onChange("member_min", newValue);
+      } else if (dragging === "max") {
+        // 최대값은 최소값보다 작을 수 없음
+        if (newValue <= minMember) newValue = minMember + 1;
+        onChange("member_max", newValue);
+      }
+    };
+
+    const handleMouseUp = () => {
+      setDragging(null); // 드래그 종료
+    };
+
+    if (dragging) {
+      window.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("mouseup", handleMouseUp);
+    }
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, [dragging, minMember, maxMember, onChange]);
+
   return (
     <div className={styles.container}>
       <div>
@@ -92,7 +147,41 @@ function StepThree({ info, onChange }) {
           <label className={styles.label}>목표 인원 수</label>
           <p className={styles.sub}>최소 인원과 최대 인원을 설정해 주세요.</p>
         </div>
-        <input type="range" min={1} max={50}></input>
+        <div className={styles.barBackground} ref={sliderRef}>
+          <span className={styles.staticNumber}>1</span>
+          <div
+            className={styles.barFill}
+            style={{
+              left: `${getPercent(minMember)}%`,
+              width: `${getPercent(maxMember) - getPercent(minMember)}%`,
+            }}
+          ></div>
+
+          {/* 최소 인원 핸들 (왼쪽) */}
+          <div
+            className={styles.handle}
+            style={{ left: `${getPercent(minMember)}%` }}
+            onMouseDown={(e) => {
+              e.preventDefault();
+              setDragging("min");
+            }}
+          >
+            {minMember}
+          </div>
+
+          {/* 최대 인원 핸들 (오른쪽) */}
+          <div
+            className={styles.handle}
+            style={{ left: `${getPercent(maxMember)}%` }}
+            onMouseDown={(e) => {
+              e.preventDefault();
+              setDragging("max");
+            }}
+          >
+            {maxMember}
+          </div>
+          <span className={styles.staticNumber}>50</span>
+        </div>
       </div>
     </div>
   );
