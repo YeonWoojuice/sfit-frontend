@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  height: 100px;
+}
+
+.insturctorSection,
+.meetingSection {
+  width: 774px;
+
+  margin-top: 2rem;
+}
+
+.instructorCards {
+  margin-top: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.meetingSection {
+  margin-top: 4rem;
+}
+
+.meetingCards {
+  margin-top: 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.bottom {
+  margin-block: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.prev,
+.next {
+  width: 37px;
+  height: 37px;
+
+  border-radius: 8px;
+  background: #e9e7e9;
+
+  cursor: pointer;
+}
+
+.pages {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.page {
+  font-weight: 500;
+  font-size: 16px;
+
+  color: #000000;
+  cursor: pointer;
+}

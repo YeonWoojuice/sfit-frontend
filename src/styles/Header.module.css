@@ -1,0 +1,122 @@
+.Header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: black;
+  padding: 35px;
+  gap: 20px;
+}
+
+.Headerlogo {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+/* 레이아웃(전체)*/
+.Headernav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 40px;
+}
+
+.Headernav ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  gap: 40px;
+  list-style: none;
+}
+
+.Headernav ul li {
+  margin: 0;
+  padding: 0;
+}
+
+/* 텍스트 스타일일 */
+.Headernav ul a {
+  display: block;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  color: white;
+  margin: 0;
+}
+
+.Headersearch {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  max-width: 700px;
+  height: 60px;
+  width: 100%;
+
+  align-items: center;
+  border-radius: 10px;
+  background-color: white;
+  padding: 0;
+}
+
+.Headersearch input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 12px 80px 12px 20px; /* 버튼 영역을 고려한 우측 패딩 */
+  border-radius: 10px 0 0 10px; /* 좌측 모서리만 둥글게 */
+  font-size: 16px;
+  background-color: transparent;
+}
+
+.Headersearch button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #464646; /* 원하는 배경색으로 변경 가능 */
+  border: none;
+  border-radius: 0 10px 10px 0; /* 우측 모서리만 둥글게 */
+  cursor: pointer;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.Headersearch button img {
+  width: 24px;
+  height: 24px;
+}
+
+.Headerlogin {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: auto;
+  margin-right: 100px;
+  flex-shrink: 0;
+}
+
+.HeaderStatus {
+  color: white;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+}
+
+.HeaderProfileButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.HeaderProfileButton img {
+  width: 52px;
+  height: 52px;
+}

@@ -1,0 +1,122 @@
+.dateBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.days {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.input {
+  flex: 1;
+  padding: 0.5rem 1rem;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #e9e7e9;
+}
+
+.label {
+  font-weight: 700;
+  font-size: 14px;
+
+  color: #000000;
+}
+
+.displayBox {
+  width: 100%;
+
+  padding: 0.5rem;
+
+  display: flex;
+
+  border-radius: 8px;
+
+  background: #e9e7e9;
+}
+
+.dayText {
+  font-weight: 500;
+  font-size: 12px;
+
+  color: #8d8b8d;
+}
+
+.dayText.active {
+  color: #000000;
+}
+
+.dayButtons {
+  margin-top: 0.5rem;
+
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 0.5rem;
+}
+
+.dayBtn {
+  flex: 1;
+
+  padding-block: 0.5rem;
+
+  border-radius: 8px;
+
+  font-weight: 500;
+  font-size: 12px;
+  text-align: center;
+  color: #ffffff;
+
+  background: #c8c6c8;
+  cursor: pointer;
+}
+
+.dayBtn.active {
+  background: #ff9f2c;
+}
+
+.times {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.time {
+  position: relative;
+  flex: 1;
+  padding: 0.5rem 0.25rem;
+
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  background: #e9e7e9;
+  cursor: pointer;
+}
+
+.timeImg {
+  width: 19px;
+  height: 19px;
+}
+
+.timeInput {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.arrow {
+  width: 16px;
+  height: 16px;
+}

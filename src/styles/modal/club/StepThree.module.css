@@ -1,0 +1,106 @@
+.container {
+  width: 100%;
+
+  margin-top: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.label {
+  font-weight: 700;
+  font-size: 14px;
+
+  color: #000000;
+}
+
+.levelContainer {
+  margin-top: 0.75rem;
+
+  display: flex;
+  gap: 0.75rem;
+}
+
+.levelBox {
+  padding: 0.25rem;
+
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+
+  border-radius: 8px;
+  background: #e9e7e9;
+}
+
+.level {
+  flex: 1;
+
+  padding: 0.5rem 0.75rem;
+
+  border-radius: 8px;
+
+  font-weight: 500;
+  font-size: 12px;
+
+  text-align: center;
+  color: #ffffff;
+
+  background: #c8c6c8;
+
+  cursor: pointer;
+  transform: 0.3s ease;
+}
+
+.level:hover {
+  background: #ff9f2c;
+  transform: scale(1.05);
+}
+
+.level.select {
+  background: #ff9f2c;
+  transform: scale(1.05);
+}
+
+.levelText {
+  flex: 1;
+  position: relative;
+
+  padding: 0.5rem 1rem;
+
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+
+  font-weight: 500;
+  font-size: 12px;
+
+  color: #8d8b8d;
+
+  background: #e9e7e9;
+}
+
+.levelText::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 8px solid #e9e7e9;
+}
+
+.memberTitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sub {
+  font-weight: 500;
+  font-size: 12px;
+
+  color: #8d8b8d;
+}
