@@ -1,7 +1,7 @@
 import styles from "../../styles/main/FilterSelect.module.css";
-// import RegionIcon from "../../assets/regions.svg?react";
-// import SportsIcon from "../../assets/sports.svg?react";
-// import CoachIcon from "../../assets/coach.svg?react";
+import RegionIcon from "../../assets/regions.svg?react";
+import SportsIcon from "../../assets/sports.svg?react";
+import CoachIcon from "../../assets/coach.svg?react";
 
 function FilterSelect({ label, filter, filterkey, onClick, isOpen, onToggle }) {
   // const [open, setOpen] = useState(false);
@@ -9,16 +9,16 @@ function FilterSelect({ label, filter, filterkey, onClick, isOpen, onToggle }) {
   const getIconClass = (isActive) =>
     `${styles.icon} ${isActive ? styles.select : ""}`;
 
-  // const icons = {
-  //   regions: <RegionIcon className={getIconClass(isOpen || hasValue)} />,
-  //   sports: <SportsIcon className={getIconClass(isOpen || hasValue)} />,
-  //   coach: (
-  //     <CoachIcon
-  //       className={getIconClass(filter.coach)}
-  //       style={{ width: "26px", height: "29px" }}
-  //     />
-  //   ),
-  // };
+  const icons = {
+    regions: <RegionIcon className={getIconClass(isOpen || hasValue)} />,
+    sports: <SportsIcon className={getIconClass(isOpen || hasValue)} />,
+    coach: (
+      <CoachIcon
+        className={getIconClass(filter.coach)}
+        style={{ width: "26px", height: "29px" }}
+      />
+    ),
+  };
 
   const mockOptions = {
     regions: [
@@ -54,7 +54,7 @@ function FilterSelect({ label, filter, filterkey, onClick, isOpen, onToggle }) {
         }}
       >
         <div className={styles.left}>
-          {/* {icons[filterkey]} */}
+          {icons[filterkey]}
           <p className={styles.label}>{label}</p>
         </div>
         <div className={styles.menuBtn}>

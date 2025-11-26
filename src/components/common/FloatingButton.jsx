@@ -19,7 +19,7 @@ function FloatingButton({ type, onClick }) {
       style={{ background: color[type] }}
       onClick={onClick}
     >
-      {/* {icons[type]} */}
+      {icons[type]}
     </div>
   );
 }
