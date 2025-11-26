@@ -1,14 +1,16 @@
-import styles from "../Styles/Header.module.css";
-import headerlogo from "../assets/HeaderLogo.svg";
-import headersearch from "../assets/HeaderSearch.svg";
-import profileImage from "../assets/ProfileImage.svg";
+import styles from "../styles/Header.module.css";
+import headerlogo from "../assets/headerlogo.svg";
+import headersearch from "../assets/headersearch.svg";
+import profileImage from "../assets/profileimage.svg";
 import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <div className={styles.Header}>
       <div className={styles.Headerlogo}>
-        <img src={headerlogo} alt="logo" />
+        <Link to="/">
+          <img src={headerlogo} alt="logo" />
+        </Link>
       </div>
 
       <div className={styles.Headernav}>
@@ -30,10 +32,14 @@ function Header() {
       </div>
 
       <div className={styles.Headerlogin}>
-        <span className={styles.HeaderStatus}>로그아웃 상태입니다</span>
-        <button className={styles.HeaderProfileButton}>
-          <img src={profileImage} alt="user profile" />
-        </button>
+        <Link to="/auth" className={styles.HeaderStatus}>
+          로그아웃 상태입니다
+        </Link>
+        <Link to="/auth">
+          <button className={styles.HeaderProfileButton}>
+            <img src={profileImage} alt="user profile" />
+          </button>
+        </Link>
       </div>
     </div>
   );

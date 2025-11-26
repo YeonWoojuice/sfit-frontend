@@ -1,4 +1,4 @@
-import login from "../assets/LoginImage.png";
+import login from "../assets/loginimage.png";
 import styles from "../styles/LoginImage.module.css";
 
 function LoginImage({ onSwitch }) {

@@ -10,6 +10,7 @@ import prevIcon from "../assets/prev.png";
 import nextIcon from "../assets/next.png";
 import FloatingLayout from "../components/common/FloatingLayout";
 import Modal from "../components/modal/Modal";
+import AlertItem from "../components/common/AlertItem";
 
 function MainPage() {
   const mockMeetingData = [
@@ -93,7 +94,6 @@ function MainPage() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.header}></div>
       {modal && <Modal onClick={() => setModal(false)} />}
       {/* 플로팅 버튼 */}
       <FloatingLayout>
@@ -105,6 +105,7 @@ function MainPage() {
           }}
         />
       </FloatingLayout>
+      {/* <AlertItem /> */}
 
       {/* 필터링 */}
       <FilterMenu filter={filter} onClick={handleFilter} />
