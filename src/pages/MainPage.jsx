@@ -10,6 +10,7 @@ import prevIcon from "../assets/prev.png";
 import nextIcon from "../assets/next.png";
 import FloatingLayout from "../components/common/FloatingLayout";
 import Modal from "../components/modal/Modal";
+import AlertItem from "../components/common/AlertItem";
 
 function MainPage() {
   const mockMeetingData = [
@@ -104,6 +105,7 @@ function MainPage() {
           }}
         />
       </FloatingLayout>
+      {/* <AlertItem /> */}
 
       {/* 필터링 */}
       <FilterMenu filter={filter} onClick={handleFilter} />
