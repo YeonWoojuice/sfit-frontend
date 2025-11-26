@@ -3,14 +3,23 @@
   display: flex;
   align-items: center;
   width: 100%;
-  background-color: black;
-  padding: 35px;
+  background-color: #252525;
+  padding: 28px;
   gap: 20px;
 }
 
 .Headerlogo {
-  width: 280px;
+  width: 200px;
   flex-shrink: 0;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.Headerlogo img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* 레이아웃(전체)*/
@@ -38,7 +47,7 @@
 .Headernav ul a {
   display: block;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
   font-family: "Inter", sans-serif;
   color: white;
@@ -55,7 +64,7 @@
   width: 100%;
 
   align-items: center;
-  border-radius: 10px;
+  border-radius: 20px;
   background-color: white;
   padding: 0;
 }
@@ -65,7 +74,7 @@
   border: none;
   outline: none;
   padding: 12px 80px 12px 20px; /* 버튼 영역을 고려한 우측 패딩 */
-  border-radius: 10px 0 0 10px; /* 좌측 모서리만 둥글게 */
+  border-radius: 0px 0 0 20px; /* 좌측 모서리만 둥글게 */
   font-size: 16px;
   background-color: transparent;
 }
