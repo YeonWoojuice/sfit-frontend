@@ -93,7 +93,6 @@ function MainPage() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.header}></div>
       {modal && <Modal onClick={() => setModal(false)} />}
       {/* 플로팅 버튼 */}
       <FloatingLayout>
