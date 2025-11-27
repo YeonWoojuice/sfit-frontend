@@ -18,27 +18,39 @@ function SignupForm({ onSwitch }) {
   return (
     <div className={styles.signupFormContainer}>
       <form className={styles.signupForm} onSubmit={handleSubmit(onSubmit)}>
-        <div className={styles.rowGroup}>
-          <div className={styles.rowItem}>
-            <label className={styles.label}>ID</label>
-            <div className={styles.inputWithButton}>
-              <input
-                type="text"
-                className={styles.inputField}
-                placeholder="아이디를 입력해 주세요."
-                {...register("ID", { required: "아이디를 입력해 주세요." })}
-              />
-              <button type="button" className={styles.checkButton}>
-                중복확인
-              </button>
-            </div>
+        <div className={styles.inputGroup}>
+          <label className={styles.label}>
+            ID
             {errors.ID && (
-              <p className={styles.errorMassage}>{errors.ID.message}</p>
+              <span className={styles.errorMassage}>{errors.ID.message}</span>
             )}
+          </label>
+          <div className={styles.inputWithButton}>
+            <input
+              type="text"
+              className={styles.inputField}
+              placeholder="아이디를 입력해 주세요."
+              {...register("ID", { 
+                pattern: {
+                  value: /^[a-zA-Z0-9]+$/,
+                  message: "영문,숫자만 입력해 주세요.",
+                },
+              })}
+            />
+            <button type="button" className={styles.checkButton}>
+              중복확인
+            </button>
           </div>
         </div>
         <div className={styles.inputGroup}>
-          <label className={styles.label}>Password</label>
+          <label className={styles.label}>
+            Password
+            {errors.Password && (
+              <span className={styles.errorMassage}>
+                {errors.Password.message}
+              </span>
+            )}
+          </label>
           <input
             type="password"
             className={styles.inputField}
@@ -52,71 +64,107 @@ function SignupForm({ onSwitch }) {
               },
             })}
           />
-          {errors.Password && (
-            <p className={styles.errorMassage}>{errors.Password.message}</p>
-          )}
         </div>
         <div className={styles.rowGroup}>
           <div className={styles.rowItem}>
-            <label className={styles.label}>이름</label>
+            <label className={styles.label}>
+              이름
+              {errors.Name && (
+                <span className={styles.errorMassage}>
+                  {errors.Name.message}
+                </span>
+              )}
+            </label>
             <input
               type="text"
               placeholder="이름을 입력해 주세요."
               className={styles.inputField}
-              {...register("Name", { required: "이름을 입력해 주세요." })}
+              {...register("Name", {
+                pattern: {
+                  value: /^[가-힣]+$/,
+                  message: "한글만 입력해 주세요.",
+                },
+                minLength: {
+                  value: 2,
+                  message: "이름은 최소 2자 이상입니다.",
+                },
+                maxLength: {
+                  value: 10,
+                  message: "이름은 최대 10자까지 입력 가능합니다.",
+                },
+              })}
             />
-            {errors.Name && (
-              <p className={styles.errorMassage}>{errors.Name.message}</p>
-            )}
           </div>
           <div className={styles.rowItem}>
-            <label className={styles.label}>전화번호</label>
+            <label className={styles.label}>
+              전화번호
+              {errors.phonenumber && (
+                <span className={styles.errorMassage}>
+                  {errors.phonenumber.message}
+                </span>
+              )}
+            </label>
             <input
-              type="number"
+              type="tel"
               className={styles.inputField}
               placeholder="전화번호를 입력해 주세요."
               {...register("phonenumber", {
-                required: "전화번호를 입력해 주세요.",
+                pattern: {
+                  value: /^01[0-9]-?[0-9]{3,4}-?[0-9]{4}$/,
+                  message: "형식을 확인해주세요. ",
+                },
               })}
             />
-            {errors.phonenumber && (
-              <p className={styles.errorMassage}>
-                {errors.phonenumber.message}
-              </p>
-            )}
           </div>
         </div>
-        <div className={styles.inputGroup}>
-          <label className={styles.label}>이메일</label>
-          <div className={styles.rowGroup}>
-            <div className={styles.rowItem}>
-              <input
-                type="text"
-                placeholder="이메일을 입력해 주세요."
-                className={styles.inputField}
-                {...register("Email", { required: "이메일을 입력해 주세요." })}
-              />
-            </div>
-            <div className={styles.rowItem}>
-              <select
-                className={`${styles.inputField} ${styles.emailDomainSelect}`}
-                {...register("EmailDomain", {
-                  required: "도메인을 선택해 주세요.",
-                })}
-              >
-                <option value="naver.com">naver.com</option>
-                <option value="gmail.com">gmail.com</option>
-                <option value="daum.net">daum.net</option>
-                <option value="direct">직접 입력</option>
-              </select>
-            </div>
+        <div className={styles.rowGroup}>
+          <div className={styles.rowItem}>
+            <label className={styles.label}>
+              E-mail
+              {errors.Email && (
+                <span className={styles.errorMassage}>
+                  {errors.Email.message}
+                </span>
+              )}
+            </label>
+            <input
+              type="text"
+              placeholder="이메일을 입력해 주세요."
+              className={styles.inputField}
+              {...register("Email", {
+                pattern: {
+                  value: /^[a-zA-Z0-9]([a-zA-Z0-9._-]*[a-zA-Z0-9])?$/,
+                  message: "올바른 형식이 아닙니다.",
+                },
+                
+              })}
+            />
+          </div>
+          <div className={styles.rowItem}>
+            <label
+              className={styles.label}
+              style={{ visibility: "hidden" }}
+            >
+              도메인
+              {errors.EmailDomain && (
+                <span className={styles.errorMassage}>
+                  {errors.EmailDomain.message}
+                </span>
+              )}
+            </label>
+            <select
+              className={`${styles.inputField} ${styles.emailDomainSelect}`}
+              {...register("EmailDomain", {
+                required: "도메인을 선택해 주세요.",
+              })}
+            >
+              <option value="naver.com">@naver.com</option>
+              <option value="gmail.com">@gmail.com</option>
+              <option value="daum.net">@daum.net</option>
+              <option value="direct">직접 입력</option>
+            </select>
           </div>
         </div>
-        {(errors.EmailId || errors.EmailDomain) && (
-          <p className={styles.errorMessage}>
-            {errors.EmailId?.message || errors.EmailDomain?.message}
-          </p>
-        )}
 
         <button type="submit" className={styles.submitButton}>
           회원가입

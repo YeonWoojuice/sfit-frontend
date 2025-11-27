@@ -1,5 +1,5 @@
 .signupFormContainer {
-  width: 100%;
+  width: auto;
   height: 100%;
   display: flex;
   justify-content: flex-start;
@@ -11,33 +11,39 @@
 }
 /* 폼 영역 (흰색 카드 부분) */
 .signupForm {
-  width: 100%;
-  max-width: 420px;
+  width: auto;
+  min-width: 450px; /* 최소 너비 설정 */
+  max-width: 500px; /* 최대 너비 설정 (원하는 값으로 조정) */
   padding: 60px 60px 60px 0;
   border-radius: 26px; /* 둥근 모서리 */
-  /* box-shadow: 0 10px 30px rgba(0,0,0,0.08); */
   display: flex;
   flex-direction: column;
   margin: 0;
-  margin-top: -30px; /* 폼을 위로 올림 (원하는 만큼 조정 가능) */
+  margin-top: -40px; /* 폼을 위로 올림 (원하는 만큼 조정 가능) */
   box-sizing: border-box;
 }
 
-/* SIGN UP 타이틀 (h1) 스타일 */
 
 /* 각 입력 필드 그룹 (ID, PASSWORD 등) */
 .inputGroup {
   margin-bottom: 20px;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  position: relative;
 }
 
 /* 필드 레이블 (ID, PASSWORD, 이름 등) */
 .label {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 14px;
   font-weight: bold;
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
+  margin-top: 1px;
   font-family: "Pretendard";
   margin-left: 10px;
 }
@@ -46,7 +52,8 @@
 .rowGroup {
   display: flex;
   gap: 8px; /* 필드 사이의 간격 */
-  align-items: center;
+  align-items: flex-start; /* 상단 정렬로 변경 */
+  margin-top: 0;
   margin-bottom: 20px;
 }
 
@@ -54,7 +61,12 @@
 .rowItem {
   flex: 1; /* 너비를 균등하게 분할 */
   margin-top: 3px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
 }
+
 
 /* 모든 입력 요소 (input, select) 공통 스타일 */
 .inputField {
@@ -63,7 +75,7 @@
   padding: 10px;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 0.9;
   box-sizing: border-box;
   color: #000000;
   background-color: #ffffff;
@@ -86,16 +98,13 @@
 }
 
 /* 에러 메시지 스타일 */
-.errorMessage {
-  color: red;
-  font-size: 13px;
-  margin-top: 5px;
-}
+
 
 .errorMassage {
-  color: red;
-  font-size: 13px;
-  margin-top: 5px;
+  color: #8D8B8D;
+  font-size: 0.7rem;
+  margin: 0;
+  padding: 0;
 }
 
 /* 중복확인 버튼 */
@@ -108,7 +117,7 @@
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
-  margin-top: 8px;
+  /* margin-top: 8px; */
   display: inline-block;
   width: auto;
   white-space: nowrap;
