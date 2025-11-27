@@ -1,19 +1,31 @@
-.Header {
-  position: relative;
-  display: flex;
-  align-items: center;
+.Headerwrapper {
   width: 100%;
   background-color: #252525;
-  padding: 28px;
+  /* padding: 28px 0; */
+  
+  /* gap: 20px;
+  margin: 0 auto; */
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  /* background-color: #252525; */
+  padding: 28px 20px;
   gap: 20px;
+  max-width: 1440px;
+  max-height: 111px;
+  margin: 0 auto;
 }
 
 .Headerlogo {
   width: 200px;
-  flex-shrink: 0;
-  margin-left: 20px;
-  display: flex;
-  align-items: center;
+  flex-shrink: 0; 
+  margin-left: -90px;
+  /* display: flex;
+  align-items: center; */
 }
 
 .Headerlogo img {
@@ -24,7 +36,7 @@
 
 /* 레이아웃(전체)*/
 .Headernav {
-  flex: 1;
+  /* flex: 1; */
   display: flex;
   justify-content: flex-start;
   margin-left: 40px;
@@ -55,14 +67,12 @@
 }
 
 .Headersearch {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   display: flex;
   max-width: 700px;
   height: 60px;
   width: 100%;
-
+  margin: 0 auto;
   align-items: center;
   border-radius: 20px;
   background-color: white;
@@ -105,7 +115,7 @@
   align-items: center;
   gap: 15px;
   margin-left: auto;
-  margin-right: 100px;
+  margin-right: -80px;
   flex-shrink: 0;
 }
 
