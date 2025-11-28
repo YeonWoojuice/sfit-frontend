@@ -78,8 +78,8 @@ function MainPage() {
             <Tab />
             {/* 강사 데이터 넘겨줘야 됨 */}
             <InstructorSection />
-            {/* <Loading /> */}
-            {data.clubs ? <ClubSection data={data.clubs} /> : <Loading />}
+            <Loading />
+            {/* {data.clubs ? <ClubSection data={data.clubs} /> : <Loading />} */}
             {/* 모임 페이지 버튼 */}
             <div className={styles.bottom}>
               {data.count > 8 ? (
