@@ -1,5 +1,5 @@
+import styles from "../../styles/gathering/ClubCard.module.css";
 import { SPORT_OPTIONS } from "../../constants/option";
-import styles from "../../styles/gathering/MeetingCard.module.css";
 
 const RecomandIcon = () => {
   return <div className={styles.recoIcon}>추천</div>;
@@ -13,8 +13,11 @@ const CategoryButton = ({ children }) => {
   return <button className={styles.categoryBtn}>{children}</button>;
 };
 
+const DAYS = ["일", "월", "화", "수", "목", "금", "토"];
+
 function ClubCard({ item }) {
   const sport = SPORT_OPTIONS.find((option) => option.id === item.sport_id);
+  const days = item.days_of_week;
 
   return (
     <div className={styles.container}>
@@ -31,7 +34,11 @@ function ClubCard({ item }) {
       </div>
 
       <div className={styles.bottomBox}>
-        {item.date}
+        <div className={styles.dates}>
+          {days.map((day) => (
+            <CategoryButton>{DAYS[day]}</CategoryButton>
+          ))}
+        </div>
         <div className={styles.btnBox}>
           <CategoryButton>{item.region_name}</CategoryButton>
           <CategoryButton>{sport.name}</CategoryButton>

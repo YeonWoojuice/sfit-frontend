@@ -1,4 +1,4 @@
-import styles from "../../styles/gathering/MeetingSection.module.css";
+import styles from "../../styles/gathering/ClubSection.module.css";
 import SectionHeader from "../main/SectionHeader";
 import ClubCard from "./ClubCard";
 

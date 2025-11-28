@@ -86,7 +86,12 @@
   margin-top: 0.5rem;
 
   display: flex;
-  gap: 5.5rem;
+  gap: 6rem;
+}
+
+.dates {
+  display: flex;
+  gap: 0.5rem;
 }
 
 .btnBox {
