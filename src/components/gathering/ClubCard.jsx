@@ -1,3 +1,4 @@
+import { SPORT_OPTIONS } from "../../constants/option";
 import styles from "../../styles/gathering/MeetingCard.module.css";
 
 const RecomandIcon = () => {
@@ -12,32 +13,33 @@ const CategoryButton = ({ children }) => {
   return <button className={styles.categoryBtn}>{children}</button>;
 };
 
-function MeetingCard({ meeting }) {
+function ClubCard({ item }) {
+  const sport = SPORT_OPTIONS.find((option) => option.id === item.sport_id);
+
   return (
     <div className={styles.container}>
       <div className={styles.img}></div>
-
       <div className={styles.contentBox}>
         <div className={styles.contentHeader}>
           <div className={styles.leftBox}>
             <RecomandIcon />
-            <p className={styles.name}>{meeting.name}</p>
+            <p className={styles.name}>{item.name}</p>
           </div>
           <RequestButton />
         </div>
-        <p className={styles.content}>{meeting.description}</p>
+        <p className={styles.content}>{item.explain}</p>
       </div>
 
       <div className={styles.bottomBox}>
-        {meeting.date}
+        {item.date}
         <div className={styles.btnBox}>
-          <CategoryButton>{meeting.region}</CategoryButton>
-          <CategoryButton>{meeting.sport}</CategoryButton>
-          <CategoryButton>{meeting.rating}</CategoryButton>
+          <CategoryButton>{item.region_name}</CategoryButton>
+          <CategoryButton>{sport.name}</CategoryButton>
+          <CategoryButton>{item.rating_avg}</CategoryButton>
         </div>
       </div>
     </div>
   );
 }
 
-export default MeetingCard;
+export default ClubCard;
