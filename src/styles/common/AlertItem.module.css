@@ -13,10 +13,10 @@
 }
 
 .header {
-  padding: 1rem;
+  padding: 15px;
 
   display: flex;
-  gap: 1rem;
+  /* gap: 15px; */
 }
 
 .imgBox {
@@ -25,8 +25,8 @@
 
 .circleBox {
   position: absolute;
-  width: 13px;
-  height: 13px;
+  width: 12px;
+  height: 12px;
   top: -1px;
   left: -2px;
 
@@ -45,12 +45,16 @@
 }
 
 .img {
-  width: 44px;
-  height: 44px;
+  width: 43px;
+  height: 43px;
 
   border-radius: 10px;
 
   background: #c8c6c8;
+}
+
+.textBox {
+  margin-left: 15px;
 }
 
 .name {

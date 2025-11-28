@@ -9,3 +9,15 @@ const api = axios.create({
     "Access-Control-Allow-Origin": "*", // 모든 출처 허용
   },
 });
+
+export const getClubs = async ({ region, sport, search }) => {
+  const res = await api.get("/api/clubs", {
+    params: {
+      region,
+      sport,
+      search,
+    },
+  });
+
+  return res.data;
+};

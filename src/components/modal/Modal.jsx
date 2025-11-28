@@ -11,6 +11,8 @@ const Button = ({ children, color, onClick }) => {
   const backColor = {
     oragne: "#FF632C",
     gray: "#8D8B8D",
+    // font-weight: 500;
+    // font-size: 18px;
   };
 
   const textColor = {
