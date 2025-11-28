@@ -5,6 +5,10 @@
 
 body {
   overflow-x: hidden;
+
+  /* 추가해야됨 */
+  /* font-family: "Inter";
+  font-style: normal; */
 }
 
 a {

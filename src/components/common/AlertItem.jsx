@@ -16,7 +16,7 @@ function AlertItem() {
           </div>
           <div className={styles.img}></div>
         </div>
-        <div>
+        <div className={styles.textBox}>
           <p className={styles.name}>[모임명]</p>
           <p className={styles.place}>축구 종합운동장 (잠실) 모임</p>
         </div>
