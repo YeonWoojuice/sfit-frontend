@@ -23,6 +23,8 @@
 }
 
 .contentBox {
+  width: 100%;
+
   margin-top: 1rem;
 }
 
@@ -40,7 +42,7 @@
 
 .contentHeader {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 2.5rem;
 }

@@ -1,6 +1,4 @@
 .container {
-  /* position: sticky;
-  top: 500px; */
   right: 54px;
   display: flex;
   flex-direction: column;
@@ -10,7 +8,6 @@
 
 .wrap {
   position: fixed;
-  /* top: 500px; */
 
   display: flex;
   flex-direction: column;
