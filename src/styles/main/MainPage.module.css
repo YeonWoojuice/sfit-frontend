@@ -7,8 +7,30 @@
   align-items: center;
 }
 
+.inner {
+  width: 1080px;
+  position: relative;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.rightSection {
+  /* height: 620px; */
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+
 .alertContainer {
-  position: absolute;
+  width: 268px;
+  height: 440px;
+  /* position: absolute; */
   top: 0;
   right: 40px;
 }

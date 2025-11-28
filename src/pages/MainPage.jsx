@@ -70,44 +70,51 @@ function MainPage() {
   return (
     <div className={styles.container}>
       {modal && <Modal onClick={() => setModal(false)} />}
-      {/* 플로팅 버튼 */}
-      <FloatingLayout>
-        <FloatingButton type="chat" />
-        <FloatingButton
-          type="new"
-          onClick={() => {
-            setModal(!modal);
-          }}
-        />
-      </FloatingLayout>
-      <div className={styles.alertContainer}>
-        <AlertItem />
-      </div>
-
-      {/* 필터링 */}
-      <FilterMenu filter={filter} onClick={handleFilter} />
-      <Tab />
-      {/* 강사 데이터 넘겨줘야 됨 */}
-      <InstructorSection />
-      {/* <Loading /> */}
-      {data.clubs ? <ClubSection data={data.clubs} /> : <Loading />}
-      {/* 모임 페이지 버튼 */}
-      <div className={styles.bottom}>
-        {data.count > 8 ? (
-          <>
-            <img src={prevIcon} className={styles.prev}></img>
-            <div className={styles.pages}>
-              {pages.map((item) => (
-                <div key={item} className={styles.page}>
-                  {item}
-                </div>
-              ))}
+      <div className={styles.inner}>
+        {/* 필터링 */}
+        <div className={styles.section}>
+          <FilterMenu filter={filter} onClick={handleFilter} />
+          <div className={styles.midSection}>
+            <Tab />
+            {/* 강사 데이터 넘겨줘야 됨 */}
+            <InstructorSection />
+            {/* <Loading /> */}
+            {data.clubs ? <ClubSection data={data.clubs} /> : <Loading />}
+            {/* 모임 페이지 버튼 */}
+            <div className={styles.bottom}>
+              {data.count > 8 ? (
+                <>
+                  <img src={prevIcon} className={styles.prev}></img>
+                  <div className={styles.pages}>
+                    {pages.map((item) => (
+                      <div key={item} className={styles.page}>
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                  <img src={nextIcon} className={styles.next}></img>
+                </>
+              ) : (
+                <div></div>
+              )}
             </div>
-            <img src={nextIcon} className={styles.next}></img>
-          </>
-        ) : (
-          <div></div>
-        )}
+          </div>
+          <div className={styles.rightSection}>
+            <div className={styles.alertContainer}>
+              <AlertItem />
+            </div>
+            {/* 플로팅 버튼 */}
+            <FloatingLayout>
+              <FloatingButton type="chat" />
+              <FloatingButton
+                type="new"
+                onClick={() => {
+                  setModal(!modal);
+                }}
+              />
+            </FloatingLayout>
+          </div>
+        </div>
       </div>
     </div>
   );
