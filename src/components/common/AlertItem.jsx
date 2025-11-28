@@ -3,12 +3,12 @@ import styles from "../../styles/common/AlertItem.module.css";
 function AlertItem() {
   return (
     <div className={styles.container}>
-      {/* <div className={styles.short}>
+      <div className={styles.short}>
         <div className={styles.circle}></div>
-        <div className={styles.text}>
+        <div className={styles.place}>
           강남대학교 클라이밍 번개 모임 (용인 기흥역) 준...
         </div>
-      </div> */}
+      </div>
       <div className={styles.header}>
         <div className={styles.imgBox}>
           <div className={styles.circleBox}>
@@ -18,7 +18,9 @@ function AlertItem() {
         </div>
         <div className={styles.textBox}>
           <p className={styles.name}>[모임명]</p>
-          <p className={styles.place}>축구 종합운동장 (잠실) 모임</p>
+          <p className={styles.place}>
+            축구 종합운동장 (잠실) 모임 축구 종합운동장 (잠실) 모임
+          </p>
         </div>
         <div className={styles.time}>1시간 전</div>
       </div>

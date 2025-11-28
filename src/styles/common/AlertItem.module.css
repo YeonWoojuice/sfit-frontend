@@ -1,4 +1,6 @@
 .container {
+  /* width: 268px; */
+
   border-radius: 12px;
   background: #e9e7e9;
 }
@@ -7,7 +9,7 @@
   padding: 0.5rem 0.75rem;
 
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 0.5rem;
 }
@@ -54,7 +56,9 @@
 }
 
 .textBox {
-  margin-left: 15px;
+  width: 138px;
+
+  margin-left: 13px;
 }
 
 .name {
@@ -65,6 +69,14 @@
 }
 
 .place {
+  width: 200px;
+
+  margin-left: -1px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
   font-weight: 400;
   font-size: 12px;
 
