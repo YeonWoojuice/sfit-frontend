@@ -19,20 +19,15 @@
 }
 
 .rightSection {
-  /* height: 620px; */
   height: auto;
 
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
 }
 
 .alertContainer {
   width: 268px;
   height: 440px;
-  /* position: absolute; */
-  top: 0;
-  right: 40px;
 }
 
 .insturctorSection,
