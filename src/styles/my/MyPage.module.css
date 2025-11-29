@@ -1,0 +1,142 @@
+.container {
+  width: 100%;
+
+  background: #e9e7e9;
+}
+
+.inner {
+  width: 880px;
+
+  margin: 0 auto;
+
+  background: #ff632c;
+}
+
+.headerContainer {
+  margin-right: 3rem;
+  padding: 2rem;
+
+  display: flex;
+  justify-content: flex-end;
+  gap: 2.5rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.number {
+  font-weight: 500;
+  font-size: 60px;
+
+  color: #000000;
+}
+
+.text {
+  font-weight: 500;
+  font-size: 20px;
+
+  color: #000000;
+}
+
+.section {
+  position: relative;
+  height: 400px;
+
+  /* padding: 2rem; */
+
+  border-radius: 22px 22px 0 0;
+
+  background: #ffffff;
+}
+
+.sectionTitle {
+  padding: 2rem;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.sectionProfile {
+  width: 100px;
+  height: 100px;
+
+  position: absolute;
+  top: -50px;
+  left: 50px;
+
+  background: #000fff;
+
+  border-radius: 50%;
+}
+
+.profileContainer {
+  margin-top: 2rem;
+  margin-left: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.profile {
+  font-weight: 700;
+  font-size: 28px;
+
+  color: #000000;
+}
+
+.sub {
+  font-weight: 500;
+  font-size: 20px;
+
+  color: #000000;
+}
+
+.btnContainer {
+  margin-right: 2rem;
+
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  height: 44px;
+
+  padding: 0.5rem 1.25rem;
+
+  border-radius: 10px;
+  background: #d9d9d9;
+
+  font-weight: 500;
+  font-size: 18px;
+
+  color: #000000;
+}
+
+.tabs {
+  padding-block: 1rem;
+  padding-inline: 2rem;
+
+  display: flex;
+  gap: 1rem;
+
+  border-bottom: 4px solid #e9e7e9;
+}
+
+.tab {
+  position: relative;
+  font-weight: 500;
+  font-size: 18px;
+
+  color: #000000;
+}
+
+.tabSection {
+  padding-top: 2rem;
+  padding-inline: 3rem;
+  padding-bottom: 5rem;
+}
