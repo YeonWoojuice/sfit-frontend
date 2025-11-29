@@ -35,8 +35,8 @@ function ClubCard({ item }) {
 
       <div className={styles.bottomBox}>
         <div className={styles.dates}>
-          {days.map((day) => (
-            <CategoryButton>{DAYS[day]}</CategoryButton>
+          {days.map((day, index) => (
+            <CategoryButton key={index}>{DAYS[day]}</CategoryButton>
           ))}
         </div>
         <div className={styles.btnBox}>

@@ -11,19 +11,18 @@ const Button = ({ children, color, onClick }) => {
   const backColor = {
     oragne: "#FF632C",
     gray: "#8D8B8D",
-    // font-weight: 500;
-    // font-size: 18px;
   };
 
   const textColor = {
     oragne: "#ffffff",
     gray: "#343339",
   };
+
   return (
     <button
       type="button"
       onClick={onClick}
-      className={styles.btn}
+      className={`${styles.btn} ${color === "gray" ? styles.gray : ""}`}
       style={{ backgroundColor: backColor[color], color: textColor[color] }}
     >
       {children}

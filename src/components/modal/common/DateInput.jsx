@@ -1,4 +1,5 @@
 import styles from "../../../styles/modal/common/DateInput.module.css";
+import calendar from "../../../assets/calendar.svg";
 import clock from "../../../assets/clock.png";
 import arrow from "../../../assets/arrow.png";
 
@@ -55,6 +56,7 @@ function DateInput({ info, onChange, isCalendar }) {
         ) : (
           <div className={styles.dayContainer}>
             <div className={styles.displayBox}>
+              <img src={calendar} className={styles.img} />
               <span
                 className={`${styles.dayText} ${
                   hasSelectedDays ? styles.active : ""

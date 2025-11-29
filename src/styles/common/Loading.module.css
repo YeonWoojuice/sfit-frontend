@@ -1,7 +1,15 @@
+.container {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+
+  display: flex;
+  justify-content: center;
+}
+
 .outter {
   position: relative;
+  width: 96px;
 
-  margin-top: 6rem;
   padding: 0.75rem;
 
   border-radius: 50%;
