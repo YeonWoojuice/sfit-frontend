@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = " https://sfit-api-server.onrender.com/api/auth";
+const BASE_URL = "https://sfit-api-server.onrender.com/api/auth";
 
 const api = axios.create({
   baseURL: BASE_URL,
@@ -11,25 +11,34 @@ const api = axios.create({
 });
 
 // 회원가입
-export const signup = async () => {
-  const res = await api.post("/register");
+export const signup = async (userData) => {
+  const res = await api.post("/register", {
+    username: userData.username,
+    password: userData.password,
+    name: userData.name,
+    phone: userData.phone,
+    email: userData.email,
+  });
   return res.data;
 };
 
 // 로그인
-export const login = async ({ username, password }) => {
-  const res = await api.post("/login", { username, password });
+export const login = async (loginData) => {
+  const res = await api.post("/login", {
+    username: loginData.username,
+    password: loginData.password,
+  });
   return res.data;
 };
 
 // 중복확인
-export const checkUsername = async () => {
-  const res = await api.post("/check-username");
+export const checkUsername = async ({username}) => {
+  const res = await api.post("/check-username", {username});
   return res.data;
 };
 
 // 토큰 재발급
-export const getToken = async () => {
-  const res = await api.post("/refresh");
+export const getToken = async (refreshToken) => {
+  const res = await api.post("/refresh", { refreshToken });
   return res.data;
 };

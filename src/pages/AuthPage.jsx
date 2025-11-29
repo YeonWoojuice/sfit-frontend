@@ -1,4 +1,4 @@
-import AuthLayout from "../components/AuthLayout";
+import AuthLayout from "../components/auth/AuthLayout";
 import { useState } from "react";
 import styles from "../styles/AuthPage.module.css";
 

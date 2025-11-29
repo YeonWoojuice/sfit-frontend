@@ -120,9 +120,20 @@
 }
 
 .HeaderStatus {
-  color: white;
-  font-size: 16px;
-  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+
+
+
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 480;
+line-height: 19px;
+text-align: right;
+
+color: #DEDEDE;
+
+
 }
 
 .HeaderProfileButton {
