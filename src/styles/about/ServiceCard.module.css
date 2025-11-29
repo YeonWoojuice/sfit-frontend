@@ -1,19 +1,17 @@
-.stepSection {
+.serviceSection {
     width: 100%;
-    background-color: #ffffff;
+    background-color: #E9E7E9;
     padding: 80px 20px;
     box-sizing: border-box;
 }
 
-.stepContainer {
+.serviceContainer {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-    min-height: 477px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 .sectionTitle {
@@ -21,7 +19,7 @@
     padding: 0;
     font-size: 2.5rem;
     font-weight: 600;
-    color: #000000;
+    color: #343339;
     text-align: center;
     margin-bottom: 16px;
 }
@@ -40,35 +38,25 @@
 .cardsContainer {
     width: 100%;
     display: flex;
-    gap: 24px;
+    gap: 72px;
     justify-content: center;
-    flex-wrap: nowrap;
-    padding: 0 20px;
+    flex-wrap: wrap;
 }
 
 .card {
-    box-sizing: border-box;
     flex: 1;
-    min-width: 344px;
-    height: 418px;
+    max-width: 371px;
+    min-height: 463px;
     background-color: #ffffff;
+    border-radius: 16px;
+    padding: 32px 18px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    padding: 32px 15px;
-    border: 4px solid #8D8B8D;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    border-radius: 15px;
+    box-sizing: border-box;
 }
-
-
-
-
-
-
-
-
 
 .iconWrapper {
     width: 64px;
@@ -82,45 +70,57 @@
     margin-bottom: 24px;
 }
 
-.stepIcon {
+.icon {
     font-size: 32px;
     color: #ff714d;
 }
 
-.stepTitle {
+.cardTitle {
     margin: 0;
     padding: 0;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #000000;
+    font-size: 1.25rem;
+    font-weight: 700;
     margin-bottom: 16px;
     font-family: 'Inter';
     font-style: normal;
     line-height: 27px;
     text-align: center;
+    color: #000000;
+
+    
+
+
 }
 
-.stepDescription {
-    margin: 0;
-    padding: 0;
+.cardDescription {
     font-size: 0.875rem;
     font-weight: 500;
     color: #000000;
-    line-height: 17px;
+    line-height: 1.6;
     margin-bottom: 24px;
     white-space: pre-wrap;
     font-family: 'Inter';
+    line-height: 17px;
     letter-spacing: -0.05em;
+
 }
 
-.stepImage {
+.cardImage {
     width: 100%;
     height: 200px;
     border-radius: 12px;
     overflow: hidden;
     margin-top: auto;
+}
+
+.imagePlaceholder {
+    width: 100%;
+    height: 100%;
     background-color: #e9e7e9;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #999999;
+    font-size: 0.9rem;
 }
+

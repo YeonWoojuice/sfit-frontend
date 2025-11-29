@@ -8,9 +8,9 @@ function AboutPage() {
     return(
         <main>
             <HeroSection />
-            {/* <ServiceCard />
+            <ServiceCard />
             <StepItem />
-            <CTAService /> */}
+            <CTASection />
         </main>
     )
 

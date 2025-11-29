@@ -1,6 +1,6 @@
 .heroSection {
     width: 100%;
-    min-height: clamp(400px, 60vh, 607px);
+    min-height: clamp(607px, 83vw, 700px);
     background-color: #343339;
     display: flex;
     justify-content: center;
@@ -43,7 +43,7 @@
 
 .heroSectionButtons {
     display: flex;
-    gap: 16px;
+    gap: 35px;
     margin-top: 70px;
     flex-wrap: wrap;
     justify-content: center;
