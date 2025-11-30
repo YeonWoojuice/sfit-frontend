@@ -20,6 +20,9 @@ function SignupForm({ onSwitch }) {
   const username = watch("ID");
 
   const handleCheckDuplicate = async () => {
+    console.log("중복확인 버튼 클릭됨");
+    console.log("현재 username:", username);
+    
     if (!username || username.trim() === "") {
       alert("아이디를 입력해 주세요.");
       return;
@@ -35,6 +38,7 @@ function SignupForm({ onSwitch }) {
     setCheckResult(null);
 
     try {
+      console.log("API 호출 시작:", username);
       const result = await checkUsername(username);
       console.log("중복확인 API 응답:", result);
       
