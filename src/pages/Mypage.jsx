@@ -19,14 +19,14 @@ function MyPage() {
   const [tab, setTab] = useState("profile");
   const navigate = useNavigate();
 
-  useEffect(() => {
-    // 로그인 상태 확인
-    const userName = localStorage.getItem("userName");
-    if (!userName) {
-      // 로그인하지 않은 경우 로그인 페이지로 리다이렉트
-      navigate("/auth");
-    }
-  }, [navigate]);
+  //   useEffect(() => {
+  //     // 로그인 상태 확인
+  //     const userName = localStorage.getItem("userName");
+  //     if (!userName) {
+  //       // 로그인하지 않은 경우 로그인 페이지로 리다이렉트
+  //       navigate("/auth");
+  //     }
+  //   }, [navigate]);
 
   const renderItem = {
     profile: <UserProfile />,
