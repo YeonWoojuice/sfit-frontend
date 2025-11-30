@@ -1,7 +1,7 @@
 import styles from "../styles/my/MyPage.module.css";
 import BadgeList from "../components/my/BadgeList";
 import MyClubList from "../components/my/MyClubList";
-import UpcomingMeetups from "../components/my/UpcomingMeetups";
+import UpcomingMeetups from "../components/my/UpComingMeetups";
 import UserHistory from "../components/my/UserHistory";
 import UserProfile from "../components/my/UserProfile";
 import { useState, useEffect } from "react";
