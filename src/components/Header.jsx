@@ -70,7 +70,7 @@ function Header() {
             로그아웃 상태입니다
           </Link>
         )}
-        <Link to="/auth">
+        <Link to={isLoggedIn ? "/my" : "/auth"}>
           <button className={styles.HeaderProfileButton}>
             <img src={profileImage} alt="user profile" />
           </button>

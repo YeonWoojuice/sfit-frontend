@@ -1,4 +1,4 @@
-import AuthLayout from "../components/AuthLayout";
+import AuthLayout from "../components/auth/AuthLayout";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import styles from "../styles/AuthPage.module.css";
