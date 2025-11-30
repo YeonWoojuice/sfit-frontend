@@ -4,7 +4,7 @@ import { getRange } from "../utils/pagination";
 import Tab from "../components/main/Tab";
 import FilterMenu from "../components/main/FilterMenu";
 import InstructorSection from "../components/gathering/InstructorSection";
-import MeetingSection from "../components/gathering/MeetingSection";
+import ClubSection from "../components/gathering/ClubSection ";
 import FloatingButton from "../components/common/FloatingButton";
 import prevIcon from "../assets/prev.png";
 import nextIcon from "../assets/next.png";
@@ -114,7 +114,7 @@ function MainPage() {
       <Tab />
       {/* 강사 데이터 넘겨줘야 됨 */}
       <InstructorSection />
-      <MeetingSection data={mockMeetingData} />
+      <ClubSection data={mockMeetingData} />
       {/* 모임 페이지 버튼 */}
       <div className={styles.bottom}>
         <img src={prevIcon} className={styles.prev}></img>
