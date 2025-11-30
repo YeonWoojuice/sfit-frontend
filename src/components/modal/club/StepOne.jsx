@@ -3,10 +3,10 @@ import Input from "../common/Input";
 
 function StepOne({ info, onChange }) {
   return (
-    <>
-      <div className={styles.imgBox}>
+    <div className={styles.container}>
+      {/* <div className={styles.imgBox}>
         <div className={styles.img}>사진을 업로드해 주세요.</div>
-      </div>
+      </div> */}
       <div className={styles.inputBox}>
         <Input
           label="모임 명"
@@ -24,7 +24,7 @@ function StepOne({ info, onChange }) {
           onChange={(e) => onChange("explain", e.target.value)}
         ></textarea>
       </div>
-    </>
+    </div>
   );
 }
 

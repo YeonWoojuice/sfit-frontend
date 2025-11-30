@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
+    <div className={styles.Headerwrapper}>
     <div className={styles.Header}>
       <div className={styles.Headerlogo}>
         <Link to="/">
@@ -41,6 +42,7 @@ function Header() {
           </button>
         </Link>
       </div>
+    </div>
     </div>
   );
 }
