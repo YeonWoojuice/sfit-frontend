@@ -70,6 +70,7 @@ function MainPage() {
   return (
     <div className={styles.container}>
       {modal && <Modal onClick={() => setModal(false)} />}
+
       <div className={styles.inner}>
         {/* 필터링 */}
         <div className={styles.section}>
@@ -102,6 +103,7 @@ function MainPage() {
           <div className={styles.rightSection}>
             <div className={styles.alertContainer}>
               <AlertItem />
+
             </div>
             {/* 플로팅 버튼 */}
             <FloatingLayout>

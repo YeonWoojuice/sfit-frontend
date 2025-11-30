@@ -1,0 +1,144 @@
+.container {
+  width: 100%;
+
+  background: #e9e7e9;
+}
+
+.inner {
+  width: 880px;
+
+  margin: 0 auto;
+
+  background: #ff632c;
+}
+
+.header {
+  margin-right: 3rem;
+  padding: 2rem;
+
+  display: flex;
+  justify-content: flex-end;
+  gap: 2.5rem;
+}
+
+.headerItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerNumber {
+  font-weight: 500;
+  font-size: 60px;
+
+  color: #000000;
+}
+
+.headerLabel {
+  font-weight: 500;
+  font-size: 20px;
+
+  color: #000000;
+}
+
+.profileSection {
+  position: relative;
+  height: 400px;
+
+  /* padding: 2rem; */
+
+  border-radius: 22px 22px 0 0;
+
+  background: #ffffff;
+}
+
+.sectionProfile {
+  width: 100px;
+  height: 100px;
+
+  position: absolute;
+  top: -50px;
+  left: 50px;
+
+  background: #000fff;
+
+  border-radius: 50%;
+}
+
+.sectionTitle {
+  padding: 2rem;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.profileMain {
+  margin-top: 2rem;
+  margin-left: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.profileName {
+  font-weight: 700;
+  font-size: 28px;
+
+  color: #000000;
+}
+
+.profileLevel {
+  font-weight: 500;
+  font-size: 20px;
+
+  color: #000000;
+}
+
+.profileActions {
+  margin-right: 2rem;
+
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  height: 44px;
+
+  padding: 0.5rem 1.25rem;
+
+  border-radius: 10px;
+  background: #d9d9d9;
+
+  font-weight: 500;
+  font-size: 18px;
+
+  color: #000000;
+}
+
+.tabs {
+  padding-block: 1rem;
+  padding-inline: 2rem;
+
+  display: flex;
+  gap: 1rem;
+
+  border-bottom: 4px solid #e9e7e9;
+}
+
+.tab {
+  position: relative;
+  font-weight: 500;
+  font-size: 18px;
+
+  color: #000000;
+
+  cursor: pointer;
+}
+
+.tabPanel {
+  padding-top: 2rem;
+  padding-inline: 3rem;
+  padding-bottom: 5rem;
+}
