@@ -3,6 +3,7 @@
     background-color: #ffffff;
     padding: 80px 20px;
     box-sizing: border-box;
+    min-height: 100vh;
 }
 
 .stepContainer {
@@ -31,7 +32,7 @@
     padding: 0;
     font-size: 1.125rem;
     font-weight: 400;
-    color: #343339;
+    color: #000000;
     text-align: center;
     margin-bottom: 60px;
     opacity: 0.8;
@@ -44,9 +45,11 @@
     justify-content: center;
     flex-wrap: nowrap;
     padding: 0 20px;
+    margin-top: 50px;
 }
 
 .card {
+    position: relative;
     box-sizing: border-box;
     flex: 1;
     min-width: 344px;
@@ -70,22 +73,17 @@
 
 
 
-.iconWrapper {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    border: 2px solid #ff714d;
-    background-color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 24px;
+.stepIcon {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: contain;
+    width: 112px;
+    height: 108px;
 }
 
-.stepIcon {
-    font-size: 32px;
-    color: #ff714d;
-}
+
 
 .stepTitle {
     margin: 0;
@@ -93,6 +91,7 @@
     font-size: 1.5rem;
     font-weight: 600;
     color: #000000;
+    margin-top: 54px;
     margin-bottom: 16px;
     font-family: 'Inter';
     font-style: normal;

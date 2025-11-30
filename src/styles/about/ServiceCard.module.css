@@ -1,5 +1,6 @@
 .serviceSection {
     width: 100%;
+    min-height: 100vh;
     background-color: #E9E7E9;
     padding: 80px 20px;
     box-sizing: border-box;
@@ -29,10 +30,19 @@
     padding: 0;
     font-size: 1.125rem;
     font-weight: 400;
-    color: #343339;
     text-align: center;
     margin-bottom: 60px;
     opacity: 0.8;
+    font-family: 'Inter';
+    font-style: normal;
+    line-height: 24px;
+    text-align: center;
+
+    color: #000000;
+   
+
+
+
 }
 
 .cardsContainer {
@@ -41,9 +51,11 @@
     gap: 72px;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 50px;
 }
 
 .card {
+    position: relative;
     flex: 1;
     max-width: 371px;
     min-height: 463px;
@@ -58,21 +70,14 @@
     box-sizing: border-box;
 }
 
-.iconWrapper {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    border: 2px solid #ff714d;
-    background-color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 24px;
-}
-
 .icon {
-    font-size: 32px;
-    color: #ff714d;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: contain;
+    width: 112px;
+    height: 108px;
 }
 
 .cardTitle {
@@ -80,16 +85,13 @@
     padding: 0;
     font-size: 1.25rem;
     font-weight: 700;
+    margin-top: 54px;
     margin-bottom: 16px;
     font-family: 'Inter';
     font-style: normal;
     line-height: 27px;
     text-align: center;
     color: #000000;
-
-    
-
-
 }
 
 .cardDescription {

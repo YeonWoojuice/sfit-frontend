@@ -10,7 +10,7 @@ function CTASection() {
             
 
                 <div className={styles.ctaSectionButtons}>
-                    <Link to="/auth" className={styles.primaryButton}>회원가입</Link>
+                    <Link to="/auth?mode=signup" className={styles.primaryButton}>회원가입</Link>
 
                     <Link to="/" className={styles.secondaryButton}>서비스 둘러보기</Link>
                 </div>
