@@ -1,4 +1,4 @@
-import styles from "../../styles/my/UpcomingMeetups.module.css";
+import styles from "../../styles/my/UpComingMeetups.module.css";
 import UpComingItem from "./UpComingItem";
 
 function UpcomingMeetups() {
