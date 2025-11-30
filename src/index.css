@@ -5,6 +5,9 @@
 
 body {
   overflow-x: hidden;
+
+  font-family: "Inter";
+  font-style: normal;
 }
 
 a {
@@ -13,6 +16,11 @@ a {
 
 input {
   outline: none;
+
+  font-weight: 500;
+  font-size: 12px;
+
+  color: #000000;
 }
 button {
   border: none;

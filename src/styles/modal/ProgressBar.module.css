@@ -1,15 +1,16 @@
 .progressBar {
   position: relative;
-
   width: 100%;
+
+  margin-top: 2rem;
 
   display: flex;
   align-items: center;
 }
 
 .circle {
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   z-index: 1;
 
   display: flex;

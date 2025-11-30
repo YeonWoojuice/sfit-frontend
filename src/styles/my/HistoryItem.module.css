@@ -1,0 +1,51 @@
+.itemRow {
+  padding: 0.5rem 1.25rem;
+
+  /* display: flex;
+  justify-content: flex-end; */
+
+  border-bottom: 1px solid #e9e9e9;
+
+  display: grid;
+  grid-template-columns: 90px 120px 140px 1fr 0.8fr 70px;
+}
+
+.itemRow p {
+  /* flex: 1; */
+
+  font-weight: 500;
+  font-size: 14px;
+
+  color: #000000;
+}
+
+.itemRow p:nth-child(5) {
+  /* flex: none; */
+  width: 44px;
+}
+
+.attendanceOk {
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #2fce2a;
+
+  background: #d5ffd6;
+
+  font-weight: 700;
+  font-size: 14px;
+
+  color: #30b32c;
+}
+
+.attendanceNo {
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #bb2020;
+
+  background: #ffd5d5;
+
+  font-weight: 500;
+  font-size: 14px;
+
+  color: #bb2020;
+}
