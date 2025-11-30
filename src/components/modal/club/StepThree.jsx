@@ -159,7 +159,7 @@ function StepThree({ info, onChange }) {
 
           {/* 최소 인원 핸들 (왼쪽) */}
           <div
-            className={styles.handle}
+            className={`${styles.handle} ${styles.left}`}
             style={{ left: `${getPercent(minMember)}%` }}
             onMouseDown={(e) => {
               e.preventDefault();
@@ -171,7 +171,7 @@ function StepThree({ info, onChange }) {
 
           {/* 최대 인원 핸들 (오른쪽) */}
           <div
-            className={styles.handle}
+            className={`${styles.handle} ${styles.right}`}
             style={{ left: `${getPercent(maxMember)}%` }}
             onMouseDown={(e) => {
               e.preventDefault();

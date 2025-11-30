@@ -15,18 +15,20 @@ function FilterMenu({ filter, onClick }) {
     setActiveMenu((prev) => (prev === key ? null : key));
   };
   return (
-    <div className={styles.menus}>
-      {filters.map((item) => (
-        <FilterSelect
-          key={item.key}
-          label={item.label}
-          filter={filter}
-          filterkey={item.key}
-          onClick={onClick}
-          isOpen={activeMenu === item.key}
-          onToggle={() => handleToggle(item.key)}
-        />
-      ))}
+    <div className={styles.menuWrap}>
+      <div className={styles.menus}>
+        {filters.map((item) => (
+          <FilterSelect
+            key={item.key}
+            label={item.label}
+            filter={filter}
+            filterkey={item.key}
+            onClick={onClick}
+            isOpen={activeMenu === item.key}
+            onToggle={() => handleToggle(item.key)}
+          />
+        ))}
+      </div>
     </div>
   );
 }

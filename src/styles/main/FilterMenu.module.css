@@ -1,8 +1,12 @@
-.menus {
-  position: absolute;
-  top: 34px;
-  left: 40px;
+.menuWrap {
+  width: 240px;
 
+  margin-top: 2rem;
+}
+
+.menus {
+  position: sticky;
+  top: 34px;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;

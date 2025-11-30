@@ -1,0 +1,125 @@
+.stepSection {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 80px 20px;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+.stepContainer {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    min-height: 477px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sectionTitle {
+    margin: 0;
+    padding: 0;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.sectionSubtitle {
+    margin: 0;
+    padding: 0;
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 60px;
+    opacity: 0.8;
+}
+
+.cardsContainer {
+    width: 100%;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: nowrap;
+    padding: 0 20px;
+    margin-top: 50px;
+}
+
+.card {
+    position: relative;
+    box-sizing: border-box;
+    flex: 1;
+    min-width: 344px;
+    height: 418px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 32px 15px;
+    border: 4px solid #8D8B8D;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+}
+
+
+
+
+
+
+
+
+
+.stepIcon {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: contain;
+    width: 112px;
+    height: 108px;
+}
+
+
+
+.stepTitle {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000000;
+    margin-top: 54px;
+    margin-bottom: 16px;
+    font-family: 'Inter';
+    font-style: normal;
+    line-height: 27px;
+    text-align: center;
+}
+
+.stepDescription {
+    margin: 0;
+    padding: 0;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #000000;
+    line-height: 17px;
+    margin-bottom: 24px;
+    white-space: pre-wrap;
+    font-family: 'Inter';
+    letter-spacing: -0.05em;
+}
+
+.stepImage {
+    width: 100%;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: auto;
+    background-color: #e9e7e9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
