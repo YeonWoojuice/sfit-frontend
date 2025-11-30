@@ -1,0 +1,69 @@
+.itemContainer {
+  /* padding: 1rem 2rem; */
+  display: flex;
+  align-items: center;
+
+  font-weight: 500;
+  font-size: 12px;
+
+  color: #000000;
+}
+
+.dateSection {
+  position: relative;
+
+  padding: 1rem 2rem;
+
+  text-align: right;
+  border-right: 3px solid #e9e7e9;
+}
+
+.timelineMarker {
+  position: absolute;
+  top: 24px;
+  right: -11px;
+
+  width: 19px;
+  height: 19px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background: #ff9f2c;
+}
+
+.markerInner {
+  width: 8px;
+  height: 8px;
+
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: #ff9f2c;
+}
+
+.infoSection {
+  margin-left: 2rem;
+}
+
+.subtitle {
+  color: #8d8b8d;
+}
+
+.name {
+  font-size: 16px;
+}
+
+.region {
+  margin-left: 4rem;
+}
+
+.placeSection {
+  margin-left: 4rem;
+}
+
+.time {
+  margin-left: 5rem;
+}
