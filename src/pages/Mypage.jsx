@@ -4,8 +4,7 @@ import MyClubList from "../components/my/MyClubList";
 import UpcomingMeetups from "../components/my/UpcomingMeetups";
 import UserHistory from "../components/my/UserHistory";
 import UserProfile from "../components/my/UserProfile";
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState} from "react";
 
 const Button = ({ children }) => {
   return (
@@ -17,16 +16,6 @@ const Button = ({ children }) => {
 
 function MyPage() {
   const [tab, setTab] = useState("profile");
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    // 로그인 상태 확인
-    const userName = localStorage.getItem("userName");
-    if (!userName) {
-      // 로그인하지 않은 경우 로그인 페이지로 리다이렉트
-      navigate("/auth");
-    }
-  }, [navigate]);
 
   const renderItem = {
     profile: <UserProfile />,
