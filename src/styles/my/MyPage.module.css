@@ -118,7 +118,7 @@
 }
 
 .tabs {
-  padding-block: 1rem;
+  padding-top: 1rem;
   padding-inline: 2rem;
 
   display: flex;
@@ -132,9 +132,13 @@
   font-weight: 500;
   font-size: 18px;
 
+  padding-bottom: 0.5rem;
+
   color: #000000;
 
   cursor: pointer;
+
+  /* border-bottom: 5px solid #ff632c; */
 }
 
 .tabPanel {
