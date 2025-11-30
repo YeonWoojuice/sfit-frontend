@@ -1,5 +1,5 @@
 import styles from "../../styles/my/UserHistory.module.css";
-import HistoryItem from "./HistoryItme";
+import HistoryItem from "./HistoryItem";
 
 function UserHistory() {
   return (
@@ -12,8 +12,22 @@ function UserHistory() {
           <div>동호회</div>
         </div>
       </div>
-      <div className={styles.lists}>
-        <HistoryItem />
+      <div className={styles.historyTable}>
+        <div className={styles.tableHeader}>
+          <p>날짜</p>
+          <p>모임</p>
+          <p>지역</p>
+          <p>장소</p>
+          <p>참겨 여부</p>
+          <p>별점 기록</p>
+        </div>
+        <div className={styles.tableBody}>
+          <HistoryItem label="참가" />
+          <HistoryItem label="불참" />
+          <HistoryItem label="불참" />
+          <HistoryItem label="참가" />
+          <HistoryItem label="불참" />
+        </div>
       </div>
     </div>
   );

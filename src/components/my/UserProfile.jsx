@@ -1,16 +1,16 @@
 import styles from "../../styles/my/UserProfile.module.css";
 import ProfileItem from "./ProfileItem";
 
-function UserPofile() {
+function UserProfile() {
   return (
-    <div className={styles.container}>
-      <div className={styles.title}>나의 프로필 카드</div>
-      <div className={styles.left}>
+    <div className={styles.profileContainer}>
+      <div className={styles.profileTitle}>나의 프로필 카드</div>
+      <div className={styles.profileGroupLeft}>
         <ProfileItem label="관심 운동" content="축구 / 농구" />
         <ProfileItem label="지역" content="서울시 강남구" />
         <ProfileItem label="성별" content="여자" />
       </div>
-      <div className={styles.right}>
+      <div className={styles.profileGroupRight}>
         <ProfileItem label="나이" content="22세 (2003년생)" />
         <ProfileItem
           label="한 줄 소개"
@@ -22,4 +22,4 @@ function UserPofile() {
   );
 }
 
-export default UserPofile;
+export default UserProfile;

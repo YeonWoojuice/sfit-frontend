@@ -8,19 +8,19 @@ import CoachIcon from "../../assets/my/coach.svg?react";
 
 function ProfileItem({ label, content }) {
   const renderIcon = {
-    "관심 운동": <FlagIcon className={styles.icon} />,
-    지역: <RegionIcon className={styles.icon} />,
-    성별: <GenderIcon className={styles.icon} />,
-    나이: <AgeIcon className={styles.icon} />,
-    "한 줄 소개": <ExpalinIcon className={styles.icon} />,
-    "코치 자격": <CoachIcon className={styles.icon} />,
+    "관심 운동": <FlagIcon className={styles.itemIcon} />,
+    지역: <RegionIcon className={styles.itemIcon} />,
+    성별: <GenderIcon className={styles.itemIcon} />,
+    나이: <AgeIcon className={styles.itemIcon} />,
+    "한 줄 소개": <ExpalinIcon className={styles.itemIcon} />,
+    "코치 자격": <CoachIcon className={styles.itemIcon} />,
   };
   return (
-    <div className={styles.container}>
-      <div className={styles.iconBox}>{renderIcon[label]}</div>
-      <div className={styles.texts}>
-        <div className={styles.label}>{label}</div>
-        <div className={styles.content}>{content}</div>
+    <div className={styles.itemContainer}>
+      <div className={styles.itemIconBox}>{renderIcon[label]}</div>
+      <div className={styles.itemTexts}>
+        <div className={styles.itemLabel}>{label}</div>
+        <div className={styles.itemContent}>{content}</div>
       </div>
     </div>
   );

@@ -1,10 +1,11 @@
 .container {
-  height: 248px;
+  /* height: 248px; */
 
   padding: 1rem;
 
   display: flex;
-  gap: 4rem;
+  flex-direction: column;
+  gap: 2rem;
 
   border-radius: 16px;
   border: 3px solid #e9e7e9;
@@ -26,4 +27,39 @@
 
 .filters {
   display: flex;
+}
+
+.historyTable {
+  /* border: 2px solid #e9e7e9; */
+}
+
+.tableHeader {
+  padding: 0.5rem 1.25rem;
+
+  /* display: flex;
+  justify-content: flex-end; */
+
+  border-radius: 8px 8px 0 0;
+  background: #efedef;
+
+  display: grid;
+  grid-template-columns: 90px 120px 140px 1fr 0.8fr 70px;
+}
+
+.tableHeader p {
+  /* flex: 1; */
+
+  font-weight: 500;
+  font-size: 12px;
+
+  color: #8d8b8d;
+}
+
+/* .tableHeader p:nth-child(5) {
+  flex: none;
+  width: 48px;
+} */
+
+.tableBody {
+  border: 1px solid #e9e7e9;
 }

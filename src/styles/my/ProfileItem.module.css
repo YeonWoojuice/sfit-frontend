@@ -1,9 +1,9 @@
-.container {
+.itemContainer {
   display: flex;
   gap: 1.5rem;
 }
 
-.iconBox {
+.itemIconBox {
   /* width: 25px;
   height: 25px; */
 
@@ -17,26 +17,26 @@
   background: #ff632c;
 }
 
-.icon {
+.itemIcon {
   width: 20px;
   height: 20px;
 
   fill: #fff;
 }
 
-.texts {
+.itemTexts {
   display: flex;
   flex-direction: column;
 }
 
-.label {
+.itemLabel {
   font-weight: 500;
   font-size: 12px;
 
   color: #8d8b8d;
 }
 
-.content {
+.itemContent {
   font-weight: 500;
   font-size: 14px;
 

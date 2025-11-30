@@ -1,4 +1,4 @@
-.container {
+.profileContainer {
   height: 248px;
 
   /* padding: 1rem; */
@@ -10,7 +10,7 @@
   border: 3px solid #e9e7e9;
 }
 
-.title {
+.profileTitle {
   margin-top: 1rem;
   margin-left: 1rem;
 
@@ -20,8 +20,8 @@
   color: #000000;
 }
 
-.left,
-.right {
+.profileGroupLeft,
+.profileGroupRight {
   padding-top: 4rem;
   /* margin-bottom: 2rem; */
 
@@ -30,7 +30,7 @@
   gap: 1rem;
 }
 
-.right {
+.profileGroupRight {
   padding-left: 2rem;
   border-left: 2px solid #f8f6f8;
 }

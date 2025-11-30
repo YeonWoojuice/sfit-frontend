@@ -12,7 +12,7 @@
   background: #ff632c;
 }
 
-.headerContainer {
+.header {
   margin-right: 3rem;
   padding: 2rem;
 
@@ -21,28 +21,28 @@
   gap: 2.5rem;
 }
 
-.header {
+.headerItem {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.number {
+.headerNumber {
   font-weight: 500;
   font-size: 60px;
 
   color: #000000;
 }
 
-.text {
+.headerLabel {
   font-weight: 500;
   font-size: 20px;
 
   color: #000000;
 }
 
-.section {
+.profileSection {
   position: relative;
   height: 400px;
 
@@ -51,13 +51,6 @@
   border-radius: 22px 22px 0 0;
 
   background: #ffffff;
-}
-
-.sectionTitle {
-  padding: 2rem;
-
-  display: flex;
-  justify-content: space-between;
 }
 
 .sectionProfile {
@@ -73,7 +66,14 @@
   border-radius: 50%;
 }
 
-.profileContainer {
+.sectionTitle {
+  padding: 2rem;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.profileMain {
   margin-top: 2rem;
   margin-left: 2rem;
 
@@ -82,21 +82,21 @@
   gap: 0.5rem;
 }
 
-.profile {
+.profileName {
   font-weight: 700;
   font-size: 28px;
 
   color: #000000;
 }
 
-.sub {
+.profileLevel {
   font-weight: 500;
   font-size: 20px;
 
   color: #000000;
 }
 
-.btnContainer {
+.profileActions {
   margin-right: 2rem;
 
   display: flex;
@@ -133,9 +133,11 @@
   font-size: 18px;
 
   color: #000000;
+
+  cursor: pointer;
 }
 
-.tabSection {
+.tabPanel {
   padding-top: 2rem;
   padding-inline: 3rem;
   padding-bottom: 5rem;
