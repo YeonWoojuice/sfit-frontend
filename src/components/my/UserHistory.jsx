@@ -3,7 +3,7 @@ import HistoryItem from "./HistoryItem";
 
 function UserHistory() {
   return (
-    <div className={styles.container}>
+    <div className={styles.historyContainer}>
       <div className={styles.header}>
         <div className={styles.title}>히스토리</div>
         <div className={styles.filters}>
