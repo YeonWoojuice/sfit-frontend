@@ -1,0 +1,109 @@
+.ctaSection {
+    width: 100%;
+    min-height: clamp(400px, 83vw, 469px);
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(40px, 8vh, 80px) 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.ctaSectionContainer {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 30px;
+}
+
+.sectionTitle {
+    margin: 0;
+    padding: 0;
+    font-size: 2.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    font-family: 'Inter';
+    font-style: normal;
+    line-height: 48px;
+    color: #000000;
+
+
+
+
+
+
+
+}
+
+.sectionSubtitle {
+    margin: 0;
+    padding: 0;
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: #000000;
+    opacity: 0.9;
+    font-family: 'Inter';
+    font-style: normal;
+    line-height: 24px;
+    text-align: center;
+}
+
+.ctaSectionButtons {
+    display: flex;
+    gap: 35px;
+    margin-top: 70px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.primaryButton {
+    padding: 16px 40px;
+    min-width: 180px;
+    background-color: #ff714d;
+    color: #ffffff;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s;
+    box-sizing: border-box;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.primaryButton:hover {
+    background-color: #ff632c;
+}
+
+.secondaryButton {
+    padding: 16px 40px;
+    min-width: 180px;
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    box-sizing: border-box;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.secondaryButton:hover {
+    background-color: #ffffff;
+    color: #343339;
+}
+
