@@ -9,7 +9,7 @@ const RequestButton = () => {
   return <button className={styles.requestBtn}>신청하기</button>;
 };
 
-function MeetingCard({ meeting }) {
+function ClubCard({ meeting }) {
   return (
     <div className={styles.container}>
       <div className={styles.img}></div>
@@ -37,4 +37,4 @@ function MeetingCard({ meeting }) {
   );
 }
 
-export default MeetingCard;
+export default ClubCard;

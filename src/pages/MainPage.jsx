@@ -4,7 +4,7 @@ import { getRange } from "../utils/pagination";
 import Tab from "../components/main/Tab";
 import FilterMenu from "../components/main/FilterMenu";
 import InstructorSection from "../components/gathering/InstructorSection";
-import ClubSection from "../components/gathering/ClubSection ";
+import ClubSection from "../components/gathering/ClubSection";
 import FloatingButton from "../components/common/FloatingButton";
 import prevIcon from "../assets/prev.png";
 import nextIcon from "../assets/next.png";

@@ -1,18 +1,18 @@
 import styles from "../../styles/gathering/MeetingSection.module.css";
 import SectionHeader from "../main/SectionHeader";
-import MeetingCard from "./MeetingCard";
+import ClubCard from "./ClubCard";
 
-function MeetingSection({ data }) {
+function ClubSection({ data }) {
   return (
     <section className={styles.meetingSection}>
       <SectionHeader title="일반 모임" isMeeting={true} />
       <div className={styles.meetingCards}>
         {data.map((meeting) => (
-          <MeetingCard key={meeting.id} meeting={meeting} />
+          <ClubCard key={meeting.id} meeting={meeting} />
         ))}
       </div>
     </section>
   );
 }
 
-export default MeetingSection;
+export default ClubSection;
