@@ -1,4 +1,5 @@
 import styles from "../../styles/gathering/MeetingCard.module.css";
+import CategoryButton from "../common/CategoryButton";
 
 const RecomandIcon = () => {
   return <div className={styles.recoIcon}>추천</div>;
@@ -6,10 +7,6 @@ const RecomandIcon = () => {
 
 const RequestButton = () => {
   return <button className={styles.requestBtn}>신청하기</button>;
-};
-
-const CategoryButton = ({ children }) => {
-  return <button className={styles.categoryBtn}>{children}</button>;
 };
 
 function MeetingCard({ meeting }) {
