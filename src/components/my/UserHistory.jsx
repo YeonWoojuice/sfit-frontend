@@ -7,9 +7,9 @@ function UserHistory() {
       <div className={styles.header}>
         <div className={styles.title}>히스토리</div>
         <div className={styles.filters}>
-          <div>전체</div>
-          <div>번개</div>
-          <div>동호회</div>
+          <div className={styles.all}>전체</div>
+          <div className={styles.meetup}>번개</div>
+          <div className={styles.club}>동호회</div>
         </div>
       </div>
       <div className={styles.historyTable}>

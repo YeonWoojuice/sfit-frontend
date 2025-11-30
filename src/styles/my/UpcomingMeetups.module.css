@@ -1,0 +1,60 @@
+.meetupContainer {
+  /* height: 248px; */
+
+  padding-top: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  border-radius: 16px;
+  border: 3px solid #e9e7e9;
+}
+
+.title {
+  padding-left: 1rem;
+
+  font-weight: 700;
+  font-size: 16px;
+
+  color: #000000;
+}
+
+.tableHeader {
+  padding-block: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 3rem;
+
+  /* display: flex;
+  justify-content: flex-end; */
+
+  /* border-radius: 8px 8px 0 0; */
+  background: #efedef;
+
+  display: grid;
+  /* grid-template-columns: 1.1fr 120px 140px 1fr 0.8fr; */
+  grid-template-columns: 1fr 2fr 1.5fr 1.2fr 1fr;
+  align-items: center;
+  text-align: center;
+}
+
+.tableHeader p {
+  /* flex: 1; */
+
+  font-weight: 500;
+  font-size: 12px;
+
+  color: #8d8b8d;
+}
+
+.region,
+.place {
+  text-align: left;
+}
+
+.region {
+  padding-left: 10px;
+}
+.place {
+  padding-left: 20px;
+}

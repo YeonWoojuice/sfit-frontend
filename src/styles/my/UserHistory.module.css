@@ -26,8 +26,22 @@
 }
 
 .filters {
+  padding: 0.5rem;
+
   display: flex;
+  gap: 0.5rem;
+
+  border-radius: 16px;
+  background: #efedef;
+
+  font-weight: 500;
+  font-size: 8px;
+
+  color: #8d8b8d;
 }
+
+/* .all {
+} */
 
 .historyTable {
   /* border: 2px solid #e9e7e9; */
