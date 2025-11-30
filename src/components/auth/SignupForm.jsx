@@ -35,11 +35,10 @@ function SignupForm({ onSwitch }) {
     setCheckResult(null);
 
     try {
-      const result = await checkUsername({ username });
-      console.log("중복확인 API 응답:", result); // 디버깅용
+      const result = await checkUsername(username);
+      console.log("중복확인 API 응답:", result);
       
       // API 응답 구조에 따라 분기 처리
-      // 가능한 응답 구조들: isAvailable, available, exists, message 등
       if (result.isAvailable === true || result.available === true) {
         setCheckResult({ success: true, message: "사용 가능한 아이디입니다." });
       } else if (result.isAvailable === false || result.available === false || result.exists === true) {
@@ -150,7 +149,7 @@ function SignupForm({ onSwitch }) {
               type="text"
               className={styles.inputField}
               placeholder="아이디를 입력해 주세요."
-              {...register("ID", { 
+              {...register("ID", {
                 pattern: {
                   value: /^[a-zA-Z0-9]+$/,
                   message: "영문,숫자만 입력해 주세요.",
@@ -261,7 +260,6 @@ function SignupForm({ onSwitch }) {
                   value: /^[a-zA-Z0-9]([a-zA-Z0-9._-]*[a-zA-Z0-9])?$/,
                   message: "올바른 형식이 아닙니다.",
                 },
-                
               })}
             />
           </div>

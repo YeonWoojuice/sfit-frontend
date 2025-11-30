@@ -12,12 +12,12 @@ const api = axios.create({
 
 // 회원가입
 export const signup = async (userData) => {
-  const res = await api.post("/register", {
-    username: userData.username,
-    password: userData.password,
-    name: userData.name,
-    phone: userData.phone,
-    email: userData.email,
+  const res = await api.post("/register",{
+    username:userData.username,
+    password:userData.password,
+    name:userData.name,
+    phone:userData.phone,
+    email:userData.email
   });
   return res.data;
 };
@@ -32,8 +32,9 @@ export const login = async (loginData) => {
 };
 
 // 중복확인
-export const checkUsername = async ({username}) => {
-  const res = await api.post("/check-username", {username});
+
+export const checkUsername = async (username) => {
+  const res = await api.post("/check-username",{username});
   return res.data;
 };
 
