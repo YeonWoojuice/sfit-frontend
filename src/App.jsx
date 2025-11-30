@@ -4,7 +4,7 @@ import AuthPage from "./pages/AuthPage";
 import MainPage from "./pages/MainPage";
 import Layout from "./layouts/layout";
 import AboutPage from "./pages/AboutPage";
-import MyPage from "./pages/Mypage";
+import MyPage from "./pages/MyPage";
 
 function App() {
   return (
