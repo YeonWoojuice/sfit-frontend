@@ -105,9 +105,7 @@ function MainPage() {
           }}
         />
       </FloatingLayout>
-      <div className={styles.alertContainer}>
-        <AlertItem />
-      </div>
+      {/* <AlertItem /> */}
 
       {/* 필터링 */}
       <FilterMenu filter={filter} onClick={handleFilter} />

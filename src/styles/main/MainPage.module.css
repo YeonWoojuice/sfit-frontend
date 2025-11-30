@@ -7,12 +7,6 @@
   align-items: center;
 }
 
-.alertContainer {
-  position: absolute;
-  top: 0;
-  right: 40px;
-}
-
 .insturctorSection,
 .meetingSection {
   width: 774px;

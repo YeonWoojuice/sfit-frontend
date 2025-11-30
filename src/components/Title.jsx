@@ -1,4 +1,4 @@
-import styles from "../../styles/AuthLayout.module.css";
+import styles from "../styles/AuthLayout.module.css";
 
 function Title({ text, children }) {
   return (
