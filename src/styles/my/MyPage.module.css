@@ -75,7 +75,7 @@
 
 .profileMain {
   margin-top: 2rem;
-  margin-left: 2rem;
+  margin-left: 1rem;
 
   display: flex;
   flex-direction: column;
@@ -83,6 +83,8 @@
 }
 
 .profileName {
+  margin-left: -2px;
+
   font-weight: 700;
   font-size: 28px;
 
@@ -97,7 +99,7 @@
 }
 
 .profileActions {
-  margin-right: 2rem;
+  margin-right: 1rem;
 
   display: flex;
   gap: 1rem;
@@ -122,7 +124,7 @@
   padding-inline: 2rem;
 
   display: flex;
-  gap: 1rem;
+  gap: 2.25rem;
 
   border-bottom: 4px solid #e9e7e9;
 }

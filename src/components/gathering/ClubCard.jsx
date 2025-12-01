@@ -1,10 +1,6 @@
-
-
-import CategoryButton from "../common/CategoryButton";
-
 import styles from "../../styles/gathering/ClubCard.module.css";
+import CategoryButton from "../common/CategoryButton";
 import { SPORT_OPTIONS } from "../../constants/option";
-
 
 const RecomandIcon = () => {
   return <div className={styles.recoIcon}>추천</div>;
@@ -13,8 +9,6 @@ const RecomandIcon = () => {
 const RequestButton = () => {
   return <button className={styles.requestBtn}>신청하기</button>;
 };
-
-
 
 const DAYS = ["일", "월", "화", "수", "목", "금", "토"];
 
@@ -48,7 +42,6 @@ function ClubCard({ item }) {
           <CategoryButton>{item.region_name}</CategoryButton>
           <CategoryButton>{sport.name}</CategoryButton>
           <CategoryButton>{item.rating_avg}</CategoryButton>
-
         </div>
       </div>
     </div>

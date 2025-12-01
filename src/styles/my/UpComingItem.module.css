@@ -4,7 +4,7 @@
   align-items: center;
 
   font-weight: 500;
-  font-size: 12px;
+  font-size: 14px;
 
   color: #000000;
 }
@@ -57,13 +57,13 @@
 }
 
 .region {
-  margin-left: 4rem;
+  margin-left: 3rem;
 }
 
 .placeSection {
-  margin-left: 4rem;
+  margin-left: 3rem;
 }
 
 .time {
-  margin-left: 5rem;
+  margin-left: 4.5rem;
 }

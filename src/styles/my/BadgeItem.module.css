@@ -5,17 +5,31 @@
   padding: 1rem;
 
   display: flex;
+  align-items: center;
 
   border: 2px solid #e9e7e9;
   border-radius: 8px;
 }
 
-.img {
-  width: 36px;
-  height: 36px;
+.circle {
+  width: 45px;
+  height: 45px;
+
+  fill: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   border-radius: 50%;
   background: #ff9f2c;
+}
+
+.img {
+  width: 32px;
+  height: 32px;
+
+  fill: #fff;
 }
 
 .content {
@@ -31,36 +45,37 @@
 .textGroup {
   display: flex;
   flex-direction: column;
+  gap: 0.13rem;
 }
 
 .title {
   font-weight: 700;
-  font-size: 12px;
+  font-size: 14px;
 
   color: #000000;
 }
 
 .description {
   font-weight: 500;
-  font-size: 10px;
+  font-size: 12px;
 
   color: #000000;
 }
 
 .count {
   height: 18px;
-  padding: 0.25rem 0.5rem;
+
+  padding: 0.3rem 0.9rem;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  border-radius: 8px;
-
+  border-radius: 18px;
   background: #d9d9d9;
 
   font-weight: 500;
-  font-size: 10px;
+  font-size: 12px;
 
   color: #000000;
 }

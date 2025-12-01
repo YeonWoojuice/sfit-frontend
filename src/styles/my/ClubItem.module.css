@@ -12,8 +12,8 @@
 }
 
 .img {
-  width: 109px;
-  height: 80px;
+  width: 113px;
+  height: 84px;
 
   border-radius: 12px;
 
@@ -22,6 +22,12 @@
 
 .contentBox {
   flex: 1;
+}
+
+.textBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .name {
@@ -39,8 +45,15 @@
 }
 
 .box {
+  margin-top: 11px;
+
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
+}
+
+.box p {
+  font-size: 14px;
 }
 
 .btnBox {
