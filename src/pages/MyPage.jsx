@@ -1,7 +1,7 @@
 import styles from "../styles/my/MyPage.module.css";
 import BadgeList from "../components/my/BadgeList";
 import MyClubList from "../components/my/MyClubList";
-import UpcomingMeetups from "../components/my/UpcomingMeetups";
+import UpComingMeetups from "../components/my/UpcomingMeetups";
 import UserHistory from "../components/my/UserHistory";
 import UserProfile from "../components/my/UserProfile";
 import { useState } from "react";
@@ -21,7 +21,7 @@ function MyPage() {
     history: <UserHistory />,
     badge: <BadgeList />,
     club: <MyClubList />,
-    meetups: <UpcomingMeetups />,
+    meetups: <UpComingMeetups />,
   };
   return (
     <div className={styles.container}>
