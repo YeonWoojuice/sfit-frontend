@@ -1,0 +1,80 @@
+.container {
+    position: relative;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .inner {
+    width: 1080px;
+    position: relative;
+  }
+  
+  .section {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .midSection {
+    width: 774px;
+  
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .rightSection {
+    height: auto;
+  
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .popularCoachesContainer {
+    width: 268px;
+    height: 440px;
+  }
+  
+  .sortContainer {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .bottom {
+    margin-block: 2rem;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .prev,
+  .next {
+    width: 37px;
+    height: 37px;
+  
+    border-radius: 8px;
+    background: #e9e7e9;
+  
+    cursor: pointer;
+  }
+  
+  .pages {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .page {
+    font-weight: 500;
+    font-size: 16px;
+  
+    color: #000000;
+    cursor: pointer;
+  }
+  

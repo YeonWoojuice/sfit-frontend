@@ -1,0 +1,117 @@
+.sidebar {
+    width: 268px;
+  
+    padding: 1rem;
+  
+    border-radius: 17px;
+    background: #f8f6f8;
+  }
+  
+  .title {
+    font-weight: 700;
+    font-size: 18px;
+  
+    color: #000000;
+  }
+  
+  .tabs {
+    margin-top: 1rem;
+  
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .tab {
+    padding: 0.25rem 0.75rem;
+  
+    border: none;
+    border-radius: 15px;
+    background: transparent;
+  
+    font-weight: 500;
+    font-size: 12px;
+  
+    color: #8d8b8d;
+  
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .tab.active {
+    background: #ff632c;
+  
+    color: #ffffff;
+  }
+  
+  .coachList {
+    margin-top: 1rem;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .coachItem {
+    display: flex;
+    gap: 0.75rem;
+  
+    padding: 0.75rem;
+  
+    border-radius: 11px;
+    background: #ffffff;
+  }
+  
+  .profileImage {
+    width: 50px;
+    height: 50px;
+  
+    border-radius: 8px;
+    background: #d9d9d9;
+  }
+  
+  .info {
+    flex: 1;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .name {
+    font-weight: 700;
+    font-size: 14px;
+  
+    color: #000000;
+  }
+  
+  .details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .sport {
+    font-weight: 500;
+    font-size: 12px;
+  
+    color: #8d8b8d;
+  }
+  
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  
+  .star {
+    color: #ff632c;
+    font-size: 12px;
+  }
+  
+  .ratingValue {
+    font-weight: 500;
+    font-size: 12px;
+  
+    color: #000000;
+  }
+  

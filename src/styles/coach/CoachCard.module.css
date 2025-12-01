@@ -1,0 +1,159 @@
+.container {
+    width: 742px;
+    max-height: 415px;
+  
+    padding: 1rem;
+  
+    display: flex;
+    gap: 1rem;
+  
+    border-radius: 17px;
+  
+    background: #e9e7e9;
+  }
+  
+  .profileImage {
+    width: 108px;
+    height: 108px;
+    flex-shrink: 0;
+  
+    border-radius: 50%;
+    background: #d9d9d9;
+  }
+  
+  .content {
+    flex: 1;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .nameRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .nameSection {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .name {
+    font-weight: 700;
+    font-size: 16px;
+  
+    color: #000000;
+    margin: 0;
+  }
+  
+  .sportRow {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  
+  .sportName {
+    font-weight: 500;
+    font-size: 12px;
+  
+    color: #8d8b8d;
+  }
+  
+  .yellowDot {
+    width: 6px;
+    height: 6px;
+  
+    border-radius: 50%;
+    background: #FF632C;
+  }
+  
+  .description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+  
+  .description p {
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+  
+    color: #000000;
+  }
+  
+  .ratingRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .ratingSection {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  
+  .star {
+    color: #FF632C;
+    font-size: 14px;
+  }
+  
+  .ratingValue {
+    font-weight: 700;
+    font-size: 14px;
+  
+    color: #000000;
+  }
+  
+  .reviewCount {
+    font-weight: 500;
+    font-size: 14px;
+  
+    color: #8d8b8d;
+  }
+  
+  .contactIcons {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .iconBtn {
+    width: 24px;
+    height: 24px;
+  
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  
+  .iconBtn img,
+  .iconBtn svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .tags {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .tag {
+    padding: 0.25rem 0.75rem;
+  
+    border-radius: 8px;
+    background: #ffffff;
+  
+    font-weight: 500;
+    font-size: 12px;
+  
+    color: #8d8b8d;
+  }
