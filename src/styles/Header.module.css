@@ -150,3 +150,21 @@ color: #DEDEDE;
   width: 52px;
   height: 52px;
 }
+
+.HeaderLogoutButton {
+  background: none;
+  border: 1px solid #DEDEDE;
+  color: #DEDEDE;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: 'Inter';
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.HeaderLogoutButton:hover {
+  background-color: #DEDEDE;
+  color: #252525;
+}
