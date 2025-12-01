@@ -16,7 +16,6 @@ const Button = ({ children }) => {
 
 function MyPage() {
   const [tab, setTab] = useState("profile");
-
   const renderItem = {
     profile: <UserProfile />,
     history: <UserHistory />,
