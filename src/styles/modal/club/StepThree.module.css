@@ -2,10 +2,11 @@
   width: 100%;
 
   margin-top: 1.5rem;
+  margin-bottom: 1.25rem;
 
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 2.25rem;
 }
 
 .label {
@@ -19,6 +20,7 @@
   margin-top: 0.75rem;
 
   display: flex;
+  justify-content: space-between;
   gap: 0.75rem;
 }
 
@@ -34,7 +36,9 @@
 }
 
 .level {
-  flex: 1;
+  /* flex: 1; */
+  width: 6px;
+  height: 18px;
 
   padding: 0.5rem 0.75rem;
 
@@ -43,6 +47,9 @@
   font-weight: 500;
   font-size: 12px;
 
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
   text-align: center;
   color: #ffffff;
 
@@ -53,18 +60,27 @@
 }
 
 .level:hover {
+  width: 12px;
+
   background: #ff9f2c;
+
   transform: scale(1.05);
+  /* padding: 0.75rem 1rem; */
 }
 
 .level.select {
+  width: 12px;
+
   background: #ff9f2c;
+
   transform: scale(1.05);
+  /* padding: 0.75rem 1rem; */
 }
 
 .levelText {
-  flex: 1;
+  /* flex: 1; */
   position: relative;
+  width: 200px;
 
   padding: 0.5rem 1rem;
 
@@ -149,15 +165,14 @@
 /* 드래그 핸들 (동그라미) */
 .handle {
   position: absolute;
-  top: 50%; /* 수직 중앙 정렬 */
-  transform: translate(-50%, -50%); /* 정확한 중앙 배치를 위해 보정 */
+  top: 50%;
 
   width: 32px;
   height: 32px;
 
   border-radius: 50%;
   background: #ff9f2c;
-  border: 3px solid #ffffff; /* 흰색 테두리 */
+  border: 3px solid #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
   display: flex;
@@ -169,12 +184,23 @@
   font-size: 14px;
 
   cursor: pointer;
-  z-index: 2; /* 가장 위에 위치 */
+  z-index: 2;
   user-select: none;
 }
 
-.handle:hover {
-  transform: translate(-50%, -50%) scale(1.1);
+.handle.left {
+  transform: translate(-7%, -50%);
+}
+
+.handle.right {
+  transform: translate(-96%, -50%);
+}
+
+.handle.left:hover {
+  transform: translate(-7%, -50%) scale(1.1);
+}
+.handle.right:hover {
+  transform: translate(-96%, -50%) scale(1.1);
 }
 
 .handle:active {
