@@ -1,9 +1,9 @@
-import LoginForm from "../components/LoginForm.jsx";
-import LoginImage from "../components/LoginImage.jsx";
-import SignupForm from "../components/SignupForm.jsx";
-import SignupImage from "../components/SignupImage.jsx";
-import Title from "./Title.jsx";
-import styles from "../styles/AuthLayout.module.css";
+import LoginForm from "./LoginForm";
+import LoginImage from "./LoginImage";
+import SignupForm from "./SignupForm";
+import SignupImage from "./SignupImage";
+import Title from "./Title";
+import styles from "../../styles/AuthLayout.module.css";
 
 function AuthLayout({ isLoginMode, onSwitch }) {
   return (

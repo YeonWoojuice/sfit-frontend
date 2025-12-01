@@ -3,17 +3,20 @@
   height: 100vh;
   display: flex;
   justify-content: center; /* 가로 중앙 */
-  align-items: center; /* 세로 중앙 */
+  align-items: flex-start;
+  padding-top: 57px; 
 }
 
 .container {
-  width: 1050px;
-  height: 750px;
+  width: 100%;
+  max-width: 958px;
+  height: 640px;
   display: flex;
   border-radius: 18px;
   overflow: hidden;
   display: flex;
   transition: 0.35s ease;
+  
 }
 
 /* 공통 레이아웃 */
