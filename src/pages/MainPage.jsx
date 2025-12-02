@@ -14,10 +14,12 @@ import Loading from "../components/common/Loading";
 import AlertItem from "../components/common/AlertItem";
 import FloatingButton from "../components/common/FloatingButton";
 import FloatingLayout from "../components/common/FloatingLayout";
+import useKeywordStore from "../store/useKeywordStore";
 
 function MainPage() {
   const [data, setData] = useState([]);
   const [activeTab, setActiveTab] = useState("전체");
+  const keyword = useKeywordStore((state) => state.keyword);
   const [filter, setFilter] = useState({
     regions: "",
     sports: "",
@@ -46,40 +48,45 @@ function MainPage() {
     setData([]);
   };
 
-  // search 추가 필요
-  // useEffect(() => {
-  //   async function getclub() {
-  //     try {
-  //       const regions = REGION_OPTIONS.find((r) => r.name === filter.regions);
-  //       const regionId = regions ? regions.id : "";
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      async function getclub() {
+        try {
+          const regions = REGION_OPTIONS.find((r) => r.name === filter.regions);
+          const regionId = regions ? regions.id : "";
 
-  //       const sports = SPORT_OPTIONS.find((s) => s.name === filter.sports);
-  //       const sportId = sports ? sports.id : "";
+          const sports = SPORT_OPTIONS.find((s) => s.name === filter.sports);
+          const sportId = sports ? sports.id : "";
 
-  //       const search = "";
+          const baseParams = {
+            region: regionId,
+            sport: sportId,
+          };
 
-  //       const baseParams = {
-  //         region: regionId,
-  //         sport: sportId,
-  //         search,
-  //       };
+          let responseData = [];
 
-  //       let responseData = [];
+          if (activeTab === "번개 모임") {
+            responseData = await getMeetup(baseParams);
+          } else {
+            const clubParams = {
+              ...baseParams,
+              search: keyword,
+            };
+            responseData = await getClubs(clubParams);
+          }
 
-  //       if (activeTab === "번개 모임") {
-  //         responseData = await getMeetup(baseParams, search);
-  //       } else {
-  //         responseData = await getClubs(baseParams);
-  //       }
-  //       console.log(responseData);
-  //       setData(responseData);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   }
+          console.log(responseData);
+          setData(responseData);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      getclub();
+    }, 500); // 0.5초 딜레이
 
-  //   getclub();
-  // }, [filter.regions, filter.sports, activeTab]);
+    // cleanup
+    return () => clearTimeout(timer);
+  }, [filter.regions, filter.sports, keyword, activeTab]);
 
   const contentList = data.clubs || data.flashes; // 응답 데이터 다른 키값
 
