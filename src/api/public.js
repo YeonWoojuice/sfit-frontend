@@ -21,3 +21,14 @@ export const getClubs = async ({ region, sport, search }) => {
 
   return res.data;
 };
+
+export const getMeetup = async ({ region, sport }) => {
+  const res = await api.get("/api/flashes", {
+    params: {
+      region,
+      sport,
+    },
+  });
+
+  return res.data;
+};

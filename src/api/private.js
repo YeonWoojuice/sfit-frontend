@@ -10,6 +10,22 @@ const api = axios.create({
   },
 });
 
+api.interceptors.request.use(
+  (config) => {
+    const accessToken = localStorage.getItem("accessToken");
+
+    if (accessToken) {
+      // 토큰이 있다면, 헤더에 'Authorization' 값을 추가
+      config.headers.Authorization = `Bearer ${accessToken}`;
+    }
+    return config;
+  },
+  (error) => {
+    // 요청 오류가 발생했을 때 수행할 로직
+    return Promise.reject(error);
+  }
+);
+
 export const createClub = async (payload) => {
   const res = await api.post("/api/clubs", payload);
   return res.data;
@@ -17,5 +33,15 @@ export const createClub = async (payload) => {
 
 export const joinClub = async (id) => {
   const res = await api.post(`/api/clubs/${id}/join`);
+  return res.data;
+};
+
+export const creatMeetup = async (payload) => {
+  const res = await api.post("/api/flashes", payload);
+  return res.data;
+};
+
+export const joinMeetup = async (id) => {
+  const res = await api.post(`/api/flashes/${id}/join`);
   return res.data;
 };

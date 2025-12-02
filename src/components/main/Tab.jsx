@@ -1,18 +1,18 @@
-import { useState } from "react";
 import styles from "../../styles/main/Tab.module.css";
 
-function Tab() {
+function Tab({ currentTab, onTabChange }) {
   const tabs = ["전체", "동호회", "번개 모임", "나의 모임"];
-  const [active, setActive] = useState("전체");
 
   return (
     <div className={styles.container}>
       {tabs.map((tab) => (
         <div
           key={tab}
-          className={`${styles.tabBtn} ${tab === active ? styles.active : ""}`}
+          className={`${styles.tabBtn} ${
+            tab === currentTab ? styles.active : ""
+          }`}
           onClick={() => {
-            setActive(tab);
+            onTabChange(tab);
           }}
         >
           {tab}

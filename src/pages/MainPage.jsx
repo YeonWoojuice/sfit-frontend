@@ -1,6 +1,6 @@
 import styles from "../styles/main/MainPage.module.css";
 import { useEffect, useState } from "react";
-import { getClubs } from "../api/public";
+import { getClubs, getMeetup } from "../api/public";
 import { REGION_OPTIONS, SPORT_OPTIONS } from "../constants/option";
 import { getRange } from "../utils/pagination";
 import prevIcon from "../assets/main/prev.png";
@@ -17,6 +17,12 @@ import FloatingLayout from "../components/common/FloatingLayout";
 
 function MainPage() {
   const [data, setData] = useState([]);
+  const [activeTab, setActiveTab] = useState("전체");
+  const [filter, setFilter] = useState({
+    regions: "",
+    sports: "",
+    coach: false,
+  });
 
   const pageInfo = {
     page: 1,
@@ -28,11 +34,6 @@ function MainPage() {
   };
 
   const pages = getRange(1, pageInfo.totalPages);
-  const [filter, setFilter] = useState({
-    regions: "",
-    sports: "",
-    coach: false,
-  });
 
   const [modal, setModal] = useState(false);
 
@@ -40,33 +41,47 @@ function MainPage() {
     setFilter((prev) => ({ ...prev, [key]: prev[key] === value ? "" : value }));
   };
 
+  const handleTabChange = (tabName) => {
+    setActiveTab(tabName);
+    setData([]);
+  };
+
   // search 추가 필요
-  useEffect(() => {
-    async function getclub() {
-      try {
-        const regions = REGION_OPTIONS.find((r) => r.name === filter.regions);
-        const regionId = regions ? regions.id : "";
+  // useEffect(() => {
+  //   async function getclub() {
+  //     try {
+  //       const regions = REGION_OPTIONS.find((r) => r.name === filter.regions);
+  //       const regionId = regions ? regions.id : "";
 
-        const sports = SPORT_OPTIONS.find((s) => s.name === filter.sports);
-        const sportId = sports ? sports.id : "";
+  //       const sports = SPORT_OPTIONS.find((s) => s.name === filter.sports);
+  //       const sportId = sports ? sports.id : "";
 
-        const search = "";
+  //       const search = "";
 
-        const params = {
-          region: regionId,
-          sport: sportId,
-          search,
-        };
-        console.log(params);
-        const data = await getClubs(params);
-        setData(data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
+  //       const baseParams = {
+  //         region: regionId,
+  //         sport: sportId,
+  //         search,
+  //       };
 
-    getclub();
-  }, [filter.regions, filter.sports]);
+  //       let responseData = [];
+
+  //       if (activeTab === "번개 모임") {
+  //         responseData = await getMeetup(baseParams, search);
+  //       } else {
+  //         responseData = await getClubs(baseParams);
+  //       }
+  //       console.log(responseData);
+  //       setData(responseData);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   }
+
+  //   getclub();
+  // }, [filter.regions, filter.sports, activeTab]);
+
+  const contentList = data.clubs || data.flashes; // 응답 데이터 다른 키값
 
   return (
     <div className={styles.container}>
@@ -77,11 +92,15 @@ function MainPage() {
         <div className={styles.section}>
           <FilterMenu filter={filter} onClick={handleFilter} />
           <div className={styles.midSection}>
-            <Tab />
+            <Tab currentTab={activeTab} onTabChange={handleTabChange} />
             {/* 강사 데이터 넘겨줘야 됨 */}
             <InstructorSection />
             {/* <Loading /> */}
-            {data.clubs ? <ClubSection data={data.clubs} /> : <Loading />}
+            {contentList ? (
+              <ClubSection type={activeTab} data={contentList} />
+            ) : (
+              <Loading />
+            )}
             {/* 모임 페이지 버튼 */}
             <div className={styles.bottom}>
               {data.count > 8 ? (
