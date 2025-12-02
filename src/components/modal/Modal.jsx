@@ -6,7 +6,7 @@ import StepOne from "./club/StepOne";
 import ProgressBar from "./ProgressBar";
 import StepTwo from "./club/StepTwo";
 import StepThree from "./club/StepThree";
-import { createClub } from "../../api/private";
+import { createClub, creatMeetup } from "../../api/private";
 
 const Button = ({ children, color, onClick }) => {
   const backColor = {
@@ -41,8 +41,8 @@ function Modal({ onClick }) {
     location: "", // 동호회 + 번개 / 장소? 상세주소(시)?
     sport_id: "", // 동호회 + 번개
     date: "", // 번개
-    start_time: "", // 번개
-    end_time: "", // 번게
+    start_time: "", // 동호회 + 번개
+    end_time: "", // 동호회 + 번게
     days_of_week: [], // 동호회
     capacity_min: 3, //번개
     capacity_max: 25, // 번개
@@ -61,7 +61,7 @@ function Modal({ onClick }) {
       2: <StepTwo info={info} onChange={handleUpdate} isCalendar={false} />,
     },
 
-    lightning: {
+    meetup: {
       1: <StepOne info={info} onChange={handleUpdate} />,
       2: <StepTwo info={info} onChange={handleUpdate} isCalendar={true} />,
       3: <StepThree info={info} onChange={handleUpdate} />,
@@ -69,7 +69,7 @@ function Modal({ onClick }) {
   };
 
   const handleToggle = () => {
-    const newType = type === "lightning" ? "club" : "lightning";
+    const newType = type === "meetup" ? "club" : "meetup";
     setType(newType);
     setStep(1);
   };
@@ -90,21 +90,40 @@ function Modal({ onClick }) {
   };
 
   const handleClick = async () => {
-    const payload = {
-      name: "",
-      explain: "",
-      region_code: "",
-      location: "",
-      sport_id: "",
-      start_time: "",
-      end_time: "",
-      days_of_week: [],
-      // attachment_id: "",
-    };
-
     try {
-      const data = await createClub(payload);
-      console.log(data);
+      const basePayload = {
+        name: info.name,
+        explain: info.explain,
+        region_code: info.region_code,
+        location: info.location,
+        sport_id: info.sport_id,
+        start_time: info.start_time,
+        end_time: info.end_time,
+        attachment_id: "a0dbf47e-8d0e-4f04-83ab-e3f9df9a28a2",
+      };
+
+      let responseData = [];
+
+      if (type === "club") {
+        const clubPayload = {
+          ...basePayload,
+          days_of_week: info.days_of_week,
+        };
+
+        responseData = await createClub(clubPayload);
+      } else if (type === "meetup") {
+        const meetupPayload = {
+          ...basePayload,
+          date: info.date,
+          capacity_min: Number(info.capacity_min),
+          capacity_max: Number(info.capacity_max),
+          level_min: Number(info.level_min),
+          level_max: Number(info.level_max),
+        };
+
+        responseData = await creatMeetup(meetupPayload);
+      }
+      console.log(responseData);
     } catch (error) {
       console.log(error);
     }

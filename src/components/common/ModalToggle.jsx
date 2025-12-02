@@ -10,10 +10,8 @@ function ModalToggle({ type, onClick }) {
         동호회
       </div>
       <div
-        className={`${styles.toggle} ${
-          type === "lightning" ? styles.active : ""
-        }`}
-        onClick={() => onClick("lightning")}
+        className={`${styles.toggle} ${type === "meetup" ? styles.active : ""}`}
+        onClick={() => onClick("meetup")}
       >
         번개모임
       </div>
