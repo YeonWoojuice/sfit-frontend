@@ -52,7 +52,13 @@ function DateInput({ info, onChange, isCalendar }) {
       <div className={styles.days}>
         <label className={styles.label}>요일 및 시간 설정</label>
         {isCalendar ? (
-          <input type="date" className={styles.input}></input>
+          <input
+            type="date"
+            className={styles.input}
+            onChange={(e) => {
+              console.log(e.target.value);
+            }}
+          ></input>
         ) : (
           <div className={styles.dayContainer}>
             <div className={styles.displayBox}>

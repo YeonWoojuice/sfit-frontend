@@ -1,19 +1,19 @@
 import styles from "../styles/main/MainPage.module.css";
 import { useEffect, useState } from "react";
+import { getClubs } from "../api/public";
+import { REGION_OPTIONS, SPORT_OPTIONS } from "../constants/option";
 import { getRange } from "../utils/pagination";
-import Tab from "../components/main/Tab";
+import prevIcon from "../assets/main/prev.png";
+import nextIcon from "../assets/main/next.png";
+import Modal from "../components/modal/Modal";
 import FilterMenu from "../components/main/FilterMenu";
+import Tab from "../components/main/Tab";
 import InstructorSection from "../components/gathering/InstructorSection";
 import ClubSection from "../components/gathering/ClubSection";
-import FloatingButton from "../components/common/FloatingButton";
-import prevIcon from "../assets/prev.png";
-import nextIcon from "../assets/next.png";
-import FloatingLayout from "../components/common/FloatingLayout";
-import Modal from "../components/modal/Modal";
-import AlertItem from "../components/common/AlertItem";
-import { getClubs } from "../api/guest";
-import { REGION_OPTIONS, SPORT_OPTIONS } from "../constants/option";
 import Loading from "../components/common/Loading";
+import AlertItem from "../components/common/AlertItem";
+import FloatingButton from "../components/common/FloatingButton";
+import FloatingLayout from "../components/common/FloatingLayout";
 
 function MainPage() {
   const [data, setData] = useState([]);
@@ -40,6 +40,7 @@ function MainPage() {
     setFilter((prev) => ({ ...prev, [key]: prev[key] === value ? "" : value }));
   };
 
+  // search 추가 필요
   useEffect(() => {
     async function getclub() {
       try {
@@ -103,7 +104,6 @@ function MainPage() {
           <div className={styles.rightSection}>
             <div className={styles.alertContainer}>
               <AlertItem />
-
             </div>
             {/* 플로팅 버튼 */}
             <FloatingLayout>

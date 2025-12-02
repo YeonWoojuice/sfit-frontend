@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../../styles/modal/Modal.module.css";
 import ModalHeader from "../common/ModalHeader";
 import ModalToggle from "../common/ModalToggle";
@@ -6,6 +6,7 @@ import StepOne from "./club/StepOne";
 import ProgressBar from "./ProgressBar";
 import StepTwo from "./club/StepTwo";
 import StepThree from "./club/StepThree";
+import { createClub } from "../../api/private";
 
 const Button = ({ children, color, onClick }) => {
   const backColor = {
@@ -34,20 +35,20 @@ function Modal({ onClick }) {
   const [type, setType] = useState("club");
   const [step, setStep] = useState(1);
   const [info, setInfo] = useState({
-    name: "",
-    explain: "",
-    region_code: "",
-    location: "",
-    sport_id: "", // 코드로 변경 필요
-    start_at: "",
-    end_at: "",
-    start_time: "",
-    end_time: "",
-    days_of_week: [],
-    capacity_min: 0,
-    capacity_max: 0,
-    level_min: "",
-    level_max: "",
+    name: "", // 동호회 + 번개
+    explain: "", // 동호회 + 번개
+    region_code: "", // 동호회 + 번개
+    location: "", // 동호회 + 번개 / 장소? 상세주소(시)?
+    sport_id: "", // 동호회 + 번개
+    date: "", // 번개
+    start_time: "", // 번개
+    end_time: "", // 번게
+    days_of_week: [], // 동호회
+    capacity_min: 3, //번개
+    capacity_max: 25, // 번개
+    level_min: 1, // 번개
+    level_max: 5, // 번개
+    attachment_id: "", // 동호회 + 번개
   });
 
   const handleUpdate = (key, value) => {
@@ -76,6 +77,8 @@ function Modal({ onClick }) {
   const current = steps[type];
   const totalSteps = Object.keys(current).length;
 
+  const isLast = step === totalSteps;
+
   const handlePrev = () => {
     if (step > 1) setStep(step - 1);
     else return;
@@ -84,6 +87,27 @@ function Modal({ onClick }) {
   const handleNext = () => {
     if (step < totalSteps) setStep(step + 1);
     else return;
+  };
+
+  const handleClick = async () => {
+    const payload = {
+      name: "",
+      explain: "",
+      region_code: "",
+      location: "",
+      sport_id: "",
+      start_time: "",
+      end_time: "",
+      days_of_week: [],
+      // attachment_id: "",
+    };
+
+    try {
+      const data = await createClub(payload);
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -99,9 +123,15 @@ function Modal({ onClick }) {
           <Button color="gray" onClick={handlePrev}>
             {step === 1 ? "저장하기" : "뒤로가기"}
           </Button>
-          <Button color="oragne" onClick={handleNext}>
-            다음으로
-          </Button>
+          {isLast ? (
+            <Button color="oragne" onClick={handleClick}>
+              생성하기
+            </Button>
+          ) : (
+            <Button color="oragne" onClick={handleNext}>
+              다음으로
+            </Button>
+          )}
         </div>
       </div>
     </div>
