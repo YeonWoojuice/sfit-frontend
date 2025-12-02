@@ -1,7 +1,8 @@
 .sort {
     display: flex;
     gap: 0.5rem;
-  
+    margin-left: auto;
+    margin-right: -2rem;
     font-size: 1rem;
     font-weight: 500;
   

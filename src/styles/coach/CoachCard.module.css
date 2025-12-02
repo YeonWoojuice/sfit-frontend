@@ -1,5 +1,6 @@
 .container {
-    width: 742px;
+    width: 770px;
+    max-width: 788px;
     max-height: 415px;
     min-height: 280px;
     padding: 1rem;
@@ -8,25 +9,28 @@
     gap: 1rem;
     justify-content: space-between;
   
-    border-radius: 17px;
+    border-radius: 34px;
   
-    background: #e9e7e9;
+    background: #F8F6F8;
   }
-  
   .content {
     flex: 1;
   
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    margin-left: 1.4rem;
+    margin-top: 1.1rem;
+    font-family: 'Inter';
+    font-style: normal;
   }
   
   .profileImage {
-    width: 108px;
-    height: 108px;
+    width: 150px;
+    height: 150px;
     flex-shrink: 0;
     align-self: flex-start;
-  
+    margin-right: 1rem;
     border-radius: 50%;
     background: #d9d9d9;
   }
@@ -47,7 +51,7 @@
   
   .name {
     font-weight: 700;
-    font-size: 16px;
+    font-size: 1.3rem;
   
     color: #000000;
     margin: 0;
@@ -55,56 +59,72 @@
   
   .sportName {
     font-weight: 500;
-    font-size: 12px;
+    font-size: 1rem;
   
     color: #8d8b8d;
   }
   
-  .yellowDot {
-    width: 6px;
-    height: 6px;
-  
-    border-radius: 50%;
-    background: #FF632C;
-  }
-  
+
   .description {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 4rem;
+    padding-bottom: 3.5rem;
+    position: relative;
+  }
+  
+  .description::after {
+    content: '';
+    position: absolute;
+    bottom: 2.5rem;
+    left: -0.9rem;
+    right: -11.5rem;
+    height: 2px;
+    background: #E9E7E9;
+    
   }
   
   .description p {
     margin: 0;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 1rem;
   
-    color: #000000;
+    color: #8D8B8D;
   }
+
   
+  .bottomSection {
+    display: flex;
+    flex-direction: column;
+    margin-top: -1.8rem;
+    gap: 1rem;
+  }
+
+
   .ratingSection {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     flex-shrink: 0;
+    
   }
   
   .star {
-    width: 14px;
-    height: 14px;
+    width: 20px;
+    height: 20px;
     object-fit: contain;
   }
   
   .ratingValue {
     font-weight: 700;
-    font-size: 14px;
+    font-size: 1rem;
   
     color: #000000;
   }
   
   .reviewCount {
     font-weight: 500;
-    font-size: 14px;
+    font-size: 1rem;
   
     color: #8d8b8d;
   }
@@ -113,6 +133,7 @@
     display: flex;
     gap: 0.5rem;
     margin-left: 0.5rem;
+    margin-top: 0.2rem;
   }
   
   .iconBtn {
@@ -153,6 +174,7 @@
     object-fit: contain !important;
     display: block;
     overflow: hidden;
+    margin-top: -0.2rem;
   }
   
   .tags {
@@ -161,13 +183,13 @@
   }
   
   .tag {
-    padding: 0.25rem 0.75rem;
+    padding: 0.5rem 1rem;
   
-    border-radius: 8px;
+    border-radius: 23px;
     background: #D9D9D9;
   
     font-weight: 500;
-    font-size: 12px;
+    font-size: 1rem;
   
     color: #8d8b8d;
   }

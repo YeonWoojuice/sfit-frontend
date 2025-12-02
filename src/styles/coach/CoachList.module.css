@@ -1,5 +1,5 @@
 .coachListSection {
-    width: 774px;
+    width: 742px;
     margin-top: 2rem;
   }
   
@@ -8,6 +8,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
+    
   }
   
   .title {

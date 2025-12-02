@@ -1,8 +1,8 @@
 import { useState } from "react";
 import styles from "../../styles/coach/PopularCoachesSidebar.module.css";
-
+import coachstar from "../../assets/coach/coachstar.svg";
 function PopularCoachesSidebar() {
-  const [activeTab, setActiveTab] = useState("전체");
+  const [activeTab, setActiveTab] = useState("전문가");
 
   const tabs = ["전체", "전문가", "커뮤니티 코치"];
 
@@ -10,22 +10,29 @@ function PopularCoachesSidebar() {
   const popularCoaches = [
     {
       id: 1,
-      name: "코치 이름 1",
-      sport: "테니스",
-      rating: "4.8",
+      name: "강사명",
+      sport: "종목",
+      description: "키워드 및 설명...",
+      rating: "4.7",
+      reviewCount: "142",
     },
     {
       id: 2,
-      name: "코치 이름 2",
-      sport: "골프",
-      rating: "4.5",
+      name: "강사명",
+      sport: "종목",
+      description: "키워드 및 설명...",
+      rating: "4.7",
+      reviewCount: "142",
     },
     {
       id: 3,
-      name: "코치 이름 3",
-      sport: "수영",
+      name: "강사명",
+      sport: "종목",
+      description: "키워드 및 설명...",
       rating: "4.7",
+      reviewCount: "142",
     },
+    
   ];
 
   return (
@@ -49,13 +56,15 @@ function PopularCoachesSidebar() {
           <div key={coach.id} className={styles.coachItem}>
             <div className={styles.profileImage}></div>
             <div className={styles.info}>
-              <h3 className={styles.name}>{coach.name}</h3>
-              <div className={styles.details}>
-                <span className={styles.sport}>{coach.sport}</span>
-                <div className={styles.rating}>
-                  <span className={styles.star}>★</span>
-                  <span className={styles.ratingValue}>{coach.rating}</span>
-                </div>
+              <div className={styles.nameRow}>
+                <span className={styles.sportTag}>{coach.sport}</span>
+                <h3 className={styles.name}>{coach.name}</h3>
+              </div>
+              <p className={styles.description}>{coach.description}</p>
+              <div className={styles.rating}>
+                <img src={coachstar} alt="star" className={styles.star} />
+                <span className={styles.ratingValue}>{coach.rating}</span>
+                <span className={styles.reviewCount}>({coach.reviewCount})</span>
               </div>
             </div>
           </div>
@@ -66,3 +75,4 @@ function PopularCoachesSidebar() {
 }
 
 export default PopularCoachesSidebar;
+
