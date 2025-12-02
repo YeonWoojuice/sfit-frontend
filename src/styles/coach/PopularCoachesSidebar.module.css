@@ -1,0 +1,157 @@
+.sidebar {
+    width: 268px;
+  
+    padding: 1rem;
+  
+    border-radius: 17px;
+    margin-top: 1rem;
+  }
+  
+  .title {
+    font-weight: 700;
+    font-size: 18px;
+  
+    color: #000000;
+  }
+  
+  .tabs {
+    margin-top: 0.5rem;
+  
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .tab {
+    padding: 0.5rem 0;
+    padding-bottom: 0.5rem;
+  
+    border: none;
+    background: transparent;
+    position: relative;
+  
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 0.4;
+  
+    color: #8d8b8d;
+  
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .tab.active {
+    font-weight: 700;
+    color: #000000;
+  }
+  
+  .tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #ff632c;
+  }
+  
+  .coachList {
+    margin-top: 1rem;
+  
+    display: flex;
+    flex-direction: column;
+    border-radius: 18px;
+    background: #f8f6f8;
+    overflow: hidden;
+  }
+  
+  .coachItem {
+    display: flex;
+    gap: 0.75rem;
+  
+    padding: 0.75rem;
+    font-family: 'Inter';
+
+  }
+  
+  .profileImage {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+  
+    border-radius: 50%;
+    background: #d9d9d9;
+  }
+  
+  .info {
+    flex: 1;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .nameRow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .sportTag {
+    padding: 0.25rem 0.5rem;
+    border-radius: 8.5px;
+    background: #FFCECE;
+    font-weight: 500;
+    font-size: 0.7rem;
+    color: #BB2020;
+    font-family: 'Inter';
+    
+    font-style: normal;
+    line-height: 12px;
+
+
+
+  }
+  
+  .name {
+    font-weight: 700;
+    font-size: 16px;
+    margin: 0;
+    color: #000000;
+  }
+  
+  .description {
+    font-weight: 400;
+    font-size: 12px;
+    color: #8D8B8D;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .star {
+    width: 12px;
+    height: 12px;
+    object-fit: contain;
+  }
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  
+  .star {
+    color: #ffd700;
+    font-size: 14px;
+  }
+  
+  .ratingValue {
+    font-weight: 500;
+    font-size: 12px;
+    color: #000000;
+  }
+  
+  .reviewCount {
+    font-weight: 400;
+    font-size: 12px;
+    color: #8d8b8d;
+  }
+  
