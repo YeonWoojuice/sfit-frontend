@@ -1,5 +1,6 @@
 import styles from "../../styles/my/ClubItem.module.css";
 import CategoryButton from "../common/CategoryButton";
+import calendar from "../../assets/calendar.svg";
 
 function ClubItem() {
   return (
@@ -11,7 +12,10 @@ function ClubItem() {
           <p className={styles.description}>게시물 혹은 부제 혹은 부연설명</p>
         </div>
         <div className={styles.box}>
-          <p>D-Day 형식</p>
+          <div className={styles.dateBox}>
+            <img src={calendar} className={styles.calendar}></img>
+            <p>D-Day 형식</p>
+          </div>
           <div className={styles.btnBox}>
             <CategoryButton isMy={true}>지역</CategoryButton>
             <CategoryButton isMy={true}>종목</CategoryButton>
