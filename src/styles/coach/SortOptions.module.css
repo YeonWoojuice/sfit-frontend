@@ -1,0 +1,24 @@
+.sort {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: auto;
+    margin-right: -2rem;
+    font-size: 1rem;
+    font-weight: 500;
+  
+    color: #8d8b8d;
+  }
+  
+  .sort p {
+    cursor: pointer;
+  }
+  .sort p:hover {
+    transform: scale(1.04);
+    cursor: pointer;
+  }
+  
+  .sort .select {
+    transform: scale(1.04);
+    color: #000;
+  }
+  

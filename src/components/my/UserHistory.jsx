@@ -18,7 +18,7 @@ function UserHistory() {
           <p>모임</p>
           <p>지역</p>
           <p>장소</p>
-          <p>참겨 여부</p>
+          <p>참가 여부</p>
           <p>별점 기록</p>
         </div>
         <div className={styles.tableBody}>
@@ -26,6 +26,9 @@ function UserHistory() {
           <HistoryItem label="불참" />
           <HistoryItem label="불참" />
           <HistoryItem label="참가" />
+          <HistoryItem label="불참" />
+          <HistoryItem label="불참" />
+          <HistoryItem label="불참" />
           <HistoryItem label="불참" />
         </div>
       </div>

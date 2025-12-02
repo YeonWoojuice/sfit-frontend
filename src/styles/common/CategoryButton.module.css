@@ -11,3 +11,9 @@
 
   color: #343339;
 }
+
+.categoryBtn.my {
+  padding-inline: 1rem;
+
+  border-radius: 16px;
+}

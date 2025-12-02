@@ -5,7 +5,7 @@ import InstructorCard from "../gathering/InstructorCard";
 function InstructorSection() {
   return (
     <section className={styles.insturctorSection}>
-      <SectionHeader title="강사님 리스트" isMeeting={false} />
+      <SectionHeader title="인기 모임" isMeeting={false} />
       <div className={styles.instructorCards}>
         <InstructorCard />
         <InstructorCard isNew={true} />

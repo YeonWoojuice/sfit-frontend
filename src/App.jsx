@@ -5,6 +5,7 @@ import MainPage from "./pages/MainPage";
 import Layout from "./layouts/layout";
 import AboutPage from "./pages/AboutPage";
 import MyPage from "./pages/MyPage";
+import CoachPage from "./pages/CoachPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="auth" element={<AuthPage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="my" element={<MyPage />} />
+          <Route path="coach" element={<CoachPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -13,9 +13,9 @@ function ClubItem() {
         <div className={styles.box}>
           <p>D-Day 형식</p>
           <div className={styles.btnBox}>
-            <CategoryButton>지역</CategoryButton>
-            <CategoryButton>종목</CategoryButton>
-            <CategoryButton>별점</CategoryButton>
+            <CategoryButton isMy={true}>지역</CategoryButton>
+            <CategoryButton isMy={true}>종목</CategoryButton>
+            <CategoryButton isMy={true}>별점</CategoryButton>
           </div>
         </div>
       </div>
