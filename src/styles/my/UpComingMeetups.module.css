@@ -32,8 +32,7 @@
   background: #efedef;
 
   display: grid;
-  /* grid-template-columns: 1.1fr 120px 140px 1fr 0.8fr; */
-  grid-template-columns: 1fr 2fr 1.5fr 1.2fr 1fr;
+  grid-template-columns: 0.65fr 1.9fr 1.5fr 1.2fr 1fr;
   align-items: center;
   text-align: center;
 }
@@ -57,4 +56,9 @@
 }
 .place {
   padding-left: 20px;
+}
+
+.tableBody {
+  display: flex;
+  flex-direction: column;
 }
