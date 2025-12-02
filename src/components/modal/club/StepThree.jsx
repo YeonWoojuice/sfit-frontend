@@ -66,8 +66,8 @@ function StepThree({ info, onChange }) {
   // };
 
   const sliderRef = useRef(null);
-  const minMember = info.member_min || 1;
-  const maxMember = info.member_max || 50;
+  const minMember = info.capacity_min || 1;
+  const maxMember = info.capacity_max || 50;
   const MIN_LIMIT = 1;
   const MAX_LIMIT = 50;
 
@@ -96,11 +96,11 @@ function StepThree({ info, onChange }) {
       if (dragging === "min") {
         // 최소값은 최대값을 넘을 수 없음 (최소 1명 차이 유지)
         if (newValue >= maxMember) newValue = maxMember - 1;
-        onChange("member_min", newValue);
+        onChange("capacity_min", newValue);
       } else if (dragging === "max") {
         // 최대값은 최소값보다 작을 수 없음
         if (newValue <= minMember) newValue = minMember + 1;
-        onChange("member_max", newValue);
+        onChange("capacity_max", newValue);
       }
     };
 

@@ -1,6 +1,6 @@
 import styles from "../../styles/gathering/ClubCard.module.css";
 import CategoryButton from "../common/CategoryButton";
-import { SPORT_OPTIONS } from "../../constants/option";
+import { REGION_OPTIONS, SPORT_OPTIONS } from "../../constants/option";
 
 const RecomandIcon = () => {
   return <div className={styles.recoIcon}>추천</div>;
@@ -14,6 +14,7 @@ const DAYS = ["일", "월", "화", "수", "목", "금", "토"];
 
 function ClubCard({ item }) {
   const sport = SPORT_OPTIONS.find((option) => option.id === item.sport_id);
+  const regin = REGION_OPTIONS.find((option) => option.id === item.region_code);
   const days = item.days_of_week;
 
   return (
@@ -39,7 +40,7 @@ function ClubCard({ item }) {
           ))}
         </div>
         <div className={styles.btnBox}>
-          <CategoryButton>{item.region_name}</CategoryButton>
+          <CategoryButton>{regin.name}</CategoryButton>
           <CategoryButton>{sport.name}</CategoryButton>
           <CategoryButton>{item.rating_avg}</CategoryButton>
         </div>

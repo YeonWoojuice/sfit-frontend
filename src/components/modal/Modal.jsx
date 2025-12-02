@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "../../styles/modal/Modal.module.css";
 import ModalHeader from "../common/ModalHeader";
 import ModalToggle from "../common/ModalToggle";
@@ -120,7 +120,6 @@ function Modal({ onClick }) {
           level_min: Number(info.level_min),
           level_max: Number(info.level_max),
         };
-
         responseData = await creatMeetup(meetupPayload);
       }
       console.log(responseData);

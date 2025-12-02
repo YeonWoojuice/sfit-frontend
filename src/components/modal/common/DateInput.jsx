@@ -55,9 +55,7 @@ function DateInput({ info, onChange, isCalendar }) {
           <input
             type="date"
             className={styles.input}
-            onChange={(e) => {
-              console.log(e.target.value);
-            }}
+            onChange={(e) => onChange("date", e.target.value)}
           ></input>
         ) : (
           <div className={styles.dayContainer}>
