@@ -12,6 +12,10 @@
   align-items: center;
 }
 
+.itemRow:last-child {
+  border-bottom: none;
+}
+
 .itemRow p {
   /* flex: 1; */
 

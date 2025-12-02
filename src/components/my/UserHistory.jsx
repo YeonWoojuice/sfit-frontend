@@ -27,6 +27,9 @@ function UserHistory() {
           <HistoryItem label="불참" />
           <HistoryItem label="참가" />
           <HistoryItem label="불참" />
+          <HistoryItem label="불참" />
+          <HistoryItem label="불참" />
+          <HistoryItem label="불참" />
         </div>
       </div>
     </div>

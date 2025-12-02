@@ -105,6 +105,27 @@
   border: 2px solid #e9e7e9;
   border-radius: 0 0 8px 8px;
 
-  /* overflow: hidden; */
   overflow-y: scroll;
+}
+
+/* .tableBody::-webkit-scrollbar {
+  display: none;
+} */
+
+.tableBody::-webkit-scrollbar {
+  width: 10px;
+}
+
+.tableBody::-webkit-scrollbar-thumb {
+  background-color: #d1d1d1;
+  border-radius: 10px;
+
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+
+.tableBody::-webkit-scrollbar-track {
+  background-color: transparent;
+
+  margin-bottom: 4px;
 }
