@@ -3,7 +3,7 @@ import styles from "../../styles/gathering/ClubSection.module.css";
 import SectionHeader from "../main/SectionHeader";
 import ClubCard from "./ClubCard";
 
-function ClubSection({ activeTab, data }) {
+function ClubSection({ type, data }) {
   const titles = {
     전체: "일반 모임",
     동호회: "일반 모임",
@@ -17,10 +17,10 @@ function ClubSection({ activeTab, data }) {
 
   return (
     <section className={styles.meetingSection}>
-      <SectionHeader title={titles[activeTab]} isMeeting={true} />
+      <SectionHeader title={titles[type]} isMeeting={true} />
       <div className={styles.meetingCards}>
         {data.map((item) => (
-          <ClubCard key={item.id} item={item} />
+          <ClubCard key={item.id} item={item} type={type} />
         ))}
       </div>
     </section>
