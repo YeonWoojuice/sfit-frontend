@@ -1,6 +1,7 @@
 import styles from "../../styles/gathering/ClubCard.module.css";
 import CategoryButton from "../common/CategoryButton";
 import calendar from "../../assets/calendar.svg";
+import card_img from "../../assets/main/card_img.jpg";
 import { REGION_OPTIONS, SPORT_OPTIONS } from "../../constants/option";
 
 const RecomandIcon = () => {
@@ -18,15 +19,10 @@ function ClubCard({ item, type }) {
   const regin = REGION_OPTIONS.find((option) => option.id === item.region_code);
   const days = item.days_of_week;
 
-  // /uploads/1764340715270-225481246.jpg
-  // /images/default-club.jpg
   return (
     <div className={styles.container}>
-      <img
-        src="https://sfit-api-server.onrender.com/images/default-club.jpg"
-        className={styles.img}
-      ></img>
-      {/* <img src={item.image_path} className={styles.img}></img> */}
+      <img src={card_img} className={styles.img}></img>
+
       <div className={styles.contentBox}>
         <div className={styles.contentHeader}>
           <div className={styles.leftBox}>
