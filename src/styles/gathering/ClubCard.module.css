@@ -99,9 +99,22 @@
   gap: 0.5rem;
 }
 
-.btnBox {
+.dateBox {
   display: flex;
   gap: 0.5rem;
+}
+
+.icon {
+  width: 18px;
+}
+
+.dateBox p {
+  font-size: 13px;
+}
+
+.btnBox {
+  display: flex;
+  gap: 0.25rem;
 }
 
 .categoryBtn {
