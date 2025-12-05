@@ -6,14 +6,14 @@ import Loading from "../common/Loading";
 
 function UserHistory() {
   const [data, setData] = useState([]);
+  const [type, setType] = useState("all");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function getMyHistory() {
       try {
-        const res = await getHistory();
+        const res = await getHistory(type);
         setData(res);
-        console.log(res);
         setLoading(false);
       } catch (error) {
         console.log(error);
@@ -29,9 +29,28 @@ function UserHistory() {
       <div className={styles.header}>
         <div className={styles.title}>히스토리</div>
         <div className={styles.filters}>
-          <div className={styles.all}>전체</div>
-          <div className={styles.meetup}>번개</div>
-          <div className={styles.club}>동호회</div>
+          <div
+            className={`${styles.all} ${type === "all" ? styles.select : ""}`}
+            onClick={() => setType("all")}
+          >
+            전체
+          </div>
+          <div
+            className={`${styles.meetup} ${
+              type === "club" ? styles.select : ""
+            }`}
+            onClick={() => setType("club")}
+          >
+            번개
+          </div>
+          <div
+            className={`${styles.club} ${
+              type === "flash" ? styles.select : ""
+            }`}
+            onClick={() => setType("flash")}
+          >
+            동호회
+          </div>
         </div>
       </div>
       <div className={styles.historyTable}>

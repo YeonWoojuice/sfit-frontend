@@ -4,6 +4,8 @@ import calendar from "../../assets/calendar.svg";
 import { REGION_OPTIONS, SPORT_OPTIONS } from "../../constants/option";
 
 function ClubItem({ item }) {
+  const imgUrl = "https://sfit-api-server.onrender.com" + item.image_url;
+  const date = item.joined_at.slice(0, 10);
   const getSportsString = () => {
     if (!item.sports || item.sports.length === 0) return "선택 안함";
 
@@ -24,7 +26,7 @@ function ClubItem({ item }) {
 
   return (
     <div className={styles.container}>
-      <div className={styles.img}></div>
+      <img src={imgUrl} className={styles.img}></img>
       <div className={styles.contentBox}>
         <div className={styles.textBox}>
           <p className={styles.name}>{item.name}</p>
@@ -33,7 +35,7 @@ function ClubItem({ item }) {
         <div className={styles.box}>
           <div className={styles.dateBox}>
             <img src={calendar} className={styles.calendar}></img>
-            <p>D-Day 형식</p>
+            <p>{date}</p>
           </div>
           <div className={styles.btnBox}>
             <CategoryButton isMy={true}>{getRegionString()}</CategoryButton>
