@@ -1,7 +1,6 @@
 import styles from "../../styles/gathering/ClubCard.module.css";
 import CategoryButton from "../common/CategoryButton";
 import calendar from "../../assets/calendar.svg";
-import card_img from "../../assets/main/card_img.jpg";
 import { REGION_OPTIONS, SPORT_OPTIONS } from "../../constants/option";
 import { joinClub } from "../../api/private";
 
@@ -23,6 +22,7 @@ function ClubCard({ item, type }) {
   const sport = SPORT_OPTIONS.find((option) => option.id === item.sport_id);
   const regin = REGION_OPTIONS.find((option) => option.id === item.region_code);
   const days = item.days_of_week;
+  const imgUrl = "https://sfit-api-server.onrender.com" + item.image_url;
 
   const handleJoin = async () => {
     try {
@@ -35,7 +35,7 @@ function ClubCard({ item, type }) {
 
   return (
     <div className={styles.container}>
-      <img src={card_img} className={styles.img}></img>
+      <img src={imgUrl} className={styles.img}></img>
 
       <div className={styles.contentBox}>
         <div className={styles.contentHeader}>

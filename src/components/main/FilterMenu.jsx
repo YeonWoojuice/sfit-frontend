@@ -8,7 +8,7 @@ function FilterMenu({ filter, onClick }) {
   const filters = [
     { label: "지역", key: "regions" },
     { label: "종목", key: "sports" },
-    { label: "코치", key: "coach" },
+    { label: "코치", key: "coaching" },
   ];
 
   const handleToggle = (key) => {
