@@ -3,13 +3,18 @@ import CategoryButton from "../common/CategoryButton";
 import calendar from "../../assets/calendar.svg";
 import card_img from "../../assets/main/card_img.jpg";
 import { REGION_OPTIONS, SPORT_OPTIONS } from "../../constants/option";
+import { joinClub } from "../../api/private";
 
 const RecomandIcon = () => {
   return <div className={styles.recoIcon}>추천</div>;
 };
 
-const RequestButton = () => {
-  return <button className={styles.requestBtn}>신청하기</button>;
+const RequestButton = ({ onClick }) => {
+  return (
+    <button className={styles.requestBtn} onClick={onClick}>
+      신청하기
+    </button>
+  );
 };
 
 const DAYS = ["일", "월", "화", "수", "목", "금", "토"];
@@ -18,6 +23,15 @@ function ClubCard({ item, type }) {
   const sport = SPORT_OPTIONS.find((option) => option.id === item.sport_id);
   const regin = REGION_OPTIONS.find((option) => option.id === item.region_code);
   const days = item.days_of_week;
+
+  const handleJoin = async () => {
+    try {
+      const data = await joinClub(item.id);
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -29,7 +43,7 @@ function ClubCard({ item, type }) {
             <RecomandIcon />
             <p className={styles.name}>{item.name}</p>
           </div>
-          <RequestButton />
+          <RequestButton onClick={handleJoin} />
         </div>
         <p className={styles.content}>{item.explain}</p>
       </div>

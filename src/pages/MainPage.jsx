@@ -68,15 +68,32 @@ function MainPage() {
             sport: sportId,
           };
 
-          let responseData = [];
+          const clubParams = {
+            ...baseParams,
+            search: keyword,
+          };
 
-          if (activeTab === "번개 모임") {
+          let responseData = {};
+
+          if (activeTab === "전체") {
+            const [clubsRes, meetupsRes] = await Promise.all([
+              getClubs(clubParams),
+              getMeetup(baseParams),
+            ]);
+
+            const combinedList = [
+              ...(clubsRes.clubs || []),
+              ...(meetupsRes.flashes || []),
+            ];
+
+            responseData = {
+              combined: combinedList,
+              count: (clubsRes.count || 0) + (meetupsRes.count || 0),
+            };
+          } else if (activeTab === "번개 모임") {
             responseData = await getMeetup(baseParams);
           } else {
-            const clubParams = {
-              ...baseParams,
-              search: keyword,
-            };
+            // 동호회
             responseData = await getClubs(clubParams);
           }
 
@@ -93,7 +110,8 @@ function MainPage() {
     return () => clearTimeout(timer);
   }, [filter.regions, filter.sports, keyword, activeTab]);
 
-  const contentList = data.clubs || data.flashes; // 응답 데이터 다른 키값
+  const contentList =
+    activeTab === "전체" ? data.combined : data.clubs || data.flashes; // 응답 데이터 다른 키값
 
   return (
     <div className={styles.container}>

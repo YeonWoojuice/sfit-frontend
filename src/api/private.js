@@ -61,11 +61,13 @@ export const getBadges = async () => {
   const res = await api.get("/api/users/me/badges");
   return res.data;
 };
+
 export const getClubs = async () => {
   const res = await api.get("/api/users/me/meetings");
   return res.data;
 };
+
 export const getMeetups = async () => {
-  const res = await api.get("/api/flashes/my-upcomming");
+  const res = await api.get("/api/users/me/my-upcomming");
   return res.data;
 };
