@@ -19,8 +19,10 @@ const Button = ({ children }) => {
 
 function MyPage() {
   const [myInfo, setMyInfo] = useState([]);
+  const [imgUrl, setImgUrl] = useState("");
   const [loading, setLoading] = useState(true);
   const [tab, setTab] = useState("profile");
+
   const navigate = useNavigate();
 
   //   useEffect(() => {
@@ -37,6 +39,7 @@ function MyPage() {
       try {
         const data = await getMy();
         setMyInfo(data);
+        setImgUrl("https://sfit-api-server.onrender.com" + data.avatar_url);
         setLoading(false);
       } catch (error) {
         console.log(error);
@@ -70,10 +73,7 @@ function MyPage() {
           </div>
         </div>
         <div className={styles.profileSection}>
-          <img
-            src="https://sfit-api-server.onrender.com/api/attachments/fb59d0d4-a6a0-4533-a920-ded9f3803a0c/file"
-            className={styles.sectionProfile}
-          ></img>
+          <img src={imgUrl} className={styles.sectionProfile}></img>
           <div className={styles.sectionTitle}>
             <div className={styles.profileMain}>
               <div className={styles.profileName}>{myInfo.name} / 당근</div>

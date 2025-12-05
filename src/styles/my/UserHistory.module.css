@@ -55,9 +55,10 @@
 
   border-radius: 16px;
   /* text-align: center; */
+  cursor: pointer;
 }
 
-.all {
+.filters div.select {
   border-radius: 16px;
 
   color: #fff;

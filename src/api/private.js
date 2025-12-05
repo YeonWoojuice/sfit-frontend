@@ -52,8 +52,12 @@ export const getMy = async () => {
   return res.data;
 };
 
-export const getHistory = async () => {
-  const res = await api.get("/api/users/me/history");
+export const getHistory = async ({ type }) => {
+  const res = await api.get("/api/users/me/history", {
+    params: {
+      type: type,
+    },
+  });
   return res.data;
 };
 
