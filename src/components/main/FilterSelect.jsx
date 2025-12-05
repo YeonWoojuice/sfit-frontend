@@ -12,9 +12,9 @@ function FilterSelect({ label, filter, filterkey, onClick, isOpen, onToggle }) {
   const icons = {
     regions: <RegionIcon className={getIconClass(isOpen || hasValue)} />,
     sports: <SportsIcon className={getIconClass(isOpen || hasValue)} />,
-    coach: (
+    coaching: (
       <CoachIcon
-        className={getIconClass(filter.coach)}
+        className={getIconClass(filter.coaching)}
         style={{ width: "26px", height: "29px" }}
       />
     ),
@@ -37,8 +37,8 @@ function FilterSelect({ label, filter, filterkey, onClick, isOpen, onToggle }) {
     sports: ["야구", "축구", "골프", "수영"],
   };
 
-  const isDropdown = filterkey !== "coach";
-  const isActive = isDropdown ? isOpen || hasValue : filter.coach;
+  const isDropdown = filterkey !== "coaching";
+  const isActive = isDropdown ? isOpen || hasValue : filter.coaching;
 
   return (
     <div className={styles.container}>
@@ -46,7 +46,7 @@ function FilterSelect({ label, filter, filterkey, onClick, isOpen, onToggle }) {
         className={`${styles.filterBox} ${isActive ? styles.active : ""}`}
         onClick={() => {
           if (!isDropdown) {
-            onClick("coach", !filter.coach);
+            onClick("coaching", !filter.coaching);
             onToggle();
             return;
           }

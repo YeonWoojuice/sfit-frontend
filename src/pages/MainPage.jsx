@@ -25,7 +25,7 @@ function MainPage() {
   const [filter, setFilter] = useState({
     regions: "",
     sports: "",
-    coach: false,
+    coaching: "",
   });
 
   const pageInfo = {
@@ -71,6 +71,7 @@ function MainPage() {
           const clubParams = {
             ...baseParams,
             search: keyword,
+            coaching: filter.coaching,
           };
 
           let responseData = {};
@@ -108,7 +109,7 @@ function MainPage() {
 
     // cleanup
     return () => clearTimeout(timer);
-  }, [filter.regions, filter.sports, keyword, activeTab]);
+  }, [filter.regions, filter.sports, filter.coaching, keyword, activeTab]);
 
   const contentList =
     activeTab === "전체" ? data.combined : data.clubs || data.flashes; // 응답 데이터 다른 키값

@@ -10,12 +10,13 @@ const api = axios.create({
   },
 });
 
-export const getClubs = async ({ region, sport, search }) => {
+export const getClubs = async ({ region, sport, search, coaching }) => {
   const res = await api.get("/api/clubs", {
     params: {
       region,
       sport,
       search,
+      coaching,
     },
   });
 
