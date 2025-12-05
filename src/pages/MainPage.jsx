@@ -5,7 +5,7 @@ import { REGION_OPTIONS, SPORT_OPTIONS } from "../constants/option";
 import { getRange } from "../utils/pagination";
 import prevIcon from "../assets/prev.png";
 import nextIcon from "../assets/next.png";
-import Modal from "../components/modal/Modal";
+import NewModal from "../components/modal/NewModal";
 import FilterMenu from "../components/main/FilterMenu";
 import Tab from "../components/main/Tab";
 import InstructorSection from "../components/gathering/InstructorSection";
@@ -15,8 +15,10 @@ import AlertItem from "../components/common/AlertItem";
 import FloatingButton from "../components/common/FloatingButton";
 import FloatingLayout from "../components/common/FloatingLayout";
 import useKeywordStore from "../store/useKeywordStore";
+import ChatModal from "../components/modal/ChatModal";
 
 function MainPage() {
+  const [modal, setModal] = useState("");
   const [data, setData] = useState([]);
   const [activeTab, setActiveTab] = useState("전체");
   const keyword = useKeywordStore((state) => state.keyword);
@@ -35,9 +37,12 @@ function MainPage() {
     hasNext: true,
   };
 
-  const pages = getRange(1, pageInfo.totalPages);
+  const renderModal = {
+    new: <NewModal onClick={() => setModal("")} />,
+    chat: <ChatModal onClick={() => setModal("")} />,
+  };
 
-  const [modal, setModal] = useState(false);
+  const pages = getRange(1, pageInfo.totalPages);
 
   const handleFilter = (key, value) => {
     setFilter((prev) => ({ ...prev, [key]: prev[key] === value ? "" : value }));
@@ -92,7 +97,7 @@ function MainPage() {
 
   return (
     <div className={styles.container}>
-      {modal && <Modal onClick={() => setModal(false)} />}
+      {modal && renderModal[modal]}
 
       <div className={styles.inner}>
         {/* 필터링 */}
@@ -128,16 +133,19 @@ function MainPage() {
             </div>
           </div>
           <div className={styles.rightSection}>
-            <div className={styles.alertContainer}>
-              <AlertItem />
-            </div>
+            <div className={styles.alertContainer}>{/* <AlertItem /> */}</div>
             {/* 플로팅 버튼 */}
             <FloatingLayout>
-              <FloatingButton type="chat" />
+              <FloatingButton
+                type="chat"
+                onClick={() => {
+                  setModal((prev) => (prev === "chat" ? "" : "chat"));
+                }}
+              />
               <FloatingButton
                 type="new"
                 onClick={() => {
-                  setModal(!modal);
+                  setModal((prev) => (prev === "new" ? "" : "new"));
                 }}
               />
             </FloatingLayout>

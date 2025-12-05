@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "../../styles/modal/Modal.module.css";
+import styles from "../../styles/modal/NewModal.module.css";
 import ModalHeader from "../common/ModalHeader";
 import ModalToggle from "../common/ModalToggle";
 import StepOne from "./club/StepOne";
@@ -31,7 +31,7 @@ const Button = ({ children, color, onClick }) => {
   );
 };
 
-function Modal({ onClick }) {
+function NewModal({ onClick }) {
   const [type, setType] = useState("club");
   const [step, setStep] = useState(1);
   const [info, setInfo] = useState({
@@ -156,4 +156,4 @@ function Modal({ onClick }) {
   );
 }
 
-export default Modal;
+export default NewModal;
