@@ -1,7 +1,29 @@
+import { useEffect, useState } from "react";
 import styles from "../../styles/my/UserHistory.module.css";
 import HistoryItem from "./HistoryItem";
+import { getHistory } from "../../api/private";
+import Loading from "../common/Loading";
 
 function UserHistory() {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function getMyHistory() {
+      try {
+        const res = await getHistory();
+        setData(res);
+        console.log(res);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    getMyHistory();
+  }, []);
+
+  if (loading) return <Loading />;
   return (
     <div className={styles.historyContainer}>
       <div className={styles.header}>
@@ -22,14 +44,9 @@ function UserHistory() {
           <p>별점 기록</p>
         </div>
         <div className={styles.tableBody}>
-          <HistoryItem label="참가" />
-          <HistoryItem label="불참" />
-          <HistoryItem label="불참" />
-          <HistoryItem label="참가" />
-          <HistoryItem label="불참" />
-          <HistoryItem label="불참" />
-          <HistoryItem label="불참" />
-          <HistoryItem label="불참" />
+          {data.map((item, index) => (
+            <HistoryItem key={index} label={item.my_state} item={item} />
+          ))}
         </div>
       </div>
     </div>

@@ -6,6 +6,8 @@ import UserHistory from "../components/my/UserHistory";
 import UserProfile from "../components/my/UserProfile";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { getMy } from "../api/private";
+import Loading from "../components/common/Loading";
 
 const Button = ({ children }) => {
   return (
@@ -16,6 +18,8 @@ const Button = ({ children }) => {
 };
 
 function MyPage() {
+  const [myInfo, setMyInfo] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [tab, setTab] = useState("profile");
   const navigate = useNavigate();
 
@@ -28,32 +32,52 @@ function MyPage() {
   //     }
   //   }, [navigate]);
 
+  useEffect(() => {
+    async function getMine() {
+      try {
+        const data = await getMy();
+        setMyInfo(data);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    getMine();
+  }, []);
+
   const renderItem = {
-    profile: <UserProfile />,
-    history: <UserHistory />,
-    badge: <BadgeList />,
-    club: <MyClubList />,
-    meetups: <UpComingMeetups />,
+    profile: <UserProfile data={myInfo} />,
+    history: <UserHistory data={myInfo} />,
+    badge: <BadgeList data={myInfo} />,
+    club: <MyClubList data={myInfo} />,
+    meetups: <UpComingMeetups data={myInfo} />,
   };
+
+  if (loading) return <Loading />;
+
   return (
     <div className={styles.container}>
       <div className={styles.inner}>
         <div className={styles.header}>
           <div className={styles.headerItem}>
-            <p className={styles.headerNumber}>32</p>
+            <p className={styles.headerNumber}>{myInfo.club_count}</p>
             <p className={styles.headerLabel}>참여 동호회</p>
           </div>
           <div className={styles.headerItem}>
-            <p className={styles.headerNumber}>200</p>
+            <p className={styles.headerNumber}>{myInfo.application_count}</p>
             <p className={styles.headerLabel}>참가 신청</p>
           </div>
         </div>
         <div className={styles.profileSection}>
-          <div className={styles.sectionProfile}></div>
+          <img
+            src="https://sfit-api-server.onrender.com/api/attachments/fb59d0d4-a6a0-4533-a920-ded9f3803a0c/file"
+            className={styles.sectionProfile}
+          ></img>
           <div className={styles.sectionTitle}>
             <div className={styles.profileMain}>
-              <div className={styles.profileName}>김운동 / 당근</div>
-              <div className={styles.profileLevel}>초보자</div>
+              <div className={styles.profileName}>{myInfo.name} / 당근</div>
+              <div className={styles.profileLevel}>{myInfo.level}</div>
             </div>
             <div className={styles.profileActions}>
               <Button>등급 승격 신청</Button>
