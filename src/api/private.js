@@ -75,3 +75,21 @@ export const getMeetups = async () => {
   const res = await api.get("/api/users/me/my-upcomming");
   return res.data;
 };
+
+// AI 코치 추천
+// 로그인 시: 토큰만으로 호출 (사용자 프로필 기반)
+// 비로그인 시: 쿼리 파라미터로 region, sports, age 전달
+export const getRecommendedCoaches = async ({ region, sports, age } = {}) => {
+  const params = {};
+  
+  // 비로그인 시 쿼리 파라미터 추가
+  if (region) params.region = region;
+  if (sports) params.sports = Array.isArray(sports) ? sports.join(",") : sports;
+  if (age) params.age = age;
+  
+  const res = await api.get("/api/coach/recommend", {
+    params: Object.keys(params).length > 0 ? params : undefined,
+  });
+  
+  return res.data;
+};
