@@ -45,3 +45,27 @@ export const joinMeetup = async (id) => {
   const res = await api.post(`/api/flashes/${id}/join`);
   return res.data;
 };
+
+// 마이 페이지
+export const getMy = async () => {
+  const res = await api.get("/api/users/me");
+  return res.data;
+};
+
+export const getHistory = async () => {
+  const res = await api.get("/api/users/me/history");
+  return res.data;
+};
+
+export const getBadges = async () => {
+  const res = await api.get("/api/users/me/badges");
+  return res.data;
+};
+export const getClubs = async () => {
+  const res = await api.get("/api/users/me/meetings");
+  return res.data;
+};
+export const getMeetups = async () => {
+  const res = await api.get("/api/flashes/my-upcomming");
+  return res.data;
+};
