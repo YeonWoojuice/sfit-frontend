@@ -1,4 +1,4 @@
-import styles from "../../styles/modal/CHatItem.module.css";
+import styles from "../../styles/modal/ChatItem.module.css";
 import start from "../../assets/modal/star.png";
 import start_act from "../../assets/modal/star_act.png";
 
