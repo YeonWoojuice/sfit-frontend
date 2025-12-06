@@ -56,6 +56,16 @@
   font-size: 14px;
 }
 
+.dateBox {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.calendar {
+  width: 18px;
+}
+
 .btnBox {
   display: flex;
   gap: 0.5rem;

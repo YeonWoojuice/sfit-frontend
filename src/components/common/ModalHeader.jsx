@@ -19,7 +19,7 @@ function ModalHeader({ onClick, type }) {
       />
     ),
 
-    lightning: (
+    meetup: (
       <GatherIcon
         style={{
           width: "60px",

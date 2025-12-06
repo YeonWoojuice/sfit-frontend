@@ -1,0 +1,69 @@
+.itemContainer {
+  display: flex;
+  justify-content: space-between;
+
+  cursor: pointer;
+}
+
+.chatBox {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 1rem;
+}
+
+.userImg {
+  position: relative;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: #d9d9d9;
+}
+
+.circle {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+}
+
+.title {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 16px;
+
+  color: #000000;
+}
+
+.date {
+  font-weight: 500;
+  font-size: 14px;
+
+  color: #8d8b8d;
+}
+
+.desc {
+  width: 276px;
+
+  font-weight: 500;
+  font-size: 14px;
+
+  color: #000000;
+}
+
+.star {
+  width: 18px;
+  height: 18px;
+}

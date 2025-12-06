@@ -1,22 +1,32 @@
 import styles from "../styles/main/MainPage.module.css";
 import { useEffect, useState } from "react";
+import { getClubs, getMeetup } from "../api/public";
+import { REGION_OPTIONS, SPORT_OPTIONS } from "../constants/option";
 import { getRange } from "../utils/pagination";
-import Tab from "../components/main/Tab";
-import FilterMenu from "../components/main/FilterMenu";
-import InstructorSection from "../components/gathering/InstructorSection";
-import ClubSection from "../components/gathering/ClubSection";
-import FloatingButton from "../components/common/FloatingButton";
 import prevIcon from "../assets/prev.png";
 import nextIcon from "../assets/next.png";
-import FloatingLayout from "../components/common/FloatingLayout";
-import Modal from "../components/modal/Modal";
-import AlertItem from "../components/common/AlertItem";
-import { getClubs } from "../api/guest";
-import { REGION_OPTIONS, SPORT_OPTIONS } from "../constants/option";
+import NewModal from "../components/modal/NewModal";
+import FilterMenu from "../components/main/FilterMenu";
+import Tab from "../components/main/Tab";
+import InstructorSection from "../components/gathering/InstructorSection";
+import ClubSection from "../components/gathering/ClubSection";
 import Loading from "../components/common/Loading";
+import AlertItem from "../components/common/AlertItem";
+import FloatingButton from "../components/common/FloatingButton";
+import FloatingLayout from "../components/common/FloatingLayout";
+import useKeywordStore from "../store/useKeywordStore";
+import ChatModal from "../components/modal/ChatModal";
 
 function MainPage() {
+  const [modal, setModal] = useState("");
   const [data, setData] = useState([]);
+  const [activeTab, setActiveTab] = useState("전체");
+  const keyword = useKeywordStore((state) => state.keyword);
+  const [filter, setFilter] = useState({
+    regions: "",
+    sports: "",
+    coaching: "",
+  });
 
   const pageInfo = {
     page: 1,
@@ -27,60 +37,101 @@ function MainPage() {
     hasNext: true,
   };
 
-  const pages = getRange(1, pageInfo.totalPages);
-  const [filter, setFilter] = useState({
-    regions: "",
-    sports: "",
-    coach: false,
-  });
+  const renderModal = {
+    new: <NewModal onClick={() => setModal("")} />,
+    chat: <ChatModal onClick={() => setModal("")} />,
+  };
 
-  const [modal, setModal] = useState(false);
+  const pages = getRange(1, pageInfo.totalPages);
 
   const handleFilter = (key, value) => {
     setFilter((prev) => ({ ...prev, [key]: prev[key] === value ? "" : value }));
   };
 
+  const handleTabChange = (tabName) => {
+    setActiveTab(tabName);
+    setData([]);
+  };
+
   useEffect(() => {
-    async function getclub() {
-      try {
-        const regions = REGION_OPTIONS.find((r) => r.name === filter.regions);
-        const regionId = regions ? regions.id : "";
+    const timer = setTimeout(() => {
+      async function getclub() {
+        try {
+          const regions = REGION_OPTIONS.find((r) => r.name === filter.regions);
+          const regionId = regions ? regions.id : "";
 
-        const sports = SPORT_OPTIONS.find((s) => s.name === filter.sports);
-        const sportId = sports ? sports.id : "";
+          const sports = SPORT_OPTIONS.find((s) => s.name === filter.sports);
+          const sportId = sports ? sports.id : "";
 
-        const search = "";
+          const baseParams = {
+            region: regionId,
+            sport: sportId,
+          };
 
-        const params = {
-          region: regionId,
-          sport: sportId,
-          search,
-        };
-        console.log(params);
-        const data = await getClubs(params);
-        setData(data);
-      } catch (error) {
-        console.log(error);
+          const clubParams = {
+            ...baseParams,
+            search: keyword,
+            coaching: filter.coaching,
+          };
+
+          let responseData = {};
+
+          if (activeTab === "전체") {
+            const [clubsRes, meetupsRes] = await Promise.all([
+              getClubs(clubParams),
+              getMeetup(baseParams),
+            ]);
+
+            const combinedList = [
+              ...(clubsRes.clubs || []),
+              ...(meetupsRes.flashes || []),
+            ];
+
+            responseData = {
+              combined: combinedList,
+              count: (clubsRes.count || 0) + (meetupsRes.count || 0),
+            };
+          } else if (activeTab === "번개 모임") {
+            responseData = await getMeetup(baseParams);
+          } else {
+            // 동호회
+            responseData = await getClubs(clubParams);
+          }
+
+          console.log(responseData);
+          setData(responseData);
+        } catch (error) {
+          console.log(error);
+        }
       }
-    }
+      getclub();
+    }, 500); // 0.5초 딜레이
 
-    getclub();
-  }, [filter.regions, filter.sports]);
+    // cleanup
+    return () => clearTimeout(timer);
+  }, [filter.regions, filter.sports, filter.coaching, keyword, activeTab]);
+
+  const contentList =
+    activeTab === "전체" ? data.combined : data.clubs || data.flashes; // 응답 데이터 다른 키값
 
   return (
     <div className={styles.container}>
-      {modal && <Modal onClick={() => setModal(false)} />}
+      {modal && renderModal[modal]}
 
       <div className={styles.inner}>
         {/* 필터링 */}
         <div className={styles.section}>
           <FilterMenu filter={filter} onClick={handleFilter} />
           <div className={styles.midSection}>
-            <Tab />
+            <Tab currentTab={activeTab} onTabChange={handleTabChange} />
             {/* 강사 데이터 넘겨줘야 됨 */}
             <InstructorSection />
             {/* <Loading /> */}
-            {data.clubs ? <ClubSection data={data.clubs} /> : <Loading />}
+            {contentList ? (
+              <ClubSection type={activeTab} data={contentList} />
+            ) : (
+              <Loading />
+            )}
             {/* 모임 페이지 버튼 */}
             <div className={styles.bottom}>
               {data.count > 8 ? (
@@ -101,17 +152,19 @@ function MainPage() {
             </div>
           </div>
           <div className={styles.rightSection}>
-            <div className={styles.alertContainer}>
-              <AlertItem />
-
-            </div>
+            <div className={styles.alertContainer}>{/* <AlertItem /> */}</div>
             {/* 플로팅 버튼 */}
             <FloatingLayout>
-              <FloatingButton type="chat" />
+              <FloatingButton
+                type="chat"
+                onClick={() => {
+                  setModal((prev) => (prev === "chat" ? "" : "chat"));
+                }}
+              />
               <FloatingButton
                 type="new"
                 onClick={() => {
-                  setModal(!modal);
+                  setModal((prev) => (prev === "new" ? "" : "new"));
                 }}
               />
             </FloatingLayout>

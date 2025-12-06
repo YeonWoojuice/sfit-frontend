@@ -5,9 +5,11 @@ import headerlogo from "../assets/headerlogo.svg";
 import headersearch from "../assets/headersearch.svg";
 import profileImage from "../assets/profileimage.svg";
 import { Link } from "react-router-dom";
+import useKeywordStore from "../store/useKeywordStore";
 
 function Header() {
   const [userName, setUserName] = useState(null);
+  const { keyword, setKeyword } = useKeywordStore();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -41,13 +43,13 @@ function Header() {
     localStorage.removeItem("refreshToken");
     localStorage.removeItem("username");
     localStorage.removeItem("userName");
-    
+
     // Header 컴포넌트에 로그아웃 상태 변경 알림
     window.dispatchEvent(new Event("userLogout"));
-    
+
     // 상태 업데이트
     setUserName(null);
-    
+
     // 메인 페이지로 이동
     navigate("/");
   };
@@ -56,56 +58,62 @@ function Header() {
 
   return (
     <div className={styles.Headerwrapper}>
-    <div className={styles.Header}>
-      <div className={styles.Headerlogo}>
-        <Link to="/">
-          <img src={headerlogo} alt="logo" />
-        </Link>
-      </div>
-
-      <div className={styles.Headernav}>
-        <ul>
-          <li>
-            <Link to="/about">소개</Link>
-          </li>
-          <li>
-            <Link to="/coach">코치</Link>
-          </li>
-        </ul>
-      </div>
-
-      <div className={styles.Headersearch}>
-        <input type="text" placeholder="모임을 검색해 보세요!" />
-        <button>
-          <img src={headersearch} alt="search" />
-        </button>
-      </div>
-
-      <div className={styles.Headerlogin}>
-        {isLoggedIn ? (
-          <>
-            <span className={styles.HeaderStatus}>
-              안녕하세요 <br />{userName}님
-            </span>
-            <button 
-              onClick={handleLogout}
-              className={styles.HeaderLogoutButton}
-            >
-              로그아웃
-            </button>
-          </>
-        ) : (
-          <Link to="/auth" className={styles.HeaderStatus}>
-            로그아웃 상태입니다
+      <div className={styles.Header}>
+        <div className={styles.Headerlogo}>
+          <Link to="/">
+            <img src={headerlogo} alt="logo" />
           </Link>
-        )}
-        <Link to={isLoggedIn ? "/my" : "/auth"}>
-          <button className={styles.HeaderProfileButton}>
-            <img src={profileImage} alt="user profile" />
+        </div>
+
+        <div className={styles.Headernav}>
+          <ul>
+            <li>
+              <Link to="/about">소개</Link>
+            </li>
+            <li>
+              <Link to="/coach">코치</Link>
+            </li>
+          </ul>
+        </div>
+
+        <div className={styles.Headersearch}>
+          <input
+            type="text"
+            placeholder="모임을 검색해 보세요!"
+            value={keyword}
+            onChange={(e) => setKeyword(e.target.value)}
+          />
+          <button>
+            <img src={headersearch} alt="search" />
           </button>
-        </Link>
+        </div>
+
+        <div className={styles.Headerlogin}>
+          {isLoggedIn ? (
+            <>
+              <span className={styles.HeaderStatus}>
+                안녕하세요 <br />
+                {userName}님
+              </span>
+              <button
+                onClick={handleLogout}
+                className={styles.HeaderLogoutButton}
+              >
+                로그아웃
+              </button>
+            </>
+          ) : (
+            <Link to="/auth" className={styles.HeaderStatus}>
+              로그아웃 상태입니다
+            </Link>
+          )}
+          <Link to={isLoggedIn ? "/my" : "/auth"}>
+            <button className={styles.HeaderProfileButton}>
+              <img src={profileImage} alt="user profile" />
+            </button>
+          </Link>
+        </div>
       </div>
-    </div>
     </div>
   );
 }

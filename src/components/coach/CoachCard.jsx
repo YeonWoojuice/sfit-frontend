@@ -2,8 +2,33 @@ import styles from "../../styles/coach/CoachCard.module.css";
 import coachchat from "../../assets/coach/coachchat.svg";
 import coachcall from "../../assets/coach/coachcall.svg";
 import coachstar from "../../assets/coach/coachstar.svg";
+import { REGION_OPTIONS } from "../../constants/option";
 
 function CoachCard({ coach }) {
+  // 지역 코드를 한글 이름으로 변환
+  const getRegionName = () => {
+    if (!coach?.regionCode) return "지역";
+    const region = REGION_OPTIONS.find(
+      (option) => option.id === coach.regionCode
+    );
+    return region ? region.name : "지역";
+  };
+
+  // 이미지 URL 생성 (BASE_URL + image_url)
+  const getImageUrl = () => {
+    if (!coach?.imageUrl || typeof coach.imageUrl !== "string") return "";
+    // image_url이 이미 전체 URL인 경우
+    if (coach.imageUrl.startsWith("http")) {
+      return coach.imageUrl;
+    }
+    // 상대 경로인 경우 BASE_URL 추가
+    return "https://sfit-api-server.onrender.com" + coach.imageUrl;
+  };
+
+  // 이미지 로딩 실패 시 처리
+  const handleImageError = (e) => {
+    e.target.style.display = "none";
+  };
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -38,13 +63,21 @@ function CoachCard({ coach }) {
             </div>
           </div>
           <div className={styles.tags}>
-            <span className={styles.tag}>종목</span>
-            <span className={styles.tag}>지역</span>
-            <span className={styles.tag}>나이대</span>
+            <span className={styles.tag}>{coach?.sport || "종목"}</span>
+            <span className={styles.tag}>{getRegionName()}</span>
+            <span className={styles.tag}>{coach?.ageGroup || "나이대"}</span>
           </div>
         </div>
       </div>
-      <div className={styles.profileImage}></div>
+      <div className={styles.profileImage}>
+        {coach?.imageUrl && getImageUrl() && (
+          <img 
+            src={getImageUrl()} 
+            alt={coach?.name || "코치 프로필"}
+            onError={handleImageError}
+          />
+        )}
+      </div>
     </div>
   );
 }

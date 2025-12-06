@@ -15,6 +15,7 @@ function ProfileItem({ label, content }) {
     "한 줄 소개": <ExpalinIcon className={styles.itemIcon} />,
     "코치 자격": <CoachIcon className={styles.itemIcon} />,
   };
+
   return (
     <div className={styles.itemContainer}>
       <div className={styles.itemIconBox}>{renderIcon[label]}</div>
