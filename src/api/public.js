@@ -38,3 +38,8 @@ export const getCoaches = async () => {
   const res = await api.get("/api/coach");
   return res.data;
 };
+
+export const getPopularCoaches = async () => {
+  const res = await api.get("/api/coach/popular");
+  return res.data;
+};
