@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../../styles/modal/ChatModal.module.css";
 import ChatItem from "./ChatItem";
 import prev from "../../assets/modal/prev.png";
+import { getChatList, getChats } from "../../api/private";
 
 const Category = ({ children, isSelect = false, onClick }) => {
   return (
@@ -31,8 +32,41 @@ const SearchIcon = () => (
 );
 
 function ChatModal() {
-  const [category, setCategory] = useState("전체");
+  const [category, setCategory] = useState("all");
+  const [search, setSearch] = useState("");
+  const [content, setContent] = useState("");
+  const [rooms, setRooms] = useState([]);
+  const [chats, setChats] = useState([]);
   const [isChat, setIsChat] = useState(false);
+
+  const handleClick = async () => {
+    try {
+      const getChat = await getChats();
+      console.log(getChat.messages);
+      setChats(getChat.messages);
+      setIsChat(true);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    async function getList() {
+      const params = {
+        filter: category,
+        search: search,
+      };
+      try {
+        const data = await getChatList(params);
+        setRooms(data.rooms);
+        console.log(data.rooms);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    getList();
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -51,26 +85,30 @@ function ChatModal() {
           <>
             <div className={styles.categorys}>
               <Category
-                isSelect={category === "전체"}
-                onClick={() => setCategory("전체")}
+                isSelect={category === "all"}
+                onClick={() => setCategory("all")}
               >
                 전체
               </Category>
               <Category
-                isSelect={category === "안 읽음"}
-                onClick={() => setCategory("안 읽음")}
+                isSelect={category === "unread"}
+                onClick={() => setCategory("unread")}
               >
                 안 읽음
               </Category>
               <Category
-                isSelect={category === "즐겨찾기"}
-                onClick={() => setCategory("즐겨찾기")}
+                isSelect={category === "favorite"}
+                onClick={() => setCategory("favorite")}
               >
                 즐겨찾기
               </Category>
             </div>
             <div className={styles.searchWrapper}>
-              <input className={styles.input} />
+              <input
+                className={styles.input}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
               <SearchIcon />
             </div>
           </>
@@ -81,16 +119,20 @@ function ChatModal() {
           <div className={styles.messageList}>
             <div className={styles.receiverPlaceholder}>...</div>
           </div>
-
           <div className={styles.inputArea}>
             <input
               className={styles.messageInput}
+              value={content}
               placeholder="메시지를 입력하세요."
+              onChange={(e) => setContent(e.target.value)}
             />
           </div>
         </div>
       ) : (
         <div className={styles.content}>
+          {/* {rooms.map((room) => (
+            <ChatItem key={room.id} data={room} onClick={handleClick(room.id)}/>
+          ))} */}
           <ChatItem
             onClick={() => {
               setIsChat(true);
@@ -103,26 +145,6 @@ function ChatModal() {
           />
           <ChatItem
             isActive={true}
-            onClick={() => {
-              setIsChat(true);
-            }}
-          />
-          <ChatItem
-            onClick={() => {
-              setIsChat(true);
-            }}
-          />
-          <ChatItem
-            onClick={() => {
-              setIsChat(true);
-            }}
-          />
-          <ChatItem
-            onClick={() => {
-              setIsChat(true);
-            }}
-          />
-          <ChatItem
             onClick={() => {
               setIsChat(true);
             }}

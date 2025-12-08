@@ -46,6 +46,34 @@ export const joinMeetup = async (id) => {
   return res.data;
 };
 
+// 채팅 모달
+export const getChatList = async ({ filter, serach }) => {
+  const res = await api.get("/api/chat/rooms", {
+    filter: filter,
+    serach: serach,
+  });
+
+  return res.data;
+};
+
+export const getChats = async ({ id, limit, offset }) => {
+  const res = await api.get(`/api/chat/rooms/${id}/messages`, {
+    limit: limit,
+    offset: offset,
+  });
+
+  return res.data;
+};
+
+export const sendMessage = async ({ id, content, type }) => {
+  const res = await api.post(`/api/chat/rooms/${id}/messages`, {
+    content: content,
+    type: type,
+  });
+
+  return res.data;
+};
+
 // 마이 페이지
 export const getMy = async () => {
   const res = await api.get("/api/users/me");
